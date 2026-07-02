@@ -1,0 +1,327 @@
+/* ==========================================================
+   CareConnect Dashboard
+   responsive.css
+   Mobile • Tablet • Layout Adaptation
+========================================================== */
+
+
+/* ==========================================================
+   TABLET (<= 1024px)
+========================================================== */
+
+@media (max-width: 1024px){
+
+    /* Sidebar becomes collapsible */
+
+    .sidebar{
+
+        transform:translateX(-100%);
+
+        position:fixed;
+
+    }
+
+    .sidebar.active{
+
+        transform:translateX(0);
+
+    }
+
+    .sidebar-close{
+
+        display:flex;
+
+    }
+
+    /* Overlay active handled by JS */
+
+    .sidebar-overlay.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+    }
+
+    /* Main content full width */
+
+    .main-content{
+
+        margin-left:0;
+
+    }
+
+    /* Grid adjustments */
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .bottom-dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .wellness-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .quick-actions-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    /* Welcome section stack */
+
+    .welcome-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .welcome-actions{
+
+        justify-content:center;
+
+    }
+
+    .welcome-illustration{
+
+        min-height:200px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE (<= 768px)
+========================================================== */
+
+@media (max-width: 768px){
+
+    /* Navbar adjustments */
+
+    .top-navbar{
+
+        padding:0 16px;
+
+    }
+
+    .menu-toggle{
+
+        display:flex;
+
+    }
+
+    /* Hide large search */
+
+    .search-box{
+
+        width:180px;
+
+    }
+
+    /* Profile info hidden */
+
+    .profile-info{
+
+        display:none;
+
+    }
+
+    /* Stats stack */
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    /* Quick actions stack */
+
+    .quick-actions-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    /* Table responsiveness */
+
+    .posts-table{
+
+        min-width:600px;
+
+    }
+
+    /* Appointment layout */
+
+    .appointment-actions{
+
+        flex-direction:column;
+
+    }
+
+    /* Footer stack */
+
+    .dashboard-footer{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        text-align:center;
+
+    }
+
+    .footer-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE (<= 480px)
+========================================================== */
+
+@media (max-width: 480px){
+
+    /* Navbar tighter */
+
+    .search-box{
+
+        display:none;
+
+    }
+
+    .icon-btn{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    /* Welcome title */
+
+    .welcome-content h1{
+
+        font-size:1.8rem;
+
+    }
+
+    /* Cards padding reduce */
+
+    .dashboard-card{
+
+        border-radius:16px;
+
+    }
+
+    .welcome-card{
+
+        padding:20px;
+
+    }
+
+    /* Sidebar width adjustment */
+
+    :root{
+
+        --sidebar-width:260px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TOUCH IMPROVEMENTS
+========================================================== */
+
+@media (hover:none){
+
+    .nav-link:hover,
+    .action-card:hover,
+    .stats-card:hover,
+    .reply-card:hover,
+    .notification-item:hover{
+
+        transform:none !important;
+
+        box-shadow:var(--shadow-sm);
+
+    }
+
+}
+
+
+/* ==========================================================
+   LANDSCAPE MOBILE FIX
+========================================================== */
+
+@media (max-height:500px){
+
+    .sidebar{
+
+        overflow-y:auto;
+
+    }
+
+    .welcome-card{
+
+        padding:18px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PRINT MODE (optional)
+========================================================== */
+
+@media print{
+
+    .sidebar,
+    .top-navbar,
+    .dashboard-footer,
+    .quick-actions-card,
+    .notifications-card{
+
+        display:none !important;
+
+    }
+
+    .main-content{
+
+        margin:0;
+
+    }
+
+    body{
+
+        background:#fff;
+
+    }
+
+}

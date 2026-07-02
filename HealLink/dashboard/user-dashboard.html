@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | CareConnect</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/userdashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/responsivedashboard.css">
+</head>
+
+<body>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+
+            <a href="/HealLink/dashboard/user-dashboard.html" class="logo">
+                <img src="/HealLink/assets/images/logo.png" alt="CareConnect" class="logo-img">
+                <div>
+                    <h2>CareConnect</h2>
+                    <span>Mental Wellness</span>
+                </div>
+            </a>
+
+            <button class="close-btn" id="closeSidebar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+
+            <ul>
+
+                <li>
+                    <a href="dashboard.html" class="active">
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        <i class="bi bi-person-circle"></i>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="create-post.html">
+                        <i class="bi bi-pencil-square"></i>
+                        <span>Create Anonymous Post</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="my-posts.html">
+                        <i class="bi bi-journal-text"></i>
+                        <span>My Posts</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="replies.html">
+                        <i class="bi bi-chat-left-heart"></i>
+                        <span>Psychologist Replies</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="appointments.html">
+                        <i class="bi bi-calendar2-check"></i>
+                        <span>Book Appointment</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="notifications.html">
+                        <i class="bi bi-bell"></i>
+                        <span>Notifications</span>
+                        <span class="badge">5</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="settings.html">
+                        <i class="bi bi-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+
+            <div class="user-card">
+
+                <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
+
+                <div>
+                    <h4>Nirdesh</h4>
+                    <span>Member</span>
+                </div>
+
+            </div>
+
+            <a href="logout.html" class="logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="menu-btn" id="menuBtn">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search..." id="searchInput">
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-btn" id="notifBtn">
+                    <i class="bi bi-bell"></i>
+                    <span class="notif-badge">5</span>
+                </button>
+
+                <button class="icon-btn" id="themeBtn">
+                    <i class="bi bi-moon"></i>
+                </button>
+
+                <div class="profile-wrap">
+
+                    <button class="profile-btn" id="profileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
+                        <span>Nirdesh</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+
+                    <div class="dropdown" id="dropdown">
+
+                        <div class="dropdown-header">
+                            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
+                            <div>
+                                <h4>Nirdesh Tiwari</h4>
+                                <p>nirdesh@email.com</p>
+                            </div>
+                        </div>
+
+                        <ul>
+                            <li><a href="profile.html"><i class="bi bi-person"></i> My Profile</a></li>
+                            <li><a href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+                            <li><a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="content">
+
+            <!-- Welcome Section -->
+            <section class="welcome">
+
+                <div class="welcome-box">
+
+                    <div class="welcome-text">
+
+                        <span class="tag">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                            Mental Wellness Matters
+                        </span>
+
+                        <h1>Hello, <span class="highlight">Nirdesh</span> 👋</h1>
+
+                        <p>
+                            Welcome back to CareConnect. Continue your journey toward
+                            better mental well-being. You are not alone in this.
+                        </p>
+
+                        <div class="actions">
+                            <a href="create-post.html" class="btn-primary">
+                                <i class="bi bi-pencil-square"></i>
+                                Create Post
+                            </a>
+                            <a href="appointments.html" class="btn-secondary">
+                                <i class="bi bi-calendar2-check"></i>
+                                Book Appointment
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="welcome-image">
+                        <div class="circle-bg c1"></div>
+                        <div class="circle-bg c2"></div>
+                        <div class="circle-bg c3"></div>
+                        <div class="card-illustration">
+                            <i class="bi bi-heart-pulse-fill"></i>
+                            <h3>Stay Positive</h3>
+                            <p>Small steps matter</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="bi bi-journal-text"></i></div>
+                        <div>
+                            <span class="stat-label">Total Posts</span>
+                            <h2 class="counter" data-target="28">0</h2>
+                            <span class="trend up"><i class="bi bi-arrow-up"></i> 12%</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="bi bi-chat-heart"></i></div>
+                        <div>
+                            <span class="stat-label">Replies</span>
+                            <h2 class="counter" data-target="46">0</h2>
+                            <span class="trend up"><i class="bi bi-arrow-up"></i> 18%</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="bi bi-calendar-event"></i></div>
+                        <div>
+                            <span class="stat-label">Appointments</span>
+                            <h2 class="counter" data-target="3">0</h2>
+                            <span class="trend"><i class="bi bi-clock"></i> Next in 2 days</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="bi bi-emoji-smile"></i></div>
+                        <div>
+                            <span class="stat-label">Wellness Score</span>
+                            <h2 class="counter" data-target="87">0</h2>
+                            <span class="trend up"><i class="bi bi-arrow-up"></i> Excellent</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Main Grid -->
+            <div class="grid-2col">
+
+                <!-- Recent Posts -->
+                <section class="card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Recent Posts</h2>
+                            <p>Your anonymous posts</p>
+                        </div>
+                        <a href="my-posts.html" class="link">View All <i class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Replies</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Feeling anxious before exams</td>
+                                    <td><span class="cat anxiety">Anxiety</span></td>
+                                    <td>05 May 2026</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>4</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Difficulty sleeping lately</td>
+                                    <td><span class="cat sleep">Sleep</span></td>
+                                    <td>30 Apr 2026</td>
+                                    <td><span class="status resolved">Resolved</span></td>
+                                    <td>7</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Feeling isolated at college</td>
+                                    <td><span class="cat depression">Depression</span></td>
+                                    <td>26 Apr 2026</td>
+                                    <td><span class="status pending">Waiting</span></td>
+                                    <td>2</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Family pressure and stress</td>
+                                    <td><span class="cat stress">Stress</span></td>
+                                    <td>22 Apr 2026</td>
+                                    <td><span class="status active">Active</span></td>
+                                    <td>5</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <!-- Latest Replies -->
+                <section class="card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Latest Replies</h2>
+                            <p>From psychologists</p>
+                        </div>
+                    </div>
+
+                    <div class="replies">
+
+                        <div class="reply">
+
+                            <img src="https://ui-avatars.com/api/?name=Dr+Asha+Sharma&background=4F46E5&color=fff" alt="Dr. Asha">
+
+                            <div>
+                                <h4>Dr. Sandip Dangi</h4>
+                                <span class="time">Today • 10:25 AM</span>
+                                <p>Anxiety often becomes stronger when we try to fight it alone. Begin by identifying your thoughts...</p>
+                                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+
+                        </div>
+
+                        <div class="reply">
+
+                            <img src="https://ui-avatars.com/api/?name=Dr+Ramesh+KC&background=06B6D4&color=fff" alt="Dr. Ramesh">
+
+                            <div>
+                                <h4>Dr. Kamal Bhattarai</h4>
+                                <span class="time">Yesterday</span>
+                                <p>Sleep improves when your body follows a consistent schedule. Try avoiding screens before bedtime...</p>
+                                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+
+                        </div>
+
+                        <div class="reply">
+
+                            <img src="https://ui-avatars.com/api/?name=Dr+Priya+Khadka&background=10B981&color=fff" alt="Dr. Priya">
+
+                            <div>
+                                <h4>Dr. Ashma Malla</h4>
+                                <span class="time">2 Days Ago</span>
+                                <p>Reaching out for help is one of the strongest decisions anyone can make...</p>
+                                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <!-- Wellness & Appointment -->
+            <div class="grid-2col">
+
+                <!-- Appointment -->
+                <section class="card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Upcoming Appointment</h2>
+                            <p>Your next session</p>
+                        </div>
+                        <span class="status-tag">Confirmed</span>
+                    </div>
+
+                    <div class="appointment">
+
+                        <div class="appt-profile">
+                            <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+                            <div>
+                                <h3>Dr. Jagadish Oli</h3>
+                                <span>Clinical Psychologist</span>
+                            </div>
+                        </div>
+
+                        <div class="appt-details">
+
+                            <div class="appt-item">
+                                <i class="bi bi-calendar-event"></i>
+                                <div>
+                                    <small>Date</small>
+                                    <h4>Monday, 08 June 2026</h4>
+                                </div>
+                            </div>
+
+                            <div class="appt-item">
+                                <i class="bi bi-clock"></i>
+                                <div>
+                                    <small>Time</small>
+                                    <h4>10:30 AM</h4>
+                                </div>
+                            </div>
+
+                            <div class="appt-item">
+                                <i class="bi bi-camera-video"></i>
+                                <div>
+                                    <small>Type</small>
+                                    <h4>Video Consultation</h4>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="appt-actions">
+                            <a href="#" class="btn-primary small">
+                                <i class="bi bi-camera-video-fill"></i>
+                                Join Meeting
+                            </a>
+                            <button class="btn-outline small">
+                                <i class="bi bi-x-circle"></i>
+                                Cancel
+                            </button>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- Wellness Tips -->
+                <section class="card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Wellness Tips</h2>
+                            <p>Daily habits</p>
+                        </div>
+                    </div>
+
+                    <div class="wellness">
+
+                        <div class="quote">
+                            <i class="bi bi-quote"></i>
+                            <p>Every day may not be good, but there is something good in every day.</p>
+                        </div>
+
+                        <div class="tips">
+
+                            <div class="tip">
+                                <span class="tip-icon green"><i class="bi bi-heart-pulse"></i></span>
+                                <div>
+                                    <h4>Healthy Habit</h4>
+                                    <p>Walk 20 minutes daily</p>
+                                </div>
+                            </div>
+
+                            <div class="tip">
+                                <span class="tip-icon purple"><i class="bi bi-moon-stars"></i></span>
+                                <div>
+                                    <h4>Sleep Reminder</h4>
+                                    <p>7-8 hours of sleep</p>
+                                </div>
+                            </div>
+
+                            <div class="tip">
+                                <span class="tip-icon blue"><i class="bi bi-cup-straw"></i></span>
+                                <div>
+                                    <h4>Hydration</h4>
+                                    <p>8 glasses of water</p>
+                                </div>
+                            </div>
+
+                            <div class="tip">
+                                <span class="tip-icon orange"><i class="bi bi-wind"></i></span>
+                                <div>
+                                    <h4>Breathing</h4>
+                                    <p>4-4-4 technique</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="progress-wrap">
+                            <div class="progress-header">
+                                <span>Weekly Goal</span>
+                                <strong>87%</strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:87%;"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <!-- Quick Actions & Notifications -->
+            <div class="grid-2col">
+
+                <!-- Quick Actions -->
+                <section class="card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Quick Actions</h2>
+                            <p>Frequently used</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+
+                        <a href="create-post.html" class="quick">
+                            <span class="q-icon primary"><i class="bi bi-pencil-square"></i></span>
+                            <h4>Create Post</h4>
+                            <p>Share anonymously</p>
+                        </a>
+
+                        <a href="appointments.html" class="quick">
+                            <span class="q-icon success"><i class="bi bi-calendar2-check"></i></span>
+                            <h4>Book Appointment</h4>
+                            <p>Get professional help</p>
+                        </a>
+
+                        <a href="resources.html" class="quick">
+                            <span class="q-icon info"><i class="bi bi-book-half"></i></span>
+                            <h4>Resources</h4>
+                            <p>Read articles</p>
+                        </a>
+
+                        <a href="emergency.html" class="quick">
+                            <span class="q-icon danger"><i class="bi bi-telephone-fill"></i></span>
+                            <h4>Emergency</h4>
+                            <p>Immediate help</p>
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <!-- Notifications -->
+                <section class="card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Notifications</h2>
+                            <p>Recent updates</p>
+                        </div>
+                        <span class="notif-count">5 New</span>
+                    </div>
+
+                    <div class="notifications">
+
+                        <div class="notif unread">
+                            <span class="n-icon success"><i class="bi bi-chat-heart-fill"></i></span>
+                            <div>
+                                <h4>New Reply</h4>
+                                <p>Dr. Anisha replied to your post</p>
+                                <span>10 min ago</span>
+                            </div>
+                        </div>
+
+                        <div class="notif unread">
+                            <span class="n-icon primary"><i class="bi bi-calendar-event-fill"></i></span>
+                            <div>
+                                <h4>Appointment Reminder</h4>
+                                <p>Session tomorrow at 10:30 AM</p>
+                                <span>1 hour ago</span>
+                            </div>
+                        </div>
+
+                        <div class="notif">
+                            <span class="n-icon info"><i class="bi bi-book-fill"></i></span>
+                            <div>
+                                <h4>New Resource</h4>
+                                <p>Article about anxiety added</p>
+                                <span>Yesterday</span>
+                            </div>
+                        </div>
+
+                        <div class="notif">
+                            <span class="n-icon warning"><i class="bi bi-award-fill"></i></span>
+                            <div>
+                                <h4>Wellness Milestone</h4>
+                                <p>Score improved this week</p>
+                                <span>2 days ago</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="card-footer">
+                        <a href="notifications.html" class="link">View All <i class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            FOOTER
+        =========================================================== -->
+
+        <footer class="footer">
+
+            <div class="footer-left">
+                <img src="assets/images/logo-small.png" alt="CareConnect" class="footer-logo">
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </footer>
+
+    </main>
+
+    <!-- ==========================================================
+        JAVASCRIPT
+    =========================================================== -->
+
+    <script src="/HealLink/assets/js/userdashboard.js"></script>
+
+</body>
+
+</html>

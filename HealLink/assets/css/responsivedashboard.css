@@ -1,0 +1,318 @@
+/* ==========================================================
+   CareConnect Dashboard
+   Responsive Styles
+   ========================================================== */
+
+/* ==========================================================
+   TABLET (1024px and below)
+   ========================================================== */
+
+@media (max-width: 1024px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .close-btn {
+        display: flex;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-2col {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-text p {
+        max-width: 100%;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .welcome-image {
+        width: 160px;
+        height: 160px;
+        margin-top: 16px;
+    }
+
+    .card-illustration {
+        padding: 12px 16px;
+    }
+
+}
+
+/* ==========================================================
+   MOBILE (768px and below)
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        padding: 10px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .topbar-left {
+        flex: 1;
+    }
+
+    .search {
+        max-width: 100%;
+        flex: 1;
+    }
+
+    .profile-info {
+        display: none;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .welcome-box {
+        padding: 20px;
+    }
+
+    .welcome-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 14px 16px;
+    }
+
+    .stat-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        padding: 12px 16px;
+    }
+
+    .footer-left {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE (480px and below)
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .search {
+        display: none;
+    }
+
+    .profile-btn span {
+        display: none;
+    }
+
+    .profile-btn i {
+        display: none;
+    }
+
+    .content {
+        padding: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-text h1 {
+        font-size: 1.3rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .actions a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .appt-actions {
+        flex-direction: column;
+    }
+
+    .appt-actions a,
+    .appt-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .welcome-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .card-illustration {
+        padding: 10px 14px;
+    }
+
+    .card-illustration i {
+        font-size: 1.5rem;
+    }
+
+    .card-illustration h3 {
+        font-size: 0.8rem;
+    }
+
+    .sidebar {
+        width: 280px;
+    }
+
+    table {
+        font-size: 0.75rem;
+    }
+
+    .table-wrap {
+        padding: 0 12px 12px;
+    }
+
+    thead th,
+    tbody td {
+        padding: 6px 4px;
+    }
+
+    .cat,
+    .status {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+
+    .btn-view {
+        font-size: 0.65rem;
+        padding: 3px 10px;
+    }
+
+    .reply {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reply img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .dropdown {
+        width: 200px;
+        right: -20px;
+    }
+
+}
+
+/* ==========================================================
+   TOUCH DEVICES
+   ========================================================== */
+
+@media (hover: none) {
+    .sidebar-nav a:hover,
+    .quick:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================================
+   LANDSCAPE MODE
+   ========================================================== */
+
+@media (max-height: 500px) {
+    .sidebar-nav {
+        padding: 8px 12px;
+    }
+
+    .sidebar-nav a {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .welcome-box {
+        padding: 16px;
+    }
+
+    .welcome-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card-illustration {
+        padding: 8px 12px;
+    }
+
+    .card-illustration i {
+        font-size: 1.2rem;
+    }
+
+    .stats-grid {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 10px 14px;
+    }
+
+    .stat-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .stat-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+}
