@@ -214,3 +214,41 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('© 2026 CareConnect - All Rights Reserved');
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+
+            // Mark as Read buttons
+            var markReadBtns = document.querySelectorAll('.btn-outline.small');
+
+            markReadBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var item = this.closest('.reply-item');
+                    if (item) {
+                        item.classList.remove('unread');
+                        var badge = item.querySelector('.unread-badge');
+                        if (badge) {
+                            badge.textContent = 'Read';
+                            badge.className = 'read-badge';
+                        }
+                        this.style.display = 'none';
+                        alert('Marked as read');
+                    }
+                });
+            });
+
+            // View Full Reply buttons
+            var viewBtns = document.querySelectorAll('.reply-footer .btn-primary.small');
+
+            viewBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var item = this.closest('.reply-item');
+                    if (item) {
+                        var name = item.querySelector('.reply-header h4');
+                        if (name) {
+                            alert('Viewing full reply from ' + name.textContent);
+                        }
+                    }
+                });
+            });
+
+        });
