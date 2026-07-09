@@ -1,5 +1,6 @@
 /* ==========================================================
-   Additional Styles for All Pages
+   PROFILE PAGE STYLES
+   Simple student project - Mobile Friendly
    ========================================================== */
 
 /* Page Header */
@@ -7,210 +8,342 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .page-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
 .page-header p {
     color: #666;
-    margin-top: 4px;
+    font-size: 0.8rem;
+    margin-top: 2px;
 }
 
-/* ==========================================================
-   PROFILE PAGE
-   ========================================================== */
-
-.profile-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 24px;
-}
-
-.profile-card {
-    text-align: center;
-}
-
-.profile-avatar-section {
-    padding: 24px;
-}
-
-.profile-avatar {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 16px;
-}
-
-.profile-avatar img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #4F46E5;
-}
-
-.avatar-edit {
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
+.edit-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     background: #4F46E5;
     color: #fff;
-    width: 36px;
-    height: 36px;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: 0.2s;
+    flex-shrink: 0;
+}
+
+.edit-profile-btn:hover {
+    background: #3730A3;
+}
+
+/* Profile Card */
+.profile-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+}
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.profile-avatar-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-avatar-wrap img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 3px solid #4F46E5;
+    object-fit: cover;
+}
+
+.avatar-upload-btn {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: #4F46E5;
+    color: #fff;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     border: 2px solid #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.3s;
+    font-size: 0.65rem;
+    transition: 0.2s;
 }
 
-.avatar-edit:hover {
+.avatar-upload-btn:hover {
     background: #3730A3;
 }
 
-.member-since {
-    color: #888;
-    font-size: 0.85rem;
+.profile-name-wrap {
+    flex: 1;
+    min-width: 0;
 }
 
+.profile-name-wrap h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.profile-username {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.profile-badges {
+    display: flex;
+    gap: 5px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.55rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.badge.verified {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.badge.anonymous {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+.badge.member {
+    background: #f5f5f5;
+    color: #666;
+}
+
+/* Profile Stats */
 .profile-stats {
     display: flex;
-    justify-content: space-around;
-    margin-top: 16px;
-    padding-top: 16px;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 14px;
     border-top: 1px solid #f0f0f0;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.p-stat span {
+.stat-box {
+    text-align: center;
+    flex: 1;
+    min-width: 60px;
+}
+
+.stat-num {
     display: block;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
-.p-stat label {
-    font-size: 0.75rem;
+.stat-lbl {
+    font-size: 0.55rem;
     color: #888;
 }
 
-.profile-details {
-    padding: 16px 24px 24px;
+.stat-divider {
+    width: 1px;
+    height: 28px;
+    background: #e8e8e8;
 }
 
-.detail-row {
-    padding: 10px 0;
-    border-bottom: 1px solid #f5f5f5;
+/* Profile Grid - Main Layout */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 18px;
+    margin-bottom: 18px;
 }
 
-.detail-row:last-child {
-    border-bottom: none;
-}
-
-.detail-row label {
-    font-size: 0.75rem;
-    color: #888;
-    font-weight: 600;
-    display: block;
-}
-
-.detail-row p {
-    font-size: 0.95rem;
-    margin-top: 2px;
-}
-
-.badge-type {
-    background: #EEF2FF;
-    color: #4F46E5;
-    padding: 2px 12px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.8rem;
-}
-
-/* Settings */
-.settings-card,
-.activity-card {
-    grid-column: 1 / -1;
-}
-
-.settings-list {
-    padding: 16px 24px 24px;
-}
-
-.setting-item {
+.profile-left,
+.profile-right {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #f5f5f5;
+    flex-direction: column;
+    gap: 18px;
 }
 
-.setting-item:last-child {
-    border-bottom: none;
+/* Info Card */
+.info-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.setting-item h4 {
+.info-card h3 {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
     font-size: 0.9rem;
 }
 
-.setting-item p {
-    font-size: 0.8rem;
-    color: #888;
+.info-card h3 i {
+    margin-right: 6px;
+    color: #4F46E5;
 }
 
-/* Toggle Switch */
-.toggle {
-    position: relative;
-    width: 48px;
-    height: 26px;
+.info-card-body {
+    padding: 12px 14px 14px;
+}
+
+.info-card-footer {
+    padding: 8px 14px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Bio */
+.bio-section {
+    margin-bottom: 12px;
+}
+
+.bio-section label {
+    font-size: 0.65rem;
+    color: #888;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.bio-text {
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.bio-edit {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-family: 'Montserrat', sans-serif;
+    resize: vertical;
+    background: #fff;
+}
+
+/* Info Grid */
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-lbl {
+    font-size: 0.65rem;
+    color: #888;
+    font-weight: 600;
+    min-width: 80px;
     flex-shrink: 0;
 }
 
-.toggle input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.info-lbl i {
+    margin-right: 4px;
 }
 
-.slider {
-    position: absolute;
-    inset: 0;
-    background: #ccc;
-    border-radius: 26px;
-    transition: 0.3s;
+.info-val {
+    font-size: 0.82rem;
+    color: #333;
+    flex: 1;
+    word-break: break-word;
 }
 
-.slider:before {
-    content: "";
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    left: 3px;
-    bottom: 3px;
+.info-edit {
+    flex: 1;
+    padding: 3px 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-family: 'Montserrat', sans-serif;
     background: #fff;
-    border-radius: 50%;
-    transition: 0.3s;
+    min-width: 0;
 }
 
-.toggle input:checked + .slider {
+/* Edit Actions */
+.edit-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+    flex-wrap: wrap;
+}
+
+.btn-save {
     background: #4F46E5;
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: 0.2s;
 }
 
-.toggle input:checked + .slider:before {
-    transform: translateX(22px);
+.btn-save:hover {
+    background: #3730A3;
+}
+
+.btn-cancel {
+    background: #fff;
+    color: #666;
+    padding: 5px 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: 0.2s;
+}
+
+.btn-cancel:hover {
+    background: #f5f5f5;
 }
 
 /* Activity */
-.activity-list {
-    padding: 16px 24px 24px;
+.activity-body {
+    padding: 4px 14px 10px;
 }
 
 .activity-item {
     display: flex;
-    gap: 14px;
-    padding: 10px 0;
+    gap: 10px;
+    padding: 6px 0;
     border-bottom: 1px solid #f5f5f5;
 }
 
@@ -218,886 +351,208 @@
     border-bottom: none;
 }
 
-.a-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
+.act-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     flex-shrink: 0;
+    font-size: 0.8rem;
 }
 
-.a-icon.primary {
+.act-icon.blue {
     background: #4F46E5;
 }
-.a-icon.success {
+.act-icon.green {
     background: #10B981;
 }
-.a-icon.info {
-    background: #3B82F6;
-}
-.a-icon.warning {
+.act-icon.orange {
     background: #F59E0B;
+}
+.act-icon.purple {
+    background: #8B5CF6;
 }
 
 .activity-item h4 {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
 }
 
 .activity-item p {
-    font-size: 0.8rem;
+    font-size: 0.68rem;
     color: #666;
+    margin: 1px 0;
 }
 
 .activity-item span {
-    font-size: 0.7rem;
+    font-size: 0.55rem;
     color: #999;
 }
 
-/* ==========================================================
-   CREATE POST PAGE
-   ========================================================== */
-
-.post-form-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
+/* Psychologists - CENTERED on desktop */
+.psych-body {
+    padding: 4px 14px 10px;
 }
 
-.post-form {
-    padding: 24px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.required {
-    color: #EF4444;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    transition: 0.3s;
-    background: #fff;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #4F46E5;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.privacy-options {
+.psych-item {
     display: flex;
-    gap: 20px;
-    margin-top: 8px;
-}
-
-.radio-option {
-    display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
-    cursor: pointer;
-}
-
-.radio-option input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    margin-top: 2px;
-    accent-color: #4F46E5;
-}
-
-.radio-label {
-    display: flex;
-    flex-direction: column;
-}
-
-.radio-label i {
-    font-size: 1.1rem;
-    color: #4F46E5;
-}
-
-.radio-label small {
-    color: #888;
-    font-weight: 400;
-}
-
-.form-actions {
-    display: flex;
-    gap: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #f0f0f0;
-}
-
-.anonymous-badge {
-    background: #EEF2FF;
-    color: #4F46E5;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.8rem;
-}
-
-.tips-content {
-    padding: 20px 24px 24px;
-}
-
-.tip-post {
-    display: flex;
-    gap: 14px;
-    padding: 12px 0;
+    padding: 6px 0;
     border-bottom: 1px solid #f5f5f5;
 }
 
-.tip-post:last-child {
+.psych-item:last-child {
     border-bottom: none;
 }
 
-.tip-post i {
-    font-size: 1.3rem;
-    color: #4F46E5;
-    margin-top: 4px;
-}
-
-.tip-post h4 {
-    font-size: 0.85rem;
-}
-
-.tip-post p {
-    font-size: 0.8rem;
-    color: #666;
-}
-
-/* ==========================================================
-   MY POSTS PAGE
-   ========================================================== */
-
-.filter-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 12px 16px;
-    background: #fff;
-    border-radius: 12px;
-    border: 1px solid #e8e8e8;
-}
-
-.filter-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.filter-group label {
-    font-weight: 600;
-    font-size: 0.85rem;
-}
-
-.filter-group select {
-    padding: 6px 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #fff;
-    font-size: 0.85rem;
-}
-
-.post-count {
-    font-size: 0.85rem;
-    color: #888;
-}
-
-.posts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.post-item {
-    padding: 0;
-}
-
-.post-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 16px 20px;
-    border-bottom: 1px solid #f5f5f5;
-}
-
-.post-header h3 {
-    font-size: 1.05rem;
-}
-
-.post-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 6px;
-}
-
-.post-meta span {
-    font-size: 0.75rem;
-    color: #888;
-}
-
-.post-actions {
-    display: flex;
-    gap: 4px;
-}
-
-.icon-btn.small {
+.psych-item img {
     width: 32px;
     height: 32px;
-    font-size: 0.9rem;
-}
-
-.icon-btn.small.danger:hover {
-    background: #FEF2F2;
-    color: #DC2626;
-    border-color: #FCA5A5;
-}
-
-.post-preview {
-    padding: 12px 20px;
-}
-
-.post-preview p {
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.post-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-top: 1px solid #f5f5f5;
-}
-
-.post-footer span {
-    font-size: 0.85rem;
-    color: #888;
-}
-
-.post-footer span i {
-    color: #4F46E5;
-}
-
-/* Pagination */
-.pagination {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.page-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid #e8e8e8;
-    background: #fff;
-    color: #333;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.page-btn:hover {
-    border-color: #4F46E5;
-}
-
-.page-btn.active {
-    background: #4F46E5;
-    color: #fff;
-    border-color: #4F46E5;
-}
-
-/* ==========================================================
-   APPOINTMENTS PAGE
-   ========================================================== */
-
-.appointment-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
-}
-
-.psychologist-list {
-    padding: 8px 20px 20px;
-}
-
-.psychologist-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 12px;
-    border: 1px solid #f0f0f0;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    transition: 0.3s;
-}
-
-.psychologist-item:hover {
-    border-color: #4F46E5;
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.06);
-}
-
-.psychologist-item img {
-    width: 48px;
-    height: 48px;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
-.psych-info {
-    flex: 1;
+.psych-item h4 {
+    font-size: 0.78rem;
+    font-weight: 600;
 }
 
-.psych-info h4 {
-    font-size: 0.95rem;
-}
-
-.specialty {
-    font-size: 0.75rem;
+.psych-item span {
+    font-size: 0.58rem;
     color: #888;
     display: block;
 }
 
-.availability {
-    font-size: 0.75rem;
+.psych-status {
+    font-size: 0.55rem;
     font-weight: 600;
 }
 
-.availability.available {
+.psych-status.active {
     color: #10B981;
 }
 
-.availability.busy {
+.psych-status.pending {
     color: #F59E0B;
 }
 
-.psych-actions {
-    flex-shrink: 0;
-}
-
-/* Upcoming */
-.upcoming-list {
-    padding: 8px 20px 20px;
-}
-
-.upcoming-item {
-    padding: 12px;
-    border: 1px solid #f0f0f0;
-    border-radius: 12px;
-    margin-bottom: 10px;
-}
-
-.upcoming-info h4 {
-    font-size: 0.95rem;
-}
-
-.upcoming-info p {
-    font-size: 0.8rem;
-    color: #666;
-    margin: 2px 0;
-}
-
-.upcoming-info p i {
-    margin-right: 6px;
-}
-
-.status-tag.confirmed {
-    background: #D1FAE5;
-    color: #059669;
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 700;
-}
-
-.status-tag.pending {
-    background: #FEF3C7;
-    color: #D97706;
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: 700;
-}
-
-.upcoming-actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
-}
-
-.no-appointments {
-    color: #888;
-    font-size: 0.85rem;
-    text-align: center;
-}
-
-/* Tips Small */
-.tips-small {
-    padding: 16px 20px 20px;
-}
-
-.tip-small {
-    display: flex;
-    gap: 12px;
-    padding: 8px 0;
-}
-
-.tip-small i {
-    color: #4F46E5;
-    font-size: 1.2rem;
-    margin-top: 2px;
-}
-
-.tip-small h4 {
-    font-size: 0.85rem;
-}
-
-.tip-small p {
-    font-size: 0.78rem;
-    color: #888;
-}
-
-/* ==========================================================
-   REPLIES PAGE
-   ========================================================== */
-
-.reply-count {
+.psych-item .msg-btn {
+    margin-left: auto;
     background: #EEF2FF;
     color: #4F46E5;
-    padding: 4px 14px;
-    border-radius: 20px;
+    padding: 3px 12px;
+    border-radius: 6px;
     font-weight: 600;
-    font-size: 0.85rem;
-}
-
-.replies-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.reply-item {
-    padding: 0;
-}
-
-.reply-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 20px;
-    border-bottom: 1px solid #f5f5f5;
-}
-
-.reply-header img {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-}
-
-.reply-header h4 {
-    font-size: 0.95rem;
-}
-
-.psych-specialty {
-    font-size: 0.75rem;
-    color: #888;
-    display: block;
-}
-
-.reply-time {
-    font-size: 0.7rem;
-    color: #999;
-}
-
-.unread-badge {
-    background: #EF4444;
-    color: #fff;
-    padding: 2px 10px;
-    border-radius: 20px;
     font-size: 0.65rem;
-    font-weight: 700;
-    margin-left: auto;
-}
-
-.read-badge {
-    background: #D1FAE5;
-    color: #059669;
-    padding: 2px 10px;
-    border-radius: 20px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    margin-left: auto;
-}
-
-.reply-body {
-    padding: 14px 20px;
-}
-
-.reply-preview {
-    color: #555;
-    line-height: 1.6;
-}
-
-.reply-post-ref {
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top: 1px solid #f5f5f5;
-}
-
-.reply-post-ref small {
-    color: #888;
-}
-
-.reply-footer {
-    display: flex;
-    gap: 10px;
-    padding: 12px 20px;
-    border-top: 1px solid #f5f5f5;
-}
-
-.reply-item.unread {
-    border-left: 4px solid #4F46E5;
-}
-
-/* ==========================================================
-   NOTIFICATIONS PAGE
-   ========================================================== */
-
-.notifications-full {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.notif-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 14px 20px;
-    position: relative;
-}
-
-.notif-item.unread {
-    border-left: 4px solid #4F46E5;
-}
-
-.notif-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+    transition: 0.2s;
     flex-shrink: 0;
 }
 
-.notif-icon.success {
-    background: #10B981;
-}
-.notif-icon.primary {
+.psych-item .msg-btn:hover {
     background: #4F46E5;
-}
-.notif-icon.info {
-    background: #3B82F6;
-}
-.notif-icon.warning {
-    background: #F59E0B;
-}
-.notif-icon.secondary {
-    background: #64748B;
-}
-
-.notif-content {
-    flex: 1;
-}
-
-.notif-content h4 {
-    font-size: 0.9rem;
-}
-
-.notif-content p {
-    font-size: 0.85rem;
-    color: #666;
-    margin: 2px 0 4px;
-}
-
-.notif-time {
-    font-size: 0.7rem;
-    color: #999;
-}
-
-.notif-dismiss {
-    background: none;
-    border: none;
-    color: #ccc;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 4px;
-    transition: 0.3s;
-}
-
-.notif-dismiss:hover {
-    color: #EF4444;
-}
-
-/* ==========================================================
-   SETTINGS PAGE
-   ========================================================== */
-
-.settings-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
-}
-
-.settings-body {
-    padding: 16px 24px 20px;
-}
-
-.setting-group {
-    margin-bottom: 20px;
-}
-
-.setting-group h4 {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #f5f5f5;
-}
-
-.setting-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #f5f5f5;
-}
-
-.setting-row:last-child {
-    border-bottom: none;
-}
-
-.setting-row label {
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.setting-row p {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-.settings-input {
-    width: 200px;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 0.85rem;
-}
-
-.settings-textarea {
-    width: 200px;
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    resize: vertical;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.btn-danger {
-    background: #EF4444;
     color: #fff;
-    padding: 6px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.75rem;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
 }
 
-.btn-danger:hover {
-    background: #DC2626;
-}
-
-.btn-danger.small {
-    padding: 6px 14px;
-    font-size: 0.75rem;
-}
-
-.danger-zone {
-    margin-top: 20px;
-    border: 2px solid #FECACA;
-}
-
-.danger-row {
-    border-bottom-color: #FECACA;
+.psych-item .msg-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* ==========================================================
-   DARK MODE OVERRIDES
-   ========================================================== */
+   DARK MODE - PROFILE
+========================================================== */
 
 body.dark-mode .page-header p {
     color: #94A3B8;
 }
 
-body.dark-mode .filter-bar {
+body.dark-mode .profile-card {
     background: #1E293B;
     border-color: #334155;
 }
 
-body.dark-mode .filter-group select {
-    background: #1E293B;
-    color: #CBD5E1;
-    border-color: #334155;
+body.dark-mode .profile-name-wrap h2 {
+    color: #F1F5F9;
 }
 
-body.dark-mode .post-count {
+body.dark-mode .profile-username {
     color: #94A3B8;
 }
 
-body.dark-mode .post-meta span {
+body.dark-mode .badge.member {
+    background: #334155;
     color: #94A3B8;
-}
-
-body.dark-mode .post-preview p {
-    color: #CBD5E1;
-}
-
-body.dark-mode .post-footer span {
-    color: #94A3B8;
-}
-
-body.dark-mode .psychologist-item {
-    border-color: #334155;
-}
-
-body.dark-mode .psychologist-item:hover {
-    border-color: #4F46E5;
-}
-
-body.dark-mode .upcoming-item {
-    border-color: #334155;
-}
-
-body.dark-mode .reply-header {
-    border-color: #334155;
-}
-
-body.dark-mode .reply-preview {
-    color: #CBD5E1;
-}
-
-body.dark-mode .reply-post-ref {
-    border-color: #334155;
-}
-
-body.dark-mode .reply-footer {
-    border-color: #334155;
-}
-
-body.dark-mode .notif-content p {
-    color: #CBD5E1;
-}
-
-body.dark-mode .notif-time {
-    color: #94A3B8;
-}
-
-body.dark-mode .setting-row {
-    border-color: #334155;
-}
-
-body.dark-mode .settings-input {
-    background: #1E293B;
-    color: #CBD5E1;
-    border-color: #334155;
-}
-
-body.dark-mode .settings-textarea {
-    background: #1E293B;
-    color: #CBD5E1;
-    border-color: #334155;
-}
-
-body.dark-mode .setting-group h4 {
-    color: #94A3B8;
-    border-color: #334155;
-}
-
-body.dark-mode .form-group input,
-body.dark-mode .form-group select,
-body.dark-mode .form-group textarea {
-    background: #1E293B;
-    color: #CBD5E1;
-    border-color: #334155;
-}
-
-body.dark-mode .privacy-options .radio-label small {
-    color: #94A3B8;
-}
-
-body.dark-mode .tip-post {
-    border-color: #334155;
-}
-
-body.dark-mode .tip-post p {
-    color: #94A3B8;
-}
-
-body.dark-mode .post-header {
-    border-color: #334155;
-}
-
-body.dark-mode .post-footer {
-    border-color: #334155;
-}
-
-body.dark-mode .post-item {
-    border-color: #334155;
-}
-
-body.dark-mode .detail-row {
-    border-color: #334155;
 }
 
 body.dark-mode .profile-stats {
     border-color: #334155;
 }
 
-body.dark-mode .setting-item {
+body.dark-mode .stat-num {
+    color: #F1F5F9;
+}
+
+body.dark-mode .stat-lbl {
+    color: #94A3B8;
+}
+
+body.dark-mode .stat-divider {
+    background: #334155;
+}
+
+body.dark-mode .info-card {
+    background: #1E293B;
     border-color: #334155;
+}
+
+body.dark-mode .info-card h3 {
+    border-color: #334155;
+    color: #F1F5F9;
+}
+
+body.dark-mode .info-card-footer {
+    border-color: #334155;
+}
+
+body.dark-mode .bio-text {
+    color: #CBD5E1;
+}
+
+body.dark-mode .bio-edit {
+    background: #1E293B;
+    color: #E2E8F0;
+    border-color: #334155;
+}
+
+body.dark-mode .info-row {
+    border-color: #334155;
+}
+
+body.dark-mode .info-val {
+    color: #E2E8F0;
+}
+
+body.dark-mode .info-edit {
+    background: #1E293B;
+    color: #E2E8F0;
+    border-color: #334155;
+}
+
+body.dark-mode .edit-actions {
+    border-color: #334155;
+}
+
+body.dark-mode .btn-cancel {
+    background: #1E293B;
+    color: #CBD5E1;
+    border-color: #334155;
+}
+
+body.dark-mode .btn-cancel:hover {
+    background: #334155;
 }
 
 body.dark-mode .activity-item {
@@ -1112,157 +567,1485 @@ body.dark-mode .activity-item span {
     color: #64748B;
 }
 
-body.dark-mode .page-btn {
+body.dark-mode .psych-item {
+    border-color: #334155;
+}
+
+body.dark-mode .psych-item span {
+    color: #94A3B8;
+}
+
+body.dark-mode .psych-item .msg-btn {
+    background: #334155;
+    color: #A5B4FC;
+}
+
+body.dark-mode .psych-item .msg-btn:hover {
+    background: #4F46E5;
+    color: #fff;
+}
+
+body.dark-mode .edit-profile-btn {
+    background: #4F46E5;
+}
+
+body.dark-mode .edit-profile-btn:hover {
+    background: #3730A3;
+}
+
+/* ==========================================================
+   RESPONSIVE - PROFILE (MOBILE FIRST)
+========================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .profile-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .profile-name-wrap {
+        text-align: center;
+    }
+
+    .profile-badges {
+        justify-content: center;
+    }
+
+    .profile-avatar-wrap img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .avatar-upload-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 0.6rem;
+    }
+
+    .profile-stats {
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .stat-box {
+        flex: none;
+        min-width: 50px;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-num {
+        font-size: 1rem;
+    }
+
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        padding: 5px 0;
+    }
+
+    .info-lbl {
+        min-width: auto;
+        font-size: 0.6rem;
+    }
+
+    .info-val {
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .info-edit {
+        width: 100%;
+        font-size: 0.75rem;
+    }
+
+    .psych-item {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .psych-item .msg-btn {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        padding: 4px 0;
+    }
+
+    .edit-actions {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .edit-actions button {
+        width: 100%;
+        justify-content: center;
+        padding: 6px 0;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .page-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .profile-card {
+        padding: 12px 14px;
+    }
+
+    .profile-name-wrap h2 {
+        font-size: 1.1rem;
+    }
+
+    .activity-item {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .activity-item h4 {
+        font-size: 0.75rem;
+    }
+
+    .activity-item p {
+        font-size: 0.65rem;
+    }
+
+    .info-card-body {
+        padding: 10px 12px 12px;
+    }
+
+    .bio-text {
+        font-size: 0.78rem;
+    }
+
+    .bio-edit {
+        font-size: 0.78rem;
+    }
+
+    /* Profile grid - mobile stacking */
+    .profile-grid {
+        gap: 14px;
+        grid-template-columns: 1fr;
+    }
+
+    .profile-left,
+    .profile-right {
+        gap: 14px;
+    }
+
+    /* Psychologists - Center on mobile too */
+    .psych-item {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .psych-item .msg-btn {
+        width: auto;
+        padding: 3px 12px;
+        flex-shrink: 0;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1rem;
+    }
+
+    .page-header p {
+        font-size: 0.7rem;
+    }
+
+    .edit-profile-btn {
+        font-size: 0.65rem;
+        padding: 5px 12px;
+    }
+
+    .profile-avatar-wrap img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .profile-name-wrap h2 {
+        font-size: 0.95rem;
+    }
+
+    .profile-username {
+        font-size: 0.7rem;
+    }
+
+    .badge {
+        font-size: 0.5rem;
+        padding: 1px 6px;
+    }
+
+    .stat-num {
+        font-size: 0.9rem;
+    }
+
+    .stat-lbl {
+        font-size: 0.5rem;
+    }
+
+    .info-card h3 {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+
+    .info-card-body {
+        padding: 8px 10px 10px;
+    }
+
+    .info-lbl {
+        font-size: 0.55rem;
+    }
+
+    .info-val {
+        font-size: 0.75rem;
+    }
+
+    .info-edit {
+        font-size: 0.7rem;
+        padding: 2px 4px;
+    }
+
+    .psych-item h4 {
+        font-size: 0.7rem;
+    }
+
+    .psych-item span {
+        font-size: 0.5rem;
+    }
+
+    .psych-item img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .psych-item .msg-btn {
+        font-size: 0.55rem;
+        padding: 2px 10px;
+    }
+
+    .activity-item h4 {
+        font-size: 0.7rem;
+    }
+
+    .activity-item p {
+        font-size: 0.6rem;
+    }
+
+    .activity-item span {
+        font-size: 0.5rem;
+    }
+
+    .act-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 0.65rem;
+    }
+
+    .btn-save,
+    .btn-cancel {
+        font-size: 0.65rem;
+        padding: 4px 12px;
+    }
+}
+
+/* Very Small Mobile */
+@media (max-width: 360px) {
+    .profile-stats {
+        gap: 4px;
+    }
+
+    .stat-box {
+        min-width: 40px;
+    }
+
+    .stat-num {
+        font-size: 0.8rem;
+    }
+
+    .stat-lbl {
+        font-size: 0.45rem;
+    }
+
+    .profile-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .psych-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .psych-item .msg-btn {
+        width: 100%;
+    }
+
+    .activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* ==========================================================
+   CREATE POST PAGE STYLES
+   ========================================================== */
+
+.create-post-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+/* Post Form Card */
+.post-form-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.required {
+    color: #EF4444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4F46E5;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.char-count {
+    display: block;
+    text-align: right;
+    font-size: 0.65rem;
+    color: #999;
+    margin-top: 3px;
+}
+
+/* Privacy Options */
+.privacy-options {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.privacy-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.privacy-option:hover {
+    border-color: #4F46E5;
+    background: #f8f9fa;
+}
+
+.privacy-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #4F46E5;
+    flex-shrink: 0;
+}
+
+.privacy-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.privacy-label i {
+    font-size: 1.2rem;
+    color: #4F46E5;
+}
+
+.privacy-label strong {
+    display: block;
+    font-size: 0.85rem;
+}
+
+.privacy-label small {
+    font-size: 0.65rem;
+    color: #888;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn-submit {
+    flex: 1;
+    background: #4F46E5;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-submit:hover {
+    background: #3730A3;
+}
+
+.btn-cancel-form {
+    flex: 1;
+    background: #fff;
+    color: #666;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-cancel-form:hover {
+    background: #f5f5f5;
+}
+
+/* Tips Sidebar */
+.tips-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tips-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 16px 18px;
+}
+
+.tips-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.tips-card h3 i {
+    color: #4F46E5;
+    margin-right: 6px;
+}
+
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tip-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.tip-num {
+    background: #EEF2FF;
+    color: #4F46E5;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+
+.tip-item h4 {
+    font-size: 0.8rem;
+}
+
+.tip-item p {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.privacy-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.privacy-info p {
+    font-size: 0.75rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.privacy-info p i {
+    color: #10B981;
+    font-size: 0.9rem;
+}
+
+/* Recent Posts Section */
+.recent-posts-section {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+
+.recent-posts-section h3 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.recent-posts-section h3 i {
+    color: #4F46E5;
+    margin-right: 6px;
+}
+
+.recent-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.recent-post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.recent-post-item:hover {
+    background: #EEF2FF;
+}
+
+.recent-post-item .post-info h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.recent-post-item .post-info span {
+    font-size: 0.65rem;
+    color: #888;
+}
+
+.recent-post-item .post-status-small {
+    font-size: 0.6rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.recent-post-item .post-status-small.active {
+    background: #DBEAFE;
+    color: #2563EB;
+}
+
+.recent-post-item .post-status-small.pending {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.recent-post-item .post-status-small.resolved {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.no-posts {
+    text-align: center;
+    padding: 20px 0;
+    color: #999;
+}
+
+.no-posts i {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* ==========================================================
+   DARK MODE - CREATE POST
+========================================================== */
+
+body.dark-mode .post-form-card {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: #1E293B;
+    color: #E2E8F0;
+    border-color: #334155;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #64748B;
+}
+
+body.dark-mode .char-count {
+    color: #64748B;
+}
+
+body.dark-mode .privacy-option {
+    border-color: #334155;
+}
+
+body.dark-mode .privacy-option:hover {
+    background: #1E293B;
+    border-color: #4F46E5;
+}
+
+body.dark-mode .privacy-label small {
+    color: #94A3B8;
+}
+
+body.dark-mode .btn-cancel-form {
     background: #1E293B;
     color: #CBD5E1;
     border-color: #334155;
 }
 
-body.dark-mode .page-btn.active {
-    background: #4F46E5;
-    color: #fff;
+body.dark-mode .btn-cancel-form:hover {
+    background: #334155;
 }
 
-body.dark-mode .danger-zone {
-    border-color: #7F1D1D;
-}
-
-body.dark-mode .danger-row {
-    border-color: #7F1D1D;
-}
-
-body.dark-mode .notif-item {
+body.dark-mode .tips-card {
+    background: #1E293B;
     border-color: #334155;
 }
 
-body.dark-mode .notif-dismiss {
+body.dark-mode .tip-item p {
+    color: #94A3B8;
+}
+
+body.dark-mode .privacy-info p {
+    color: #CBD5E1;
+}
+
+body.dark-mode .recent-posts-section {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+body.dark-mode .recent-post-item {
+    background: #334155;
+}
+
+body.dark-mode .recent-post-item:hover {
+    background: #3D4A5F;
+}
+
+body.dark-mode .recent-post-item .post-info span {
+    color: #94A3B8;
+}
+
+body.dark-mode .no-posts {
     color: #64748B;
 }
 
 /* ==========================================================
-   RESPONSIVE FOR ADDITIONAL PAGES
+   Appointments Page - Main CSS
+   Student Project
    ========================================================== */
 
-@media (max-width: 1024px) {
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
+/* ----------------------------------------------
+   PAGE HEADER
+---------------------------------------------- */
 
-    .post-form-container {
-        grid-template-columns: 1fr;
-    }
-
-    .appointment-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .settings-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .settings-input,
-    .settings-textarea {
-        width: 140px;
-    }
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-@media (max-width: 768px) {
-    .page-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .filter-bar {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-
-    .filter-group {
-        flex-wrap: wrap;
-    }
-
-    .post-header {
-        flex-direction: column;
-    }
-
-    .post-actions {
-        margin-top: 10px;
-    }
-
-    .psychologist-item {
-        flex-wrap: wrap;
-    }
-
-    .psych-actions {
-        width: 100%;
-    }
-
-    .setting-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .settings-input,
-    .settings-textarea {
-        width: 100%;
-    }
-
-    .privacy-options {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .reply-header {
-        flex-wrap: wrap;
-    }
-
-    .unread-badge,
-    .read-badge {
-        margin-left: 0;
-    }
-
-    .notif-item {
-        flex-wrap: wrap;
-    }
+.page-header h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
-@media (max-width: 480px) {
-    .page-header h1 {
-        font-size: 1.3rem;
-    }
+.page-header p {
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
 
-    .profile-stats {
-        flex-direction: column;
-        gap: 8px;
-    }
+.btn-book {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #4F46E5;
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
 
-    .form-actions {
-        flex-direction: column;
-    }
+.btn-book:hover {
+    background: #3730A3;
+}
 
-    .form-actions button {
-        width: 100%;
-        justify-content: center;
-    }
+/* ----------------------------------------------
+   STATS
+---------------------------------------------- */
 
-    .reply-footer {
-        flex-direction: column;
-    }
+.appt-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+}
 
-    .reply-footer button {
-        width: 100%;
-        justify-content: center;
-    }
+.stat-item {
+    text-align: center;
+    flex: 1;
+}
 
-    .upcoming-actions {
-        flex-direction: column;
-    }
+.stat-num {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
 
-    .upcoming-actions button {
-        width: 100%;
-        justify-content: center;
-    }
+.stat-lbl {
+    font-size: 0.65rem;
+    color: #888;
+}
+
+.stat-line {
+    width: 1px;
+    height: 25px;
+    background: #e8e8e8;
+}
+
+/* ----------------------------------------------
+   APPOINTMENTS GRID
+---------------------------------------------- */
+
+.appt-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.appt-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.col-title {
+    font-size: 1rem;
+    font-weight: 700;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #4F46E5;
+}
+
+.col-title i {
+    color: #4F46E5;
+    margin-right: 6px;
+}
+
+/* ----------------------------------------------
+   APPOINTMENT CARD
+---------------------------------------------- */
+
+.appt-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: 0.2s;
+}
+
+.appt-card:hover {
+    border-color: #4F46E5;
+}
+
+.appt-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.appt-doctor {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.appt-doctor img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.appt-doctor h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.appt-doctor span {
+    font-size: 0.65rem;
+    color: #888;
+}
+
+.appt-badge {
+    font-size: 0.55rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+.appt-badge.confirmed {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.appt-badge.pending {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.appt-badge.cancelled {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.appt-badge.completed {
+    background: #DBEAFE;
+    color: #2563EB;
+}
+
+/* ----------------------------------------------
+   APPOINTMENT INFO
+---------------------------------------------- */
+
+.appt-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #555;
+}
+
+.info-row i {
+    color: #4F46E5;
+    width: 16px;
+    font-size: 0.8rem;
+}
+
+/* ----------------------------------------------
+   APPOINTMENT BUTTONS
+---------------------------------------------- */
+
+.appt-btns {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.appt-btns button {
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.65rem;
+    transition: 0.2s;
+    flex: 1;
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-join {
+    background: #4F46E5;
+    color: #fff;
+}
+
+.btn-join:hover {
+    background: #3730A3;
+}
+
+.btn-cancel {
+    background: #fff;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.btn-cancel:hover {
+    background: #FEF2F2;
+    border-color: #FCA5A5;
+    color: #DC2626;
+}
+
+.btn-reschedule {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+.btn-reschedule:hover {
+    background: #4F46E5;
+    color: #fff;
+}
+
+/* ----------------------------------------------
+   PSYCHOLOGIST CARD
+---------------------------------------------- */
+
+.psych-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: 0.2s;
+}
+
+.psych-card:hover {
+    border-color: #4F46E5;
+}
+
+.psych-top {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.psych-top img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.psych-top h4 {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.psych-top span {
+    font-size: 0.6rem;
+    color: #888;
+    display: block;
+}
+
+.avail {
+    font-size: 0.5rem;
+    font-weight: 600;
+}
+
+.avail-yes {
+    color: #10B981;
+}
+
+.avail-no {
+    color: #F59E0B;
+}
+
+.psych-spec {
+    display: flex;
+    gap: 12px;
+    font-size: 0.6rem;
+    color: #888;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.psych-spec i {
+    color: #4F46E5;
+    margin-right: 2px;
+}
+
+.btn-book-now {
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.7rem;
+    background: #4F46E5;
+    color: #fff;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-book-now:hover {
+    background: #3730A3;
+}
+
+/* ----------------------------------------------
+   MODAL
+---------------------------------------------- */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    background: #fff;
+    border-radius: 12px;
+    z-index: 2000;
+    width: 440px;
+    max-width: 92%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: #fff;
+    border-radius: 12px;
+}
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+    border-radius: 12px 12px 0 0;
+}
+
+.modal-head h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.modal-head h3 i {
+    color: #4F46E5;
+    margin-right: 6px;
+}
+
+.modal-x {
+    font-size: 1.1rem;
+    color: #999;
+    padding: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-x:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 18px;
+}
+
+.field {
+    margin-bottom: 12px;
+}
+
+.field label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    background: #fff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: #4F46E5;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+.modal-foot {
+    display: flex;
+    gap: 10px;
+    padding: 12px 18px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.btn-modal-cancel {
+    flex: 1;
+    background: #fff;
+    color: #666;
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btn-modal-cancel:hover {
+    background: #f5f5f5;
+}
+
+.btn-modal-book {
+    flex: 1;
+    background: #4F46E5;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-modal-book:hover {
+    background: #3730A3;
+}
+
+/* ----------------------------------------------
+   RESCHEDULE INFO
+---------------------------------------------- */
+
+.resched-info {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+}
+
+.resched-info p {
+    font-size: 0.8rem;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+.resched-info p:last-child {
+    margin-bottom: 0;
+}
+
+.resched-info strong {
+    color: #333;
+}
+
+.resched-info span {
+    color: #4F46E5;
+    font-weight: 600;
+}
+
+/* ==========================================================
+   DARK MODE
+========================================================== */
+
+body.dark-mode .page-header p {
+    color: #94A3B8;
+}
+
+body.dark-mode .appt-stats {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+body.dark-mode .stat-lbl {
+    color: #94A3B8;
+}
+
+body.dark-mode .stat-line {
+    background: #334155;
+}
+
+body.dark-mode .appt-card {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+body.dark-mode .appt-card:hover {
+    border-color: #4F46E5;
+}
+
+body.dark-mode .appt-doctor span {
+    color: #94A3B8;
+}
+
+body.dark-mode .appt-badge.confirmed {
+    background: #064E3B;
+    color: #34D399;
+}
+
+body.dark-mode .appt-badge.pending {
+    background: #451A03;
+    color: #FBBF24;
+}
+
+body.dark-mode .appt-badge.cancelled {
+    background: #450A0A;
+    color: #F87171;
+}
+
+body.dark-mode .info-row {
+    color: #CBD5E1;
+}
+
+body.dark-mode .btn-cancel {
+    background: #1E293B;
+    color: #CBD5E1;
+    border-color: #334155;
+}
+
+body.dark-mode .btn-cancel:hover {
+    background: #450A0A;
+    border-color: #7F1D1D;
+    color: #F87171;
+}
+
+body.dark-mode .btn-reschedule {
+    background: #334155;
+    color: #A5B4FC;
+}
+
+body.dark-mode .btn-reschedule:hover {
+    background: #4F46E5;
+    color: #fff;
+}
+
+body.dark-mode .psych-card {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+body.dark-mode .psych-card:hover {
+    border-color: #4F46E5;
+}
+
+body.dark-mode .psych-top span {
+    color: #94A3B8;
+}
+
+body.dark-mode .psych-spec {
+    color: #94A3B8;
+}
+
+body.dark-mode .modal {
+    background: #1E293B;
+}
+
+body.dark-mode .modal-box {
+    background: #1E293B;
+}
+
+body.dark-mode .modal-head {
+    border-color: #334155;
+    background: #1E293B;
+}
+
+body.dark-mode .field input,
+body.dark-mode .field select,
+body.dark-mode .field textarea {
+    background: #1E293B;
+    color: #E2E8F0;
+    border-color: #334155;
+}
+
+body.dark-mode .field input::placeholder,
+body.dark-mode .field textarea::placeholder {
+    color: #64748B;
+}
+
+body.dark-mode .modal-foot {
+    border-color: #334155;
+}
+
+body.dark-mode .btn-modal-cancel {
+    background: #1E293B;
+    color: #CBD5E1;
+    border-color: #334155;
+}
+
+body.dark-mode .btn-modal-cancel:hover {
+    background: #334155;
+}
+
+body.dark-mode .modal-x {
+    color: #94A3B8;
+}
+
+body.dark-mode .modal-x:hover {
+    color: #E2E8F0;
+}
+
+body.dark-mode .resched-info {
+    background: #334155;
+}
+
+body.dark-mode .resched-info p {
+    color: #CBD5E1;
+}
+
+body.dark-mode .resched-info strong {
+    color: #E2E8F0;
+}
+
+body.dark-mode .resched-info span {
+    color: #A5B4FC;
+}
+
+body.dark-mode .btn-book {
+    background: #4F46E5;
+}
+
+body.dark-mode .btn-book:hover {
+    background: #3730A3;
+}
+
+body.dark-mode .btn-join {
+    background: #4F46E5;
+}
+
+body.dark-mode .btn-join:hover {
+    background: #3730A3;
+}
+
+body.dark-mode .btn-book-now {
+    background: #4F46E5;
+}
+
+body.dark-mode .btn-book-now:hover {
+    background: #3730A3;
 }

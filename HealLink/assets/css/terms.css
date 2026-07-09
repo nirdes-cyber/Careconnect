@@ -1,0 +1,253 @@
+/*================ TERMS PAGE ================*/
+
+.terms-page {
+    padding: 120px 20px 80px;
+    background: #F8FAFC;
+    min-height: 100vh;
+    margin-top: 80px;
+}
+
+.terms-hero {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    background: linear-gradient(135deg, #10B981, #059669);
+    border-radius: 24px;
+    padding: 70px 50px;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.terms-hero::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .08);
+    top: -120px;
+    right: -100px;
+}
+
+.terms-hero::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .05);
+    bottom: -90px;
+    left: -70px;
+}
+
+.terms-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+}
+
+.terms-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    font-size: .95rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.terms-badge i {
+    font-size: 18px;
+}
+
+.terms-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.terms-hero p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #ECFDF5;
+}
+
+.last-updated {
+    margin-top: 25px;
+    font-weight: 600;
+    color: #fff !important;
+}
+
+.terms-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    gap: 30px;
+}
+
+.terms-card {
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, .06);
+    transition: .35s;
+}
+
+.terms-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(16, 185, 129, .15);
+}
+
+.terms-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.45rem;
+    margin-bottom: 20px;
+    color: #1E293B;
+}
+
+.terms-card h2 i {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ECFDF5;
+    color: #10B981;
+    border-radius: 12px;
+    font-size: 22px;
+}
+
+.terms-card p {
+    line-height: 1.9;
+    color: #475569;
+}
+
+.terms-card ul {
+    margin-top: 15px;
+    padding-left: 0;
+}
+
+.terms-card ul li {
+    position: relative;
+    list-style: none;
+    padding-left: 22px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #475569;
+}
+
+.terms-card ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: #10B981;
+    border-radius: 50%;
+}
+
+.terms-card:nth-child(even) {
+    border-left: 5px solid #10B981;
+}
+
+.terms-card:nth-child(odd) {
+    border-left: 5px solid #4F46E5;
+}
+
+.terms-card:last-child {
+    background: #F8FAFC;
+}
+
+.terms-card:last-child h2 i {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+/*================ RESPONSIVE ================*/
+
+@media(max-width:992px) {
+
+    .terms-hero {
+        padding: 55px 35px;
+    }
+
+    .terms-hero h1 {
+        font-size: 2.4rem;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .terms-page {
+        padding: 100px 15px 60px;
+    }
+
+    .terms-hero {
+        padding: 45px 25px;
+        border-radius: 18px;
+    }
+
+    .terms-hero h1 {
+        font-size: 2rem;
+    }
+
+    .terms-hero p {
+        font-size: .96rem;
+    }
+
+    .terms-card {
+        padding: 25px;
+    }
+
+    .terms-card h2 {
+        font-size: 1.2rem;
+        align-items: flex-start;
+    }
+
+    .terms-card h2 i {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .terms-page {
+        padding: 90px 12px 40px;
+    }
+
+    .terms-hero {
+        padding: 35px 20px;
+    }
+
+    .terms-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .terms-badge {
+        font-size: .85rem;
+        padding: 8px 16px;
+    }
+
+    .terms-card {
+        padding: 20px;
+    }
+
+    .terms-card p,
+    .terms-card li {
+        font-size: .93rem;
+        line-height: 1.7;
+    }
+
+}

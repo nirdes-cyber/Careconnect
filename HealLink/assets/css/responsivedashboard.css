@@ -1,134 +1,151 @@
 /* ==========================================================
-   CareConnect Dashboard
-   Responsive Styles
+   CareConnect Dashboard - Responsive Styles
+   Student Project
    ========================================================== */
 
-/* ==========================================================
-   TABLET (1024px and below)
-   ========================================================== */
+/* ----------------------------------------------
+   TABLET - 1024px and below
+---------------------------------------------- */
 
 @media (max-width: 1024px) {
 
-    .sidebar {
-        transform: translateX(-100%);
+    /* Navigation */
+    .nav-center {
+        display: none;
     }
 
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    .close-btn {
-        display: flex;
-    }
-
-    .overlay.active {
+    .mobile-menu-btn {
         display: block;
     }
 
-    .main-content {
-        margin-left: 0;
-    }
-
-    .menu-btn {
-        display: flex;
-    }
-
-    .stats-grid {
+    /* Stats */
+    .stats-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .grid-2col {
+    /* Grid */
+    .dashboard-grid {
         grid-template-columns: 1fr;
     }
 
-    .welcome-box {
+    .bottom-section {
+        grid-template-columns: 1fr;
+    }
+
+    /* Create Post */
+    .create-post-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Profile */
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Greeting */
+    .greeting-section {
         flex-direction: column;
         text-align: center;
+        gap: 12px;
     }
 
-    .welcome-text p {
-        max-width: 100%;
-    }
-
-    .actions {
+    .greeting-actions {
         justify-content: center;
-    }
-
-    .welcome-image {
-        width: 160px;
-        height: 160px;
-        margin-top: 16px;
-    }
-
-    .card-illustration {
-        padding: 12px 16px;
     }
 
 }
 
-/* ==========================================================
-   MOBILE (768px and below)
-   ========================================================== */
+/* ----------------------------------------------
+   MOBILE - 768px and below
+---------------------------------------------- */
 
 @media (max-width: 768px) {
 
-    .topbar {
-        padding: 10px 16px;
-        flex-wrap: wrap;
-        gap: 8px;
+    /* Navigation */
+    .top-nav {
+        padding: 0 12px;
     }
 
-    .topbar-left {
-        flex: 1;
-    }
-
-    .search {
-        max-width: 100%;
-        flex: 1;
-    }
-
-    .profile-info {
+    .nav-brand span {
         display: none;
     }
 
-    .content {
-        padding: 16px;
+    .nav-profile-btn span {
+        display: none;
     }
 
-    .welcome-box {
-        padding: 20px;
+    .nav-profile-btn i {
+        display: none;
     }
 
-    .welcome-text h1 {
-        font-size: 1.5rem;
+    /* Main Content */
+    .main-content {
+        padding: 12px;
     }
 
-    .stats-grid {
+    /* Stats */
+    .stats-container {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
 
-    .stat-card {
+    .stats-card {
+        padding: 10px 12px;
+    }
+
+    .stats-number {
+        font-size: 1.1rem;
+    }
+
+    /* Greeting */
+    .greeting-section {
         padding: 14px 16px;
     }
 
-    .stat-card h2 {
-        font-size: 1.3rem;
+    .greeting-text h1 {
+        font-size: 1.2rem;
     }
 
-    .quick-actions {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer {
+    .greeting-actions {
         flex-direction: column;
-        gap: 8px;
+        width: 100%;
+    }
+
+    .greeting-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Search */
+    .search-bar {
+        padding: 6px 12px;
+    }
+
+    .search-btn span {
+        display: none;
+    }
+
+    /* Wellness */
+    .wellness-tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Appointment */
+    .appt-buttons {
+        flex-direction: column;
+    }
+
+    .appt-buttons a,
+    .appt-buttons button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
         text-align: center;
-        padding: 12px 16px;
-    }
-
-    .footer-left {
-        flex-direction: column;
+        gap: 6px;
     }
 
     .footer-links {
@@ -136,183 +153,1032 @@
         justify-content: center;
     }
 
-}
-
-/* ==========================================================
-   SMALL MOBILE (480px and below)
-   ========================================================== */
-
-@media (max-width: 480px) {
-
-    .search {
-        display: none;
+    /* Cards */
+    .section-card-body {
+        padding: 8px 12px 12px;
     }
 
-    .profile-btn span {
-        display: none;
-    }
-
-    .profile-btn i {
-        display: none;
-    }
-
-    .content {
-        padding: 12px;
-    }
-
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quick-actions {
-        grid-template-columns: 1fr;
-    }
-
-    .welcome-text h1 {
-        font-size: 1.3rem;
-    }
-
-    .actions {
+    /* Posts */
+    .post-item-header {
         flex-direction: column;
-        width: 100%;
+        align-items: flex-start;
+        gap: 4px;
     }
 
-    .actions a {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .appt-actions {
-        flex-direction: column;
-    }
-
-    .appt-actions a,
-    .appt-actions button {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .welcome-image {
-        width: 120px;
-        height: 120px;
-    }
-
-    .card-illustration {
-        padding: 10px 14px;
-    }
-
-    .card-illustration i {
-        font-size: 1.5rem;
-    }
-
-    .card-illustration h3 {
-        font-size: 0.8rem;
-    }
-
-    .sidebar {
-        width: 280px;
-    }
-
-    table {
-        font-size: 0.75rem;
-    }
-
-    .table-wrap {
-        padding: 0 12px 12px;
-    }
-
-    thead th,
-    tbody td {
-        padding: 6px 4px;
-    }
-
-    .cat,
-    .status {
-        font-size: 0.6rem;
-        padding: 2px 6px;
-    }
-
-    .btn-view {
-        font-size: 0.65rem;
-        padding: 3px 10px;
-    }
-
-    .reply {
+    /* Replies */
+    .reply-item {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .reply img {
-        width: 32px;
-        height: 32px;
+    .reply-item img {
+        width: 28px;
+        height: 28px;
     }
 
-    .dropdown {
-        width: 200px;
-        right: -20px;
+    /* Profile */
+    .profile-top {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .profile-name-wrap {
+        text-align: center;
+    }
+
+    .profile-badges {
+        justify-content: center;
+    }
+
+    .profile-avatar-wrap img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .avatar-upload-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 0.6rem;
+    }
+
+    .profile-stats {
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .stat-box {
+        flex: none;
+        min-width: 50px;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-num {
+        font-size: 1rem;
+    }
+
+    /* Info Rows */
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        padding: 5px 0;
+    }
+
+    .info-lbl {
+        min-width: auto;
+        font-size: 0.6rem;
+    }
+
+    .info-val {
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .info-edit {
+        width: 100%;
+        font-size: 0.75rem;
+    }
+
+    /* Psychologists */
+    .psych-item {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .psych-item .msg-btn {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        padding: 4px 0;
+    }
+
+    /* Edit Actions */
+    .edit-actions {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .edit-actions button {
+        width: 100%;
+        justify-content: center;
+        padding: 6px 0;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .page-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .profile-card {
+        padding: 12px 14px;
+    }
+
+    .profile-name-wrap h2 {
+        font-size: 1.1rem;
+    }
+
+    /* Activity */
+    .activity-item {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .activity-item h4 {
+        font-size: 0.75rem;
+    }
+
+    .activity-item p {
+        font-size: 0.65rem;
+    }
+
+    .info-card-body {
+        padding: 10px 12px 12px;
+    }
+
+    .bio-text {
+        font-size: 0.78rem;
+    }
+
+    .bio-edit {
+        font-size: 0.78rem;
+    }
+
+    /* Create Post */
+    .post-form-card {
+        padding: 14px 16px;
+    }
+
+    .privacy-options {
+        flex-direction: column;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Recent Posts */
+    .recent-post-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .recent-post-item .post-status-small {
+        align-self: flex-start;
+    }
+
+    /* My Posts */
+    .post-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post-card-header .post-actions {
+        width: 100%;
+    }
+
+    .post-card-header .post-actions button {
+        flex: 1;
+        text-align: center;
     }
 
 }
 
-/* ==========================================================
-   TOUCH DEVICES
-   ========================================================== */
+/* ----------------------------------------------
+   SMALL MOBILE - 480px and below
+---------------------------------------------- */
 
-@media (hover: none) {
-    .sidebar-nav a:hover,
-    .quick:hover,
-    .btn-primary:hover,
-    .btn-secondary:hover {
-        transform: none;
+@media (max-width: 480px) {
+
+    /* Stats */
+    .stats-container {
+        grid-template-columns: 1fr;
     }
-}
 
-/* ==========================================================
-   LANDSCAPE MODE
-   ========================================================== */
+    /* Navigation */
+    .nav-brand span {
+        display: none;
+    }
 
-@media (max-height: 500px) {
-    .sidebar-nav {
+    /* Mobile Sidebar */
+    .mobile-sidebar {
+        width: 260px;
+        left: -260px;
+    }
+
+    .mobile-sidebar.open {
+        left: 0;
+    }
+
+    /* Greeting */
+    .greeting-text h1 {
+        font-size: 1rem;
+    }
+
+    .greeting-text p {
+        font-size: 0.75rem;
+    }
+
+    /* Cards */
+    .section-card-header {
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 10px 12px;
+    }
+
+    .section-card-header h3 {
+        font-size: 0.85rem;
+    }
+
+    /* Appointment */
+    .appt-profile {
+        flex-wrap: wrap;
+    }
+
+    .appt-profile img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .appt-detail-item {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+
+    /* Posts */
+    .post-item-meta {
+        gap: 6px;
+        font-size: 0.6rem;
+    }
+
+    /* Notifications */
+    .notif-entry {
+        flex-wrap: wrap;
+    }
+
+    .notif-entry.unread {
+        padding-left: 4px;
+    }
+
+    /* Wellness */
+    .wellness-tip {
+        flex-wrap: wrap;
+    }
+
+    /* Profile */
+    .page-header h1 {
+        font-size: 1rem;
+    }
+
+    .page-header p {
+        font-size: 0.7rem;
+    }
+
+    .edit-profile-btn {
+        font-size: 0.65rem;
+        padding: 5px 12px;
+    }
+
+    .profile-avatar-wrap img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .profile-name-wrap h2 {
+        font-size: 0.95rem;
+    }
+
+    .profile-username {
+        font-size: 0.7rem;
+    }
+
+    .badge {
+        font-size: 0.5rem;
+        padding: 1px 6px;
+    }
+
+    .stat-num {
+        font-size: 0.9rem;
+    }
+
+    .stat-lbl {
+        font-size: 0.5rem;
+    }
+
+    .info-card h3 {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+
+    .info-card-body {
+        padding: 8px 10px 10px;
+    }
+
+    .info-lbl {
+        font-size: 0.55rem;
+    }
+
+    .info-val {
+        font-size: 0.75rem;
+    }
+
+    .info-edit {
+        font-size: 0.7rem;
+        padding: 2px 4px;
+    }
+
+    .psych-item h4 {
+        font-size: 0.7rem;
+    }
+
+    .psych-item span {
+        font-size: 0.5rem;
+    }
+
+    .psych-item img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .psych-item .msg-btn {
+        font-size: 0.55rem;
+        padding: 2px 10px;
+    }
+
+    .activity-item h4 {
+        font-size: 0.7rem;
+    }
+
+    .activity-item p {
+        font-size: 0.6rem;
+    }
+
+    .activity-item span {
+        font-size: 0.5rem;
+    }
+
+    .act-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 0.65rem;
+    }
+
+    .btn-save,
+    .btn-cancel {
+        font-size: 0.65rem;
+        padding: 4px 12px;
+    }
+
+    /* Create Post */
+    .post-form-card {
+        padding: 10px 12px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .privacy-option {
         padding: 8px 12px;
     }
 
-    .sidebar-nav a {
+    .privacy-label strong {
+        font-size: 0.75rem;
+    }
+
+    .privacy-label small {
+        font-size: 0.55rem;
+    }
+
+    .tips-card {
+        padding: 12px 14px;
+    }
+
+    .recent-posts-section {
+        padding: 12px 14px;
+    }
+
+    /* My Posts */
+    .post-card {
+        padding: 10px 12px;
+    }
+
+    .post-card-header h3 {
+        font-size: 0.9rem;
+    }
+
+    .post-card-content {
+        font-size: 0.78rem;
+    }
+
+}
+
+/* ----------------------------------------------
+   VERY SMALL MOBILE - 360px and below
+---------------------------------------------- */
+
+@media (max-width: 360px) {
+
+    /* Profile Stats */
+    .profile-stats {
+        gap: 4px;
+    }
+
+    .stat-box {
+        min-width: 40px;
+    }
+
+    .stat-num {
+        font-size: 0.8rem;
+    }
+
+    .stat-lbl {
+        font-size: 0.45rem;
+    }
+
+    .profile-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+    }
+
+    /* Psychologists */
+    .psych-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .psych-item .msg-btn {
+        width: 100%;
+    }
+
+    /* Activity */
+    .activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Post Card */
+    .post-card-header .post-actions {
+        flex-direction: column;
+    }
+
+    .post-card-header .post-actions button {
+        width: 100%;
+    }
+
+}
+
+/* ----------------------------------------------
+   TOUCH DEVICES - No hover effects
+---------------------------------------------- */
+
+@media (hover: none) {
+
+    .nav-links li a:hover,
+    .nav-profile-btn:hover,
+    .action-btn:hover,
+    .appt-btn:hover,
+    .psych-item .msg-btn:hover {
+        transform: none;
+    }
+
+    .recent-post-item:hover {
+        background: #f8f9fa;
+    }
+
+    body.dark-mode .recent-post-item:hover {
+        background: #334155;
+    }
+
+}
+
+/* ----------------------------------------------
+   LANDSCAPE MODE
+---------------------------------------------- */
+
+@media (max-height: 500px) {
+
+    /* Sidebar */
+    .mobile-sidebar-links a {
         padding: 6px 12px;
         font-size: 0.8rem;
     }
 
-    .welcome-box {
-        padding: 16px;
+    /* Welcome */
+    .welcome-illustration {
+        width: 80px;
+        height: 80px;
     }
 
-    .welcome-image {
-        width: 100px;
-        height: 100px;
+    .ill-card {
+        padding: 6px 10px;
     }
 
-    .card-illustration {
-        padding: 8px 12px;
+    .ill-card i {
+        font-size: 1rem;
     }
 
-    .card-illustration i {
-        font-size: 1.2rem;
+    /* Stats */
+    .stats-card {
+        padding: 6px 10px;
     }
 
-    .stats-grid {
-        gap: 8px;
+    .stats-icon-box {
+        width: 28px;
+        height: 28px;
+        font-size: 0.65rem;
     }
 
-    .stat-card {
+    .stats-number {
+        font-size: 0.85rem;
+    }
+
+    /* Greeting */
+    .greeting-section {
         padding: 10px 14px;
     }
 
-    .stat-card h2 {
-        font-size: 1.1rem;
-    }
-
-    .stat-icon {
-        width: 34px;
-        height: 34px;
+    .greeting-text h1 {
         font-size: 1rem;
     }
+
+    /* Cards */
+    .section-card-body {
+        padding: 6px 10px 10px;
+    }
+
+    .post-item {
+        padding: 4px 0;
+    }
+
+    .reply-item {
+        padding: 4px 0;
+    }
+
+    /* Profile */
+    .profile-card {
+        padding: 10px 14px;
+    }
+
+    .profile-avatar-wrap img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .profile-stats {
+        margin-top: 8px;
+        padding-top: 8px;
+    }
+
+    .stat-num {
+        font-size: 0.8rem;
+    }
+
+    .info-card-body {
+        padding: 6px 10px 10px;
+    }
+
+    .info-row {
+        padding: 2px 0;
+    }
 }
+/* ==========================================================
+   Replies Page - Main CSS
+   Student Project
+   ========================================================== */
+
+/* ----------------------------------------------
+   PAGE HEADER STATS
+---------------------------------------------- */
+
+.page-header-stats {
+    display: flex;
+    gap: 16px;
+}
+
+.page-header-stats span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #666;
+    background: #f5f5f5;
+    padding: 4px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.page-header-stats .unread-replies {
+    color: #EF4444;
+    background: #FEF2F2;
+}
+
+.page-header-stats span i {
+    font-size: 0.85rem;
+}
+
+/* ----------------------------------------------
+   FILTER BAR
+---------------------------------------------- */
+
+.filter-bar {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-group label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.filter-group select {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    background: #fff;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.filter-group select:focus {
+    border-color: #4F46E5;
+    outline: none;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    background: #EEF2FF;
+    color: #4F46E5;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-btn:hover {
+    background: #4F46E5;
+    color: #fff;
+}
+
+/* ----------------------------------------------
+   REPLIES CONTAINER
+---------------------------------------------- */
+
+.replies-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------
+   REPLY CARD
+---------------------------------------------- */
+
+.reply-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.reply-card:hover {
+    border-color: #4F46E5;
+    box-shadow: 0 2px 12px rgba(79, 70, 229, 0.04);
+}
+
+.reply-card.unread {
+    border-left: 4px solid #4F46E5;
+}
+
+/* Reply Header */
+.reply-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f5f5f5;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.reply-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reply-info {
+    flex: 1;
+}
+
+.reply-info h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.reply-specialty {
+    font-size: 0.7rem;
+    color: #888;
+    display: block;
+}
+
+.reply-date {
+    font-size: 0.65rem;
+    color: #999;
+}
+
+.reply-date i {
+    margin-right: 3px;
+}
+
+.reply-status {
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.unread-badge {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+.read-badge {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+/* Reply Body */
+.reply-body {
+    padding: 14px 18px;
+}
+
+.reply-text {
+    font-size: 0.88rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.reply-post-ref {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    color: #888;
+    padding: 6px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.reply-post-ref i {
+    color: #4F46E5;
+}
+
+.reply-post-ref strong {
+    color: #333;
+}
+
+/* Reply Footer */
+.reply-footer {
+    padding: 10px 18px;
+    border-top: 1px solid #f5f5f5;
+    display: flex;
+    gap: 10px;
+}
+
+.reply-btn {
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: 0.2s;
+}
+
+.reply-btn.primary {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+.reply-btn.primary:hover {
+    background: #4F46E5;
+    color: #fff;
+}
+
+.reply-btn.secondary {
+    background: #fff;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.reply-btn.secondary:hover {
+    background: #f5f5f5;
+}
+
+/* ----------------------------------------------
+   PAGINATION
+---------------------------------------------- */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.page-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-btn:hover {
+    border-color: #4F46E5;
+    color: #4F46E5;
+}
+
+.page-btn.active {
+    background: #4F46E5;
+    color: #fff;
+    border-color: #4F46E5;
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ==========================================================
+   DARK MODE - REPLIES
+========================================================== */
+
+body.dark-mode .page-header-stats span {
+    color: #94A3B8;
+    background: #334155;
+}
+
+body.dark-mode .page-header-stats .unread-replies {
+    color: #F87171;
+    background: #450A0A;
+}
+
+body.dark-mode .filter-bar {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+body.dark-mode .filter-group label {
+    color: #94A3B8;
+}
+
+body.dark-mode .filter-group select {
+    background: #1E293B;
+    color: #E2E8F0;
+    border-color: #334155;
+}
+
+body.dark-mode .filter-btn {
+    background: #334155;
+    color: #A5B4FC;
+}
+
+body.dark-mode .filter-btn:hover {
+    background: #4F46E5;
+    color: #fff;
+}
+
+body.dark-mode .reply-card {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+body.dark-mode .reply-card:hover {
+    border-color: #4F46E5;
+}
+
+body.dark-mode .reply-header {
+    border-color: #334155;
+}
+
+body.dark-mode .reply-info h4 {
+    color: #E2E8F0;
+}
+
+body.dark-mode .reply-specialty {
+    color: #94A3B8;
+}
+
+body.dark-mode .reply-date {
+    color: #64748B;
+}
+
+body.dark-mode .unread-badge {
+    background: #334155;
+    color: #A5B4FC;
+}
+
+body.dark-mode .read-badge {
+    background: #064E3B;
+    color: #34D399;
+}
+
+body.dark-mode .reply-text {
+    color: #CBD5E1;
+}
+
+body.dark-mode .reply-post-ref {
+    background: #334155;
+    color: #94A3B8;
+}
+
+body.dark-mode .reply-post-ref strong {
+    color: #E2E8F0;
+}
+
+body.dark-mode .reply-footer {
+    border-color: #334155;
+}
+
+body.dark-mode .reply-btn.secondary {
+    background: #1E293B;
+    color: #CBD5E1;
+    border-color: #334155;
+}
+
+body.dark-mode .reply-btn.secondary:hover {
+    background: #334155;
+}
+
+body.dark-mode .page-btn {
+    background: #1E293B;
+    color: #CBD5E1;
+    border-color: #334155;
+}
+
+body.dark-mode .page-btn:hover {
+    border-color: #4F46E5;
+    color: #4F46E5;
+}
+
+body.dark-mode .page-btn.active {
+    background: #4F46E5;
+    color: #fff;
+}
+
+

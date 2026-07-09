@@ -4,349 +4,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard | CareConnect</title>
-    <!-- Google Font -->
+    <title>Replies | CareConnect</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="/HealLink/assets/css/userdashboard.css">
-    <link rel="stylesheet" href="/HealLink/assets/css/responsivedashboard.css">
     <link rel="stylesheet" href="/HealLink/assets/css/dashall.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/responsivedashboard.css">
 </head>
 
 <body>
 
-    <!-- Sidebar Overlay for Mobile -->
-    <div class="overlay" id="overlay"></div>
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
 
-    <aside class="sidebar" id="sidebar">
+    <nav class="top-nav">
+        <div class="nav-container">
 
-        <!-- Sidebar Header -->
-        <div class="sidebar-header">
-
-            <a href="/HealLink/dashboard/user-dashboard.html" class="logo">
-                <img src="/HealLink/assets/image/logo.png" alt="CareConnect" class="logo-img">
-                <div>
-                    <h2>CareConnect</h2>
-                    <span>Mental Wellness</span>
-                </div>
-            </a>
-
-            <button class="close-btn" id="closeSidebar">
-                <i class="bi bi-x-lg"></i>
-            </button>
-
-        </div>
-
-        <!-- Navigation -->
-        <nav class="sidebar-nav">
-
-            <ul>
-
-                <li>
-                    <a href="/HealLink/dashboard/userdash/user-dashboard.html" class="active">
-                        <i class="bi bi-grid-1x2-fill"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/HealLink/dashboard/userdash/profile.html">
-                        <i class="bi bi-person-circle"></i>
-                        <span>My Profile</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/HealLink/dashboard/userdash/create-post.html">
-                        <i class="bi bi-pencil-square"></i>
-                        <span>Create Anonymous Post</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/HealLink/dashboard/userdash/my-posts.html">
-                        <i class="bi bi-journal-text"></i>
-                        <span>My Posts</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/HealLink/dashboard/userdash/replies.html">
-                        <i class="bi bi-chat-left-heart"></i>
-                        <span>Psychologist Replies</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/HealLink/dashboard/userdash/appointments.html">
-                        <i class="bi bi-calendar2-check"></i>
-                        <span>Book Appointment</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/HealLink/dashboard/userdash/notifications.html">
-                        <i class="bi bi-bell"></i>
-                        <span>Notifications</span>
-                        <span class="badge">5</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="/HealLink/dashboard/userdash/setting.html">
-                        <i class="bi bi-gear"></i>
-                        <span>Settings</span>
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-<div class="sidebar-footer">
-            <div class="user-card">
-                <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
-                <div>
-                    <h4>Nirdesh</h4>
-                    <span>Member</span>
-                </div>
-            </div>
-            <a href="logout.html" class="logout">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Logout</span>
-            </a>
-        </div>
-
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-
-        <!-- Topbar -->
-        <header class="topbar">
-
-            <div class="topbar-left">
-                <button class="menu-btn" id="menuBtn">
-                    <i class="bi bi-list"></i>
-                </button>
-                <div class="search">
-                    <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Search replies..." id="searchInput">
-                </div>
+            <div class="nav-left">
+                <a href="user-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </a>
             </div>
 
-            <div class="topbar-right">
-                <button class="icon-btn" id="notifBtn">
-                    <i class="bi bi-bell"></i>
-                    <span class="notif-badge">5</span>
-                </button>
-                <button class="icon-btn" id="themeBtn">
-                    <i class="bi bi-moon"></i>
-                </button>
-                <div class="profile-wrap">
-                    <button class="profile-btn" id="profileBtn">
-                        <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="user-dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="create-post.html">Create Post</a></li>
+                    <li><a href="my-posts.html">My Posts</a></li>
+                    <li><a href="replies.html" class="active">Replies</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="notifications.html">Notifications <span class="nav-badge">5</span></a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
                         <span>Nirdesh</span>
                         <i class="bi bi-chevron-down"></i>
                     </button>
-                    <div class="dropdown" id="dropdown">
-                        <div class="dropdown-header">
-                            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
-                            <div>
-                                <h4>Nirdesh Tiwari</h4>
-                                <p>nirdesh@email.com</p>
-                            </div>
-                        </div>
-                        <ul>
-                            <li><a href="profile.html"><i class="bi bi-person"></i> My Profile</a></li>
-                            <li><a href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
-                            <li><a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
-                        </ul>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="profile.html"><i class="bi bi-person"></i> Profile</a>
+                        <a href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
                     </div>
                 </div>
             </div>
 
-        </header>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
 
-        <!-- Content -->
-        <div class="content">
+        </div>
+    </nav>
 
-            <div class="page-header">
-                <div>
-                    <h1>Psychologist Replies</h1>
-                    <p>All responses from verified psychologists to your posts</p>
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="user-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="profile.html"><i class="bi bi-person-circle"></i> My Profile</a></li>
+            <li><a href="create-post.html"><i class="bi bi-pencil-square"></i> Create Post</a></li>
+            <li><a href="my-posts.html"><i class="bi bi-journal-text"></i> My Posts</a></li>
+            <li><a href="replies.html" class="active"><i class="bi bi-chat-left-heart"></i> Replies</a></li>
+            <li><a href="appointments.html"><i class="bi bi-calendar2-check"></i> Appointments</a></li>
+            <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications <span class="badge">5</span></a></li>
+            <li><a href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
+            <div>
+                <h4>Nirdesh</h4>
+                <span>Anonymous Member</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
+                <h1>💬 Psychologist Replies</h1>
+                <p>All responses from verified psychologists to your posts</p>
+            </div>
+            <div class="page-header-stats">
+                <span class="total-replies"><i class="bi bi-chat"></i> 46 Total</span>
+                <span class="unread-replies"><i class="bi bi-envelope"></i> 12 Unread</span>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            FILTER BAR
+        ========================================================== -->
+
+        <div class="filter-bar">
+            <div class="filter-group">
+                <label>Filter:</label>
+                <select id="filterStatus">
+                    <option value="all">All Replies</option>
+                    <option value="unread">Unread Only</option>
+                    <option value="read">Read</option>
+                </select>
+                <select id="filterPsychologist">
+                    <option value="all">All Psychologists</option>
+                    <option value="jagadish">Jagadish Oli</option>
+                    <option value="ashma">Ashma Mall</option>
+                    <option value="kamal">Kamal Bhattrai</option>
+                    <option value="saurav">Saurav Puri</option>
+                    <option value="prasanna">Prasanna Neupane</option>
+                    <option value="sandip">Sandip Dangi</option>
+                </select>
+            </div>
+            <div class="filter-actions">
+                <button class="filter-btn" id="markAllReadBtn">
+                    <i class="bi bi-check-all"></i> Mark All Read
+                </button>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            REPLIES LIST
+        ========================================================== -->
+
+        <div class="replies-container">
+
+            <!-- Reply 1 - Unread -->
+            <div class="reply-card unread" data-psych="jagadish">
+                <div class="reply-header">
+                    <img src="https://ui-avatars.com/api/?name=Jagadish+Oli&background=4F46E5&color=fff" alt="Jagadish Oli" class="reply-avatar">
+                    <div class="reply-info">
+                        <h4>Jagadish Oli</h4>
+                        <span class="reply-specialty">Clinical Psychologist</span>
+                        <span class="reply-date"><i class="bi bi-clock"></i> Today, 10:25 AM</span>
+                    </div>
+                    <span class="reply-status unread-badge">Unread</span>
                 </div>
-                <span class="reply-count">Total: 46 replies</span>
+
+                <div class="reply-body">
+                    <p class="reply-text">
+                        Anxiety often becomes stronger when we try to fight it alone. Begin by identifying your thoughts, taking slow breaths, and maintaining a healthy daily routine. Remember that it's okay to ask for help when you need it. Your feelings are valid and you deserve support.
+                    </p>
+                    <div class="reply-post-ref">
+                        <i class="bi bi-arrow-return-right"></i>
+                        <span>In reply to: <strong>"Feeling anxious before exams"</strong></span>
+                    </div>
+                </div>
+
+                <div class="reply-footer">
+                    <button class="reply-btn primary view-reply-btn">View Full Reply</button>
+                    <button class="reply-btn secondary mark-read-btn">Mark as Read</button>
+                </div>
             </div>
 
-            <!-- Filters -->
-            <div class="filter-bar">
-                <div class="filter-group">
-                    <label>Filter:</label>
-                    <select id="filterType">
-                        <option value="all">All Replies</option>
-                        <option value="unread">Unread</option>
-                        <option value="read">Read</option>
-                    </select>
-                    <select id="filterPsych">
-                        <option value="all">All Psychologists</option>
-                        <option value="asha">Dr. Ashma Malla</option>
-                        <option value="ramesh">Dr. Kamal Bhattarai</option>
-                        <option value="priya">Dr. Sandip Dangi</option>
-                    </select>
+            <!-- Reply 2 - Unread -->
+            <div class="reply-card unread" data-psych="ashma">
+                <div class="reply-header">
+                    <img src="https://ui-avatars.com/api/?name=Ashma+Mall&background=06B6D4&color=fff" alt="Ashma Mall" class="reply-avatar">
+                    <div class="reply-info">
+                        <h4>Ashma Mall</h4>
+                        <span class="reply-specialty">Counseling Psychologist</span>
+                        <span class="reply-date"><i class="bi bi-clock"></i> Yesterday, 3:45 PM</span>
+                    </div>
+                    <span class="reply-status unread-badge">Unread</span>
+                </div>
+
+                <div class="reply-body">
+                    <p class="reply-text">
+                        Sleep improves when your body follows a consistent schedule. Try avoiding mobile screens before bedtime and practice mindfulness for a few minutes before sleeping. Establishing a bedtime routine can help your body recognize when it's time to rest.
+                    </p>
+                    <div class="reply-post-ref">
+                        <i class="bi bi-arrow-return-right"></i>
+                        <span>In reply to: <strong>"Difficulty sleeping lately"</strong></span>
+                    </div>
+                </div>
+
+                <div class="reply-footer">
+                    <button class="reply-btn primary view-reply-btn">View Full Reply</button>
+                    <button class="reply-btn secondary mark-read-btn">Mark as Read</button>
                 </div>
             </div>
 
-            <!-- Replies List -->
-            <div class="replies-list">
-
-                <div class="card reply-item unread">
-
-                    <div class="reply-header">
-                        <img src="https://ui-avatars.com/api/?name=Dr+Asha+Sharma&background=4F46E5&color=fff" alt="Dr. Sandip">
-
-                            <div>
-                                <h4>Dr. Sandip Dangi</h4>
-                                <span class="time">Today • 10:25 AM</span>
-                            <span class="psych-specialty">Clinical Psychologist</span>
-                            
-                        </div>
-                        <span class="unread-badge">Unread</span>
+            <!-- Reply 3 - Read -->
+            <div class="reply-card" data-psych="kamal">
+                <div class="reply-header">
+                    <img src="https://ui-avatars.com/api/?name=Kamal+Bhattrai&background=10B981&color=fff" alt="Kamal Bhattrai" class="reply-avatar">
+                    <div class="reply-info">
+                        <h4>Kamal Bhattrai</h4>
+                        <span class="reply-specialty">Child & Adolescent Psychologist</span>
+                        <span class="reply-date"><i class="bi bi-clock"></i> 2 days ago, 9:15 AM</span>
                     </div>
-
-                    <div class="reply-body">
-                        <p class="reply-preview">
-                            Anxiety often becomes stronger when we try to fight it alone. Begin by identifying your thoughts, taking slow breaths, and maintaining a healthy daily routine. Remember that it's okay to ask for help...
-                        </p>
-                        <div class="reply-post-ref">
-                            <small>In reply to: <strong>"Feeling anxious before exams"</strong></small>
-                        </div>
-                    </div>
-
-                    <div class="reply-footer">
-                        <button class="btn-primary small">View Full Reply</button>
-                        <button class="btn-outline small">Mark as Read</button>
-                    </div>
-
+                    <span class="reply-status read-badge">Read</span>
                 </div>
 
-                <div class="card reply-item unread">
-
-                    <div class="reply-header">
-                     <img src="https://ui-avatars.com/api/?name=Dr+kamal+bhattrai&background=06B6D4&color=fff" alt="Dr. Kamal">
-
-                            <div>
-                                <h4>Dr. Kamal Bhattarai</h4>
-                                <span class="time">Yesterday</span>
-                            <span class="psych-specialty">Counseling Psychologist</span>
-                            
-                        </div>
-                        <span class="unread-badge">Unread</span>
+                <div class="reply-body">
+                    <p class="reply-text">
+                        Reaching out for help is one of the strongest decisions anyone can make. Celebrate every small improvement instead of expecting perfection. You are taking important steps toward healing and that's something to be proud of.
+                    </p>
+                    <div class="reply-post-ref">
+                        <i class="bi bi-arrow-return-right"></i>
+                        <span>In reply to: <strong>"Feeling isolated at college"</strong></span>
                     </div>
-
-                    <div class="reply-body">
-                        <p class="reply-preview">
-                            Sleep improves when your body follows a consistent schedule. Try avoiding mobile screens before bedtime and practice mindfulness for a few minutes before sleeping. Establishing a bedtime routine can help...
-                        </p>
-                        <div class="reply-post-ref">
-                            <small>In reply to: <strong>"Difficulty sleeping lately"</strong></small>
-                        </div>
-                    </div>
-
-                    <div class="reply-footer">
-                        <button class="btn-primary small">View Full Reply</button>
-                        <button class="btn-outline small">Mark as Read</button>
-                    </div>
-
                 </div>
 
-                <div class="card reply-item">
-
-                    <div class="reply-header">
-                       <img src="https://ui-avatars.com/api/?name=Dr+Ashma+Malla&background=10B981&color=fff" alt="Dr. Ashma">
-
-                            <div>
-                                <h4>Dr. Ashma Malla</h4>
-                            <span class="psych-specialty">Child & Adolescent Psychologist</span>
-                                <span class="reply-time">2 days ago, 9:15 AM</span>
-                            </div>
-                            <span class="read-badge">Read</span>
-                        </div>
-                    </div>
-
-                    <div class="reply-body">
-                        <p class="reply-preview">
-                            Reaching out for help is one of the strongest decisions anyone can make. Celebrate every small improvement instead of expecting perfection. You are taking important steps toward healing...
-                        </p>
-                        <div class="reply-post-ref">
-                            <small>In reply to: <strong>"Feeling isolated at college"</strong></small>
-                        </div>
-                    </div>
-
-                    <div class="reply-footer">
-                        <button class="btn-primary small">View Full Reply</button>
-                    </div>
-
+                <div class="reply-footer">
+                    <button class="reply-btn primary view-reply-btn">View Full Reply</button>
                 </div>
-
-                <div class="card reply-item">
-
-                    <div class="reply-header">
-                        <img src="https://ui-avatars.com/api/?name=Dr+Asha+Sharma&background=4F46E5&color=fff" alt="Dr. Asha">
-                        <div>
-                            <h4>Dr. Asha Sharma</h4>
-                            <span class="psych-specialty">Clinical Psychologist</span>
-                            <span class="reply-time">3 days ago, 2:30 PM</span>
-                        </div>
-                        <span class="read-badge">Read</span>
-                    </div>
-
-                    <div class="reply-body">
-                        <p class="reply-preview">
-                            Family pressure can be overwhelming. It's important to establish healthy boundaries and communicate your feelings respectfully. Remember that your mental health matters too...
-                        </p>
-                        <div class="reply-post-ref">
-                            <small>In reply to: <strong>"Family pressure and stress"</strong></small>
-                        </div>
-                    </div>
-
-                    <div class="reply-footer">
-                        <button class="btn-primary small">View Full Reply</button>
-                    </div>
-
-                </div>
-
             </div>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <button class="page-btn"><i class="bi bi-chevron-left"></i></button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn"><i class="bi bi-chevron-right"></i></button>
+            <!-- Reply 4 - Read -->
+            <div class="reply-card" data-psych="saurav">
+                <div class="reply-header">
+                    <img src="https://ui-avatars.com/api/?name=Saurav+Puri&background=8B5CF6&color=fff" alt="Saurav Puri" class="reply-avatar">
+                    <div class="reply-info">
+                        <h4>Saurav Puri</h4>
+                        <span class="reply-specialty">Cognitive Behavioral Therapist</span>
+                        <span class="reply-date"><i class="bi bi-clock"></i> 3 days ago, 2:30 PM</span>
+                    </div>
+                    <span class="reply-status read-badge">Read</span>
+                </div>
+
+                <div class="reply-body">
+                    <p class="reply-text">
+                        Family pressure can be overwhelming. It's important to establish healthy boundaries and communicate your feelings respectfully. Remember that your mental health matters too and it's okay to prioritize yourself.
+                    </p>
+                    <div class="reply-post-ref">
+                        <i class="bi bi-arrow-return-right"></i>
+                        <span>In reply to: <strong>"Family pressure and stress"</strong></span>
+                    </div>
+                </div>
+
+                <div class="reply-footer">
+                    <button class="reply-btn primary view-reply-btn">View Full Reply</button>
+                </div>
+            </div>
+
+            <!-- Reply 5 - Unread -->
+            <div class="reply-card unread" data-psych="prasanna">
+                <div class="reply-header">
+                    <img src="https://ui-avatars.com/api/?name=Prasanna+Neupane&background=3B82F6&color=fff" alt="Prasanna Neupane" class="reply-avatar">
+                    <div class="reply-info">
+                        <h4>Prasanna Neupane</h4>
+                        <span class="reply-specialty">Clinical Psychologist</span>
+                        <span class="reply-date"><i class="bi bi-clock"></i> 4 days ago, 11:00 AM</span>
+                    </div>
+                    <span class="reply-status unread-badge">Unread</span>
+                </div>
+
+                <div class="reply-body">
+                    <p class="reply-text">
+                        Your feelings are completely valid. It's important to acknowledge them and give yourself permission to feel. Consider journaling your thoughts or talking to someone you trust. Professional support is also available whenever you need it.
+                    </p>
+                    <div class="reply-post-ref">
+                        <i class="bi bi-arrow-return-right"></i>
+                        <span>In reply to: <strong>"Feeling anxious before exams"</strong></span>
+                    </div>
+                </div>
+
+                <div class="reply-footer">
+                    <button class="reply-btn primary view-reply-btn">View Full Reply</button>
+                    <button class="reply-btn secondary mark-read-btn">Mark as Read</button>
+                </div>
+            </div>
+
+            <!-- Reply 6 - Read -->
+            <div class="reply-card" data-psych="sandip">
+                <div class="reply-header">
+                    <img src="https://ui-avatars.com/api/?name=Sandip+Dangi&background=F59E0B&color=fff" alt="Sandip Dangi" class="reply-avatar">
+                    <div class="reply-info">
+                        <h4>Sandip Dangi</h4>
+                        <span class="reply-specialty">Psychotherapist</span>
+                        <span class="reply-date"><i class="bi bi-clock"></i> 5 days ago, 4:20 PM</span>
+                    </div>
+                    <span class="reply-status read-badge">Read</span>
+                </div>
+
+                <div class="reply-body">
+                    <p class="reply-text">
+                        Healing is not linear and that's perfectly okay. Some days will be better than others and that's part of the journey. Be kind to yourself and recognize your courage in seeking help.
+                    </p>
+                    <div class="reply-post-ref">
+                        <i class="bi bi-arrow-return-right"></i>
+                        <span>In reply to: <strong>"Feeling isolated at college"</strong></span>
+                    </div>
+                </div>
+
+                <div class="reply-footer">
+                    <button class="reply-btn primary view-reply-btn">View Full Reply</button>
+                </div>
             </div>
 
         </div>
 
+        <!-- ==========================================================
+            PAGINATION
+        ========================================================== -->
 
+        <div class="pagination">
+            <button class="page-btn prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn next"><i class="bi bi-chevron-right"></i></button>
+        </div>
 
-        <footer class="footer">
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
 
-            <div class="footer-left">
-                <img src="/HealLink/assets/image/logo.png" alt="CareConnect" class="footer-logo">
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </div>
                 <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/HealLink/public/privacy.html">Privacy Policy</a>
+                    <a href="/HealLink/public/terms.html">Terms of Service</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
             </div>
-
-            <div class="footer-links">
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="contact.html">Contact</a>
-            </div>
-
         </footer>
 
     </main>

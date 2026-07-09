@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/userdashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/dashall.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/responsivedashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/notification.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="user-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="user-dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="create-post.html">Create Post</a></li>
+                    <li><a href="my-posts.html">My Posts</a></li>
+                    <li><a href="replies.html">Replies</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="notifications.html" class="active">Notifications <span class="nav-badge">5</span></a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
+                        <span>Nirdesh</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="profile.html"><i class="bi bi-person"></i> Profile</a>
+                        <a href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="user-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="profile.html"><i class="bi bi-person-circle"></i> My Profile</a></li>
+            <li><a href="create-post.html"><i class="bi bi-pencil-square"></i> Create Post</a></li>
+            <li><a href="my-posts.html"><i class="bi bi-journal-text"></i> My Posts</a></li>
+            <li><a href="replies.html"><i class="bi bi-chat-left-heart"></i> Replies</a></li>
+            <li><a href="appointments.html"><i class="bi bi-calendar2-check"></i> Appointments</a></li>
+            <li><a href="notifications.html" class="active"><i class="bi bi-bell"></i> Notifications <span class="badge">5</span></a></li>
+            <li><a href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
+            <div>
+                <h4>Nirdesh</h4>
+                <span>Anonymous Member</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
+                <h1>🔔 Notifications</h1>
+                <p>Stay updated with your latest activities</p>
+            </div>
+            <button class="btn-mark-all" id="markAllReadBtn">
+                <i class="bi bi-check-all"></i> Mark All Read
+            </button>
+        </div>
+
+        <!-- ==========================================================
+            STATS
+        ========================================================== -->
+
+        <div class="notif-stats">
+            <div class="stat-item">
+                <span class="stat-num" id="totalNotif">12</span>
+                <span class="stat-lbl">Total</span>
+            </div>
+            <div class="stat-line"></div>
+            <div class="stat-item">
+                <span class="stat-num" id="unreadNotif">5</span>
+                <span class="stat-lbl">Unread</span>
+            </div>
+            <div class="stat-line"></div>
+            <div class="stat-item">
+                <span class="stat-num" id="readNotif">7</span>
+                <span class="stat-lbl">Read</span>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            FILTERS
+        ========================================================== -->
+
+        <div class="filter-bar">
+            <div class="filter-btns">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="unread">Unread</button>
+                <button class="filter-btn" data-filter="read">Read</button>
+            </div>
+            <select id="filterType">
+                <option value="all">All Types</option>
+                <option value="reply">Replies</option>
+                <option value="appointment">Appointments</option>
+                <option value="resource">Resources</option>
+                <option value="milestone">Milestones</option>
+            </select>
+        </div>
+
+        <!-- ==========================================================
+            NOTIFICATIONS LIST
+        ========================================================== -->
+
+        <div class="notif-list" id="notifList">
+
+            <!-- 1 -->
+            <div class="notif-card unread" data-type="reply">
+                <div class="notif-icon green"><i class="bi bi-chat-heart-fill"></i></div>
+                <div class="notif-body">
+                    <div class="notif-head">
+                        <h4>New Reply</h4>
+                        <span class="notif-time">10 min ago</span>
+                    </div>
+                    <p>Jagadish Oli replied to your post <strong>"Feeling anxious before exams"</strong></p>
+                    <div class="notif-btns">
+                        <button class="btn-view">View Reply</button>
+                        <button class="btn-dismiss">Dismiss</button>
+                    </div>
+                </div>
+                <span class="notif-dot"></span>
+            </div>
+
+            <!-- 2 -->
+            <div class="notif-card unread" data-type="appointment">
+                <div class="notif-icon blue"><i class="bi bi-calendar-event-fill"></i></div>
+                <div class="notif-body">
+                    <div class="notif-head">
+                        <h4>Appointment Reminder</h4>
+                        <span class="notif-time">1 hour ago</span>
+                    </div>
+                    <p>Session with <strong>Sandip Dangi</strong> tomorrow at 10:30 AM</p>
+                    <div class="notif-btns">
+                        <button class="btn-view">View Details</button>
+                        <button class="btn-dismiss">Dismiss</button>
+                    </div>
+                </div>
+                <span class="notif-dot"></span>
+            </div>
+
+            <!-- 3 -->
+            <div class="notif-card unread" data-type="resource">
+                <div class="notif-icon purple"><i class="bi bi-book-fill"></i></div>
+                <div class="notif-body">
+                    <div class="notif-head">
+                        <h4>New Resource</h4>
+                        <span class="notif-time">3 hours ago</span>
+                    </div>
+                    <p>Article on <strong>Managing Anxiety</strong> added to resources</p>
+                    <div class="notif-btns">
+                        <button class="btn-view">Read Article</button>
+                        <button class="btn-dismiss">Dismiss</button>
+                    </div>
+                </div>
+                <span class="notif-dot"></span>
+            </div>
+
+            <!-- 4 -->
+            <div class="notif-card" data-type="milestone">
+                <div class="notif-icon orange"><i class="bi bi-award-fill"></i></div>
+                <div class="notif-body">
+                    <div class="notif-head">
+                        <h4>Wellness Milestone</h4>
+                        <span class="notif-time">Yesterday</span>
+                    </div>
+                    <p>Wellness score improved by <strong>5%</strong> this week</p>
+                    <div class="notif-btns">
+                        <button class="btn-view">View Progress</button>
+                        <button class="btn-dismiss">Dismiss</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="notif-card" data-type="appointment">
+                <div class="notif-icon blue"><i class="bi bi-calendar-check-fill"></i></div>
+                <div class="notif-body">
+                    <div class="notif-head">
+                        <h4>Appointment Confirmed</h4>
+                        <span class="notif-time">2 days ago</span>
+                    </div>
+                    <p>Appointment with <strong>Ashma Mall</strong> confirmed for 12 June</p>
+                    <div class="notif-btns">
+                        <button class="btn-view">View Details</button>
+                        <button class="btn-dismiss">Dismiss</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="notif-card" data-type="reply">
+                <div class="notif-icon green"><i class="bi bi-chat-heart-fill"></i></div>
+                <div class="notif-body">
+                    <div class="notif-head">
+                        <h4>New Reply</h4>
+                        <span class="notif-time">3 days ago</span>
+                    </div>
+                    <p>Kamal Bhattrai replied to your post <strong>"Feeling isolated"</strong></p>
+                    <div class="notif-btns">
+                        <button class="btn-view">View Reply</button>
+                        <button class="btn-dismiss">Dismiss</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="notif-card" data-type="resource">
+                <div class="notif-icon purple"><i class="bi bi-book-fill"></i></div>
+                <div class="notif-body">
+                    <div class="notif-head">
+                        <h4>New Resource</h4>
+                        <span class="notif-time">4 days ago</span>
+                    </div>
+                    <p><strong>Stress Management</strong> guide now available</p>
+                    <div class="notif-btns">
+                        <button class="btn-view">Read Guide</button>
+                        <button class="btn-dismiss">Dismiss</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="notif-card" data-type="milestone">
+                <div class="notif-icon orange"><i class="bi bi-award-fill"></i></div>
+                <div class="notif-body">
+                    <div class="notif-head">
+                        <h4>Wellness Achievement</h4>
+                        <span class="notif-time">5 days ago</span>
+                    </div>
+                    <p>Completed <strong>10 sessions</strong>! Keep it up!</p>
+                    <div class="notif-btns">
+                        <button class="btn-view">View Achievement</button>
+                        <button class="btn-dismiss">Dismiss</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            PAGINATION
+        ========================================================== -->
+
+        <div class="pagination">
+            <button class="page-btn prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                   <a href="/HealLink/public/privacy.html">Privacy</a>
+                    <a href="/HealLink/public/terms.html">Terms</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/userdashboard.js"></script>
+
+</body>
+
+</html>

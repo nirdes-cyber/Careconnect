@@ -10,304 +10,277 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="/HealLink/assets/css/userdashboard.css">
     <link rel="stylesheet" href="/HealLink/assets/css/responsivedashboard.css">
     <link rel="stylesheet" href="/HealLink/assets/css/dashall.css">
 </head>
 
 <body>
-    <div class="overlay" id="overlay"></div>
 
-    <aside class="sidebar" id="sidebar">
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
 
-        <div class="sidebar-header">
-            <a href="/HealLink/dashboard/userdash/user-dashboard.html" class="logo">
-                <img src="/HealLink/assets/image/logo.png" alt="CareConnect" class="logo-img">
-                <div>
-                    <h2>CareConnect</h2>
-                    <span>Mental Wellness</span>
-                </div>
-            </a>
-            <button class="close-btn" id="closeSidebar">
-                <i class="bi bi-x-lg"></i>
-            </button>
-        </div>
+    <nav class="top-nav">
+        <div class="nav-container">
 
-        <nav class="sidebar-nav">
-            <ul>
-                <li><a href="/HealLink/dashboard/userdash/user-dashboard.html"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a></li>
-                <li><a href="/HealLink/dashboard/userdash/profile.html" class="active"><i class="bi bi-person-circle"></i><span>My Profile</span></a></li>
-                <li><a href="/HealLink/dashboard/userdash/create-post.html"><i class="bi bi-pencil-square"></i><span>Create Anonymous Post</span></a></li>
-                <li><a href="/HealLink/dashboard/userdash/my-posts.html"><i class="bi bi-journal-text"></i><span>My Posts</span></a></li>
-                <li><a href="/HealLink/dashboard/userdash/replies.html"><i class="bi bi-chat-left-heart"></i><span>Psychologist Replies</span></a></li>
-                <li><a href="/HealLink/dashboard/userdash/appointments.html"><i class="bi bi-calendar2-check"></i><span>Book Appointment</span></a></li>
-                <li><a href="/HealLink/dashboard/userdash/notifications.html"><i class="bi bi-bell"></i><span>Notifications</span><span class="badge">5</span></a></li>
-                <li><a href="/HealLink/dashboard/userdash/settings.html"><i class="bi bi-gear"></i><span>Settings</span></a></li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <div class="user-card">
-                <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
-                <div>
-                    <h4>Nirdesh</h4>
-                    <span>Member</span>
-                </div>
-            </div>
-            <a href="/HealLink/dashboard/userdash/logout.html" class="logout">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Logout</span>
-            </a>
-        </div>
-
-    </aside>
-
-    <main class="main-content">
-
-        <!-- Topbar -->
-        <header class="topbar">
-
-            <div class="topbar-left">
-                <button class="menu-btn" id="menuBtn">
-                    <i class="bi bi-list"></i>
-                </button>
-                <div class="search">
-                    <i class="bi bi-search"></i>
-                    <input type="text" placeholder="Search..." id="searchInput">
-                </div>
+            <div class="nav-left">
+                <a href="user-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </a>
             </div>
 
-            <div class="topbar-right">
-                <button class="icon-btn" id="notifBtn">
-                    <i class="bi bi-bell"></i>
-                    <span class="notif-badge">5</span>
-                </button>
-                <button class="icon-btn" id="themeBtn">
-                    <i class="bi bi-moon"></i>
-                </button>
-                <div class="profile-wrap">
-                    <button class="profile-btn" id="profileBtn">
-                        <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="user-dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="create-post.html">Create Post</a></li>
+                    <li><a href="my-posts.html">My Posts</a></li>
+                    <li><a href="replies.html">Replies</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="notifications.html">Notifications <span class="nav-badge">5</span></a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
                         <span>Nirdesh</span>
                         <i class="bi bi-chevron-down"></i>
                     </button>
-                    <div class="dropdown" id="dropdown">
-                        <div class="dropdown-header">
-                            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="User">
-                            <div>
-                                <h4>Nirdesh Tiwari</h4>
-                                <p>nirdesh@email.com</p>
-                            </div>
-                        </div>
-                        <ul>
-                            <li><a href="/HealLink/dashboard/userdash/profile.html"><i class="bi bi-person"></i> My Profile</a></li>
-                            <li><a href="/HealLink/dashboard/userdash/settings.html"><i class="bi bi-gear"></i> Settings</a></li>
-                            <li><a href="/HealLink/dashboard/userdash/logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
-                        </ul>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="profile.html"><i class="bi bi-person"></i> Profile</a>
+                        <a href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
                     </div>
                 </div>
             </div>
 
-        </header>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
 
-        <!-- Content -->
-        <div class="content">
+        </div>
+    </nav>
 
-            <!-- Page Header -->
-            <div class="page-header">
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="user-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="profile.html" class="active"><i class="bi bi-person-circle"></i> My Profile</a></li>
+            <li><a href="create-post.html"><i class="bi bi-pencil-square"></i> Create Post</a></li>
+            <li><a href="my-posts.html"><i class="bi bi-journal-text"></i> My Posts</a></li>
+            <li><a href="replies.html"><i class="bi bi-chat-left-heart"></i> Replies</a></li>
+            <li><a href="appointments.html"><i class="bi bi-calendar2-check"></i> Appointments</a></li>
+            <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications <span class="badge">5</span></a></li>
+            <li><a href="settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
+            <div>
+                <h4>Nirdesh</h4>
+                <span>Anonymous Member</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
                 <h1>My Profile</h1>
-                <p>Manage your personal information and account settings</p>
+                <p>Manage your personal information</p>
+            </div>
+            <button class="edit-profile-btn" id="editToggleBtn">
+                <i class="bi bi-pencil"></i> Edit Profile
+            </button>
+        </div>
+
+        <!-- ==========================================================
+            PROFILE CARD
+        ========================================================== -->
+
+        <div class="profile-card">
+
+            <div class="profile-top">
+
+                <div class="profile-avatar-wrap">
+                    <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff&size=150" alt="Profile" id="profileAvatar">
+                    <button class="avatar-upload-btn" id="uploadPhotoBtn">
+                        <i class="bi bi-camera"></i>
+                    </button>
+                    <input type="file" id="photoInput" accept="image/*" style="display:none;">
+                </div>
+
+                <div class="profile-name-wrap">
+                    <h2 id="displayName">Nirdesh Tiwari</h2>
+                    <p class="profile-username" id="displayUsername">@nirdesh_tiwari</p>
+                    <div class="profile-badges">
+                        <span class="badge verified"><i class="bi bi-check-circle-fill"></i> Verified</span>
+                        <span class="badge anonymous"><i class="bi bi-incognito"></i> Anonymous</span>
+                        <span class="badge member"><i class="bi bi-clock"></i> Member since Apr 2026</span>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Profile Grid -->
-            <div class="profile-grid">
-
-                <!-- Profile Card -->
-                <div class="card profile-card">
-
-                    <div class="profile-avatar-section">
-
-                        <div class="profile-avatar">
-                            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff&size=150" alt="Profile Photo">
-                            <button class="avatar-edit">
-                                <i class="bi bi-camera"></i>
-                            </button>
-                        </div>
-
-                        <h2>Nirdesh Tiwari</h2>
-                        <p class="member-since">Member since April 2026</p>
-
-                        <div class="profile-stats">
-
-                            <div class="p-stat">
-                                <span>28</span>
-                                <label>Posts</label>
-                            </div>
-
-                            <div class="p-stat">
-                                <span>46</span>
-                                <label>Replies</label>
-                            </div>
-
-                            <div class="p-stat">
-                                <span>87</span>
-                                <label>Wellness Score</label>
-                            </div>
-
-                        </div>
-
-                    </div>
-
+            <div class="profile-stats">
+                <div class="stat-box">
+                    <span class="stat-num" id="statPosts">28</span>
+                    <span class="stat-lbl">Posts</span>
                 </div>
+                <div class="stat-divider"></div>
+                <div class="stat-box">
+                    <span class="stat-num" id="statReplies">46</span>
+                    <span class="stat-lbl">Replies</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-box">
+                    <span class="stat-num" id="statScore">87</span>
+                    <span class="stat-lbl">Wellness Score</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-box">
+                    <span class="stat-num" id="statAppointments">5</span>
+                    <span class="stat-lbl">Appointments</span>
+                </div>
+            </div>
 
-                <!-- Profile Info -->
-                <div class="card profile-info-card">
+        </div>
 
-                    <div class="card-header">
-                        <div>
-                            <h2>Personal Information</h2>
-                            <p>Update your profile details</p>
-                        </div>
-                        <button class="btn-primary small">Edit Profile</button>
-                    </div>
+        <!-- ==========================================================
+            PROFILE GRID
+        ========================================================== -->
 
-                    <div class="profile-details">
+        <div class="profile-grid">
 
-                        <div class="detail-row">
-                            <label>Full Name</label>
-                            <p>Nirdesh Tiwari</p>
-                        </div>
+            <!-- ==========================================================
+                LEFT - ABOUT
+            ========================================================== -->
 
-                        <div class="detail-row">
-                            <label>Email Address</label>
-                            <p>nirdesh.tiwari@email.com</p>
-                        </div>
+            <div class="profile-left">
 
-                        <div class="detail-row">
-                            <label>Username</label>
-                            <p>@nirdesh_tiwari</p>
-                        </div>
+                <div class="info-card">
+                    <h3><i class="bi bi-person"></i> About Me</h3>
+                    <div class="info-card-body">
 
-                        <div class="detail-row">
-                            <label>Member Type</label>
-                            <p><span class="badge-type">Anonymous Member</span></p>
-                        </div>
-
-                        <div class="detail-row">
-                            <label>Joined</label>
-                            <p>April 15, 2026</p>
-                        </div>
-
-                        <div class="detail-row">
+                        <div class="bio-section">
                             <label>Bio</label>
-                            <p>Passionate about mental health awareness and helping others. Currently a CSIT student working on CareConnect project.</p>
+                            <p class="bio-text" id="bioText">Passionate about mental health awareness and helping others. Currently a CSIT student working on CareConnect project. Believer in the power of kindness and empathy.</p>
+                            <textarea class="bio-edit" id="bioEdit" style="display:none;" rows="4">Passionate about mental health awareness and helping others. Currently a CSIT student working on CareConnect project. Believer in the power of kindness and empathy.</textarea>
+                        </div>
+
+                        <div class="info-grid">
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-envelope"></i> Email</span>
+                                <span class="info-val" id="infoEmail">nirdesh.tiwari@email.com</span>
+                                <input type="email" class="info-edit" id="editEmail" value="nirdesh.tiwari@email.com" style="display:none;">
+                            </div>
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-phone"></i> Phone</span>
+                                <span class="info-val" id="infoPhone">+977-9841234567</span>
+                                <input type="text" class="info-edit" id="editPhone" value="+977-9841234567" style="display:none;">
+                            </div>
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-calendar3"></i> DOB</span>
+                                <span class="info-val" id="infoDob">15 April 2000</span>
+                                <input type="date" class="info-edit" id="editDob" value="2000-04-15" style="display:none;">
+                            </div>
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-gender-ambiguous"></i> Gender</span>
+                                <span class="info-val" id="infoGender">Male</span>
+                                <select class="info-edit" id="editGender" style="display:none;">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Prefer not to say">Prefer not to say</option>
+                                </select>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-geo-alt"></i> Location</span>
+                                <span class="info-val" id="infoLocation">Kathmandu, Nepal</span>
+                                <input type="text" class="info-edit" id="editLocation" value="Kathmandu, Nepal" style="display:none;">
+                            </div>
+                        </div>
+
+                        <div class="edit-actions" id="editActions" style="display:none;">
+                            <button class="btn-save" id="saveProfileBtn"><i class="bi bi-check-circle"></i> Save Changes</button>
+                            <button class="btn-cancel" id="cancelEditBtn"><i class="bi bi-x-circle"></i> Cancel</button>
                         </div>
 
                     </div>
-
                 </div>
 
-                <!-- Account Settings -->
-                <div class="card settings-card">
+            </div>
 
-                    <div class="card-header">
-                        <div>
-                            <h2>Account Settings</h2>
-                            <p>Manage your account preferences</p>
-                        </div>
-                    </div>
+            <!-- ==========================================================
+                RIGHT - ACTIVITY & CONNECTIONS
+            ========================================================== -->
 
-                    <div class="settings-list">
-
-                        <div class="setting-item">
-                            <div>
-                                <h4>Anonymous Mode</h4>
-                                <p>Keep your identity hidden when posting</p>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" checked>
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-
-                        <div class="setting-item">
-                            <div>
-                                <h4>Email Notifications</h4>
-                                <p>Receive email updates about replies and appointments</p>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" checked>
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-
-                        <div class="setting-item">
-                            <div>
-                                <h4>Two-Factor Authentication</h4>
-                                <p>Add an extra layer of security to your account</p>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-
-                        <div class="setting-item">
-                            <div>
-                                <h4>Account Visibility</h4>
-                                <p>Make your profile visible to psychologists</p>
-                            </div>
-                            <label class="toggle">
-                                <input type="checkbox" checked>
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-
-                    </div>
-
-                </div>
+            <div class="profile-right">
 
                 <!-- Recent Activity -->
-                <div class="card activity-card">
-
-                    <div class="card-header">
-                        <div>
-                            <h2>Recent Activity</h2>
-                            <p>Your latest actions</p>
-                        </div>
-                    </div>
-
-                    <div class="activity-list">
+                <div class="info-card">
+                    <h3><i class="bi bi-clock-history"></i> Recent Activity</h3>
+                    <div class="info-card-body activity-body">
 
                         <div class="activity-item">
-                            <span class="a-icon primary"><i class="bi bi-pencil-square"></i></span>
+                            <span class="act-icon blue"><i class="bi bi-pencil-square"></i></span>
                             <div>
-                                <h4>Created a new post</h4>
-                                <p>Feeling anxious before exams</p>
+                                <h4>Created a post</h4>
+                                <p>"Feeling anxious before exams"</p>
                                 <span>2 hours ago</span>
                             </div>
                         </div>
 
                         <div class="activity-item">
-                            <span class="a-icon success"><i class="bi bi-chat-heart"></i></span>
+                            <span class="act-icon green"><i class="bi bi-chat-heart"></i></span>
                             <div>
                                 <h4>Received a reply</h4>
-                                <p>Dr. Asha Sharma responded to your post</p>
+                                <p>Jagadish Oli responded</p>
                                 <span>5 hours ago</span>
                             </div>
                         </div>
 
                         <div class="activity-item">
-                            <span class="a-icon info"><i class="bi bi-calendar-check"></i></span>
+                            <span class="act-icon orange"><i class="bi bi-calendar-check"></i></span>
                             <div>
-                                <h4>Booked an appointment</h4>
-                                <p>With Dr. Anisha Shrestha</p>
+                                <h4>Booked appointment</h4>
+                                <p>With Sandip Dangi</p>
                                 <span>1 day ago</span>
                             </div>
                         </div>
 
                         <div class="activity-item">
-                            <span class="a-icon warning"><i class="bi bi-award"></i></span>
+                            <span class="act-icon purple"><i class="bi bi-award"></i></span>
                             <div>
                                 <h4>Wellness milestone</h4>
                                 <p>Reached 87% wellness score</p>
@@ -316,28 +289,85 @@
                         </div>
 
                     </div>
+                </div>
 
+                <!-- Connected Psychologists -->
+                <div class="info-card">
+                    <h3><i class="bi bi-chat-heart"></i> Your Psychologists</h3>
+                    <div class="info-card-body psych-body">
+
+                        <div class="psych-item">
+                            <img src="https://ui-avatars.com/api/?name=Jagadish+Oli&background=4F46E5&color=fff" alt="Jagadish Oli">
+                            <div>
+                                <h4>Jagadish Oli</h4>
+                                <span>Clinical Psychologist</span>
+                                <span class="psych-status active"><i class="bi bi-check-circle"></i> Active</span>
+                            </div>
+                            <button class="msg-btn">Message</button>
+                        </div>
+
+                        <div class="psych-item">
+                            <img src="https://ui-avatars.com/api/?name=Ashma+Mall&background=06B6D4&color=fff" alt="Ashma Mall">
+                            <div>
+                                <h4>Ashma Mall</h4>
+                                <span>Counseling Psychologist</span>
+                                <span class="psych-status active"><i class="bi bi-check-circle"></i> Active</span>
+                            </div>
+                            <button class="msg-btn">Message</button>
+                        </div>
+
+                        <div class="psych-item">
+                            <img src="https://ui-avatars.com/api/?name=Sandip+Dangi&background=F59E0B&color=fff" alt="Sandip Dangi">
+                            <div>
+                                <h4>Sandip Dangi</h4>
+                                <span>Psychotherapist</span>
+                                <span class="psych-status pending"><i class="bi bi-clock"></i> Pending</span>
+                            </div>
+                            <button class="msg-btn" disabled>Waiting</button>
+                        </div>
+
+                        <div class="psych-item">
+                            <img src="https://ui-avatars.com/api/?name=Prasanna+Neupane&background=3B82F6&color=fff" alt="Prasanna Neupane">
+                            <div>
+                                <h4>Prasanna Neupane</h4>
+                                <span>Clinical Psychologist</span>
+                                <span class="psych-status active"><i class="bi bi-check-circle"></i> Active</span>
+                            </div>
+                            <button class="msg-btn">Message</button>
+                        </div>
+
+                    </div>
+                    <div class="info-card-footer">
+                        <a href="appointments.html" class="view-link">Find more psychologists →</a>
+                    </div>
                 </div>
 
             </div>
 
         </div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-left">
-                <img src="/HealLink/assets/image/logo.png" alt="CareConnect" class="footer-logo">
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </div>
                 <p>&copy; 2026 CareConnect. All rights reserved.</p>
-            </div>
-            <div class="footer-links">
-                <a href="/HealLink/dashboard/userdash/privacy.html">Privacy</a>
-                <a href="/HealLink/dashboard/userdash/terms.html">Terms</a>
-                <a href="/HealLink/public/contact.html">Contact</a>
+                <div class="footer-links">
+                <a href="/HealLink/public/privacy.html">Privacy</a>
+                    <a href="/HealLink/public/terms.html">Terms</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
             </div>
         </footer>
 
     </main>
-<script src="/HealLink/assets/js/userdashboard.js"></script>
+
+    <script src="/HealLink/assets/js/userdashboard.js"></script>
 
 </body>
 

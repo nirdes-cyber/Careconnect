@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/userdashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/usersetting.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/responsivedashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/dashall.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="user-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="user-dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="create-post.html">Create Post</a></li>
+                    <li><a href="my-posts.html">My Posts</a></li>
+                    <li><a href="replies.html">Replies</a></li>
+                    <li><a href="appointments.html">Appointments</a></li>
+                    <li><a href="notifications.html">Notifications <span class="nav-badge">5</span></a></li>
+                    <li><a href="settings.html" class="active">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
+                        <span>Nirdesh</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="profile.html"><i class="bi bi-person"></i> Profile</a>
+                        <a href="settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="user-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="profile.html"><i class="bi bi-person-circle"></i> My Profile</a></li>
+            <li><a href="create-post.html"><i class="bi bi-pencil-square"></i> Create Post</a></li>
+            <li><a href="my-posts.html"><i class="bi bi-journal-text"></i> My Posts</a></li>
+            <li><a href="replies.html"><i class="bi bi-chat-left-heart"></i> Replies</a></li>
+            <li><a href="appointments.html"><i class="bi bi-calendar2-check"></i> Appointments</a></li>
+            <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications <span class="badge">5</span></a></li>
+            <li><a href="settings.html" class="active"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
+            <div>
+                <h4>Nirdesh</h4>
+                <span>Anonymous Member</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
+                <h1>⚙️ Settings</h1>
+                <p>Manage your account preferences and privacy</p>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            SETTINGS GRID
+        ========================================================== -->
+
+        <div class="settings-grid">
+
+            <!-- ==========================================================
+                LEFT COLUMN - MAIN SETTINGS
+            ========================================================== -->
+
+            <div class="settings-left">
+
+                <!-- Account Settings -->
+                <div class="settings-card">
+                    <div class="card-head">
+                        <h3><i class="bi bi-person"></i> Account Settings</h3>
+                        <p>Manage your account preferences</p>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Display Name</h4>
+                                <p>Your public display name</p>
+                            </div>
+                            <div class="setting-action">
+                                <span>Nirdesh Tiwari</span>
+                                <button class="edit-btn" data-field="displayName">Edit</button>
+                            </div>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>Your registered email</p>
+                            </div>
+                            <div class="setting-action">
+                                <span>nirdesh.tiwari@email.com</span>
+                                <button class="edit-btn" data-field="email">Edit</button>
+                            </div>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Username</h4>
+                                <p>Your unique username</p>
+                            </div>
+                            <div class="setting-action">
+                                <span>@nirdesh_tiwari</span>
+                                <button class="edit-btn" data-field="username">Edit</button>
+                            </div>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>Your contact number</p>
+                            </div>
+                            <div class="setting-action">
+                                <span>+977-9841234567</span>
+                                <button class="edit-btn" data-field="phone">Edit</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Security -->
+                <div class="settings-card">
+                    <div class="card-head">
+                        <h3><i class="bi bi-shield-lock"></i> Security</h3>
+                        <p>Manage your security settings</p>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Change Password</h4>
+                                <p>Update your account password</p>
+                            </div>
+                            <button class="btn-action primary" id="changePasswordBtn">
+                                <i class="bi bi-key"></i> Change
+                            </button>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Two-Factor Authentication</h4>
+                                <p>Add extra security layer</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="twoFactorToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Login Sessions</h4>
+                                <p>Manage your active sessions</p>
+                            </div>
+                            <button class="btn-action secondary" id="manageSessionsBtn">
+                                <i class="bi bi-laptop"></i> Manage
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Privacy -->
+                <div class="settings-card">
+                    <div class="card-head">
+                        <h3><i class="bi bi-incognito"></i> Privacy</h3>
+                        <p>Control your privacy settings</p>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Anonymous Mode</h4>
+                                <p>Keep identity hidden when posting</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked id="anonymousToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Profile Visibility</h4>
+                                <p>Visible to psychologists</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked id="visibilityToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Activity Status</h4>
+                                <p>Show when you're active</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="activityToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Data Sharing</h4>
+                                <p>Allow anonymous data for research</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="dataToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ==========================================================
+                RIGHT COLUMN - QUICK SETTINGS
+            ========================================================== -->
+
+            <div class="settings-right">
+
+                <!-- Notifications Settings -->
+                <div class="settings-card">
+                    <div class="card-head">
+                        <h3><i class="bi bi-bell"></i> Notifications</h3>
+                        <p>Manage notification preferences</p>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Email Notifications</h4>
+                                <p>Receive email updates</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked id="emailNotifToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Push Notifications</h4>
+                                <p>Browser notifications</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="pushNotifToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Reply Notifications</h4>
+                                <p>When someone replies to your post</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked id="replyNotifToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Appointment Reminders</h4>
+                                <p>Get reminders for sessions</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked id="apptNotifToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Appearance -->
+                <div class="settings-card">
+                    <div class="card-head">
+                        <h3><i class="bi bi-palette"></i> Appearance</h3>
+                        <p>Customize your experience</p>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Dark Mode</h4>
+                                <p>Switch between light and dark</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="darkModeToggle">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Font Size</h4>
+                                <p>Adjust text size</p>
+                            </div>
+                            <select id="fontSizeSelect" class="setting-select">
+                                <option value="small">Small</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-row">
+                            <div>
+                                <h4>Language</h4>
+                                <p>Choose your preferred language</p>
+                            </div>
+                            <select id="languageSelect" class="setting-select">
+                                <option value="en" selected>English</option>
+                                <option value="np">Nepali</option>
+                                <option value="hi">Hindi</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Danger Zone -->
+                <div class="settings-card danger-zone">
+                    <div class="card-head">
+                        <h3><i class="bi bi-exclamation-triangle"></i> Danger Zone</h3>
+                        <p>Permanent actions that cannot be undone</p>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="setting-row danger-row">
+                            <div>
+                                <h4>Delete Account</h4>
+                                <p>Permanently delete your account and all data</p>
+                            </div>
+                            <button class="btn-action danger" id="deleteAccountBtn">
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+                        </div>
+
+                        <div class="setting-row danger-row">
+                            <div>
+                                <h4>Clear History</h4>
+                                <p>Remove all your post and activity history</p>
+                            </div>
+                            <button class="btn-action danger" id="clearHistoryBtn">
+                                <i class="bi bi-eraser"></i> Clear
+                            </button>
+                        </div>
+
+                        <div class="setting-row danger-row">
+                            <div>
+                                <h4>Deactivate Account</h4>
+                                <p>Temporarily deactivate your account</p>
+                            </div>
+                            <button class="btn-action warning" id="deactivateBtn">
+                                <i class="bi bi-pause-circle"></i> Deactivate
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            SAVE BUTTON
+        ========================================================== -->
+
+        <div class="save-section">
+            <button class="btn-save-all" id="saveAllBtn">
+                <i class="bi bi-check-circle"></i> Save All Settings
+            </button>
+            <p>All settings will be saved to your account</p>
+        </div>
+
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/HealLink/public/privacy.html">Privacy</a>
+                    <a href="/HealLink/public/terms.html">Terms</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/userdashboard.js"></script>
+
+</body>
+
+</html>
