@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychologist Profile | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist-responsive.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="psychologist-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="psychologist-dashboard.html">Dashboard</a></li>
+                    <li><a href="psychologist-profile.html" class="active">Profile</a></li>
+                    <li><a href="psychologist-posts.html">Anonymous Posts</a></li>
+                    <li><a href="psychologist-replies.html">My Replies</a></li>
+                    <li><a href="psychologist-appointments.html">Appointments</a></li>
+                    <li><a href="psychologist-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+                        <span>Dr. Jagadish</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="psychologist-profile.html"><i class="bi bi-person"></i> Profile</a>
+                        <a href="psychologist-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="psychologist-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="psychologist-profile.html" class="active"><i class="bi bi-person-circle"></i> My Profile</a></li>
+            <li><a href="psychologist-posts.html"><i class="bi bi-journal-text"></i> Anonymous Posts</a></li>
+            <li><a href="psychologist-replies.html"><i class="bi bi-chat-left-heart"></i> My Replies</a></li>
+            <li><a href="psychologist-appointments.html"><i class="bi bi-calendar2-check"></i> Appointments</a></li>
+            <li><a href="psychologist-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+            <div>
+                <h4>Dr. Jagadish Oli</h4>
+                <span>Clinical Psychologist</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+    <main class="main-content">
+
+
+        <div class="page-header">
+            <div>
+                <h1>👤 Psychologist Profile</h1>
+                <p>Manage your professional information and credentials</p>
+            </div>
+            <button class="btn-edit-profile" id="editProfileBtn">
+                <i class="bi bi-pencil"></i> Edit Profile
+            </button>
+        </div>
+
+        <!-- ==========================================================
+            PROFILE COVER
+        ========================================================== -->
+
+        <div class="profile-cover">
+
+            <div class="cover-gradient"></div>
+
+            <div class="cover-content">
+
+                <div class="avatar-section">
+                    <div class="avatar-wrapper">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff&size=150" alt="Profile" id="profileAvatar">
+                        <button class="avatar-upload" id="uploadPhotoBtn">
+                            <i class="bi bi-camera"></i>
+                        </button>
+                    </div>
+                    <div class="avatar-info">
+                        <h1 id="displayName">Dr. Jagadish Oli</h1>
+                        <p class="username" id="displayUsername">@dr_jagadish_oli</p>
+                        <div class="badges">
+                            <span class="badge verified"><i class="bi bi-check-circle-fill"></i> Verified</span>
+                            <span class="badge psychologist"><i class="bi bi-award"></i> Clinical Psychologist</span>
+                            <span class="badge member"><i class="bi bi-clock"></i> Member since Jan 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number">24</span>
+                        <span class="stat-label">Posts Replied</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">46</span>
+                        <span class="stat-label">Total Replies</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">87</span>
+                        <span class="stat-label">Patients Helped</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.8</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            PROFILE GRID
+        ========================================================== -->
+
+        <div class="profile-grid">
+
+            <!-- ==========================================================
+                LEFT COLUMN
+            ========================================================== -->
+
+            <div class="profile-left">
+
+                <!-- About Me -->
+                <div class="profile-card">
+
+                    <div class="card-head">
+                        <div>
+                            <h3><i class="bi bi-person"></i> About Me</h3>
+                            <p>Professional information</p>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="bio-section">
+                            <label>Bio</label>
+                            <p class="bio-text" id="bioText">Experienced Clinical Psychologist with over 8 years of practice. Specialized in anxiety disorders, depression, and stress management. Dedicated to helping individuals achieve mental wellness through evidence-based approaches.</p>
+                            <textarea class="bio-edit" id="bioEdit" style="display:none;" rows="4">Experienced Clinical Psychologist with over 8 years of practice. Specialized in anxiety disorders, depression, and stress management. Dedicated to helping individuals achieve mental wellness through evidence-based approaches.</textarea>
+                        </div>
+
+                        <div class="info-grid">
+
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-envelope"></i> Email</span>
+                                <span class="info-val" id="infoEmail">dr.jagadish@careconnect.com</span>
+                                <input type="email" class="info-edit" id="editEmail" value="dr.jagadish@careconnect.com" style="display:none;">
+                            </div>
+
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-phone"></i> Phone</span>
+                                <span class="info-val" id="infoPhone">+977-9841234567</span>
+                                <input type="text" class="info-edit" id="editPhone" value="+977-9841234567" style="display:none;">
+                            </div>
+
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-calendar3"></i> License Number</span>
+                                <span class="info-val" id="infoLicense">NMC-2024-0789</span>
+                                <input type="text" class="info-edit" id="editLicense" value="NMC-2024-0789" style="display:none;">
+                            </div>
+
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-award"></i> Specialization</span>
+                                <span class="info-val" id="infoSpecialization">Anxiety, Depression, Stress Management</span>
+                                <input type="text" class="info-edit" id="editSpecialization" value="Anxiety, Depression, Stress Management" style="display:none;">
+                            </div>
+
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-geo-alt"></i> Location</span>
+                                <span class="info-val" id="infoLocation">Kathmandu, Nepal</span>
+                                <input type="text" class="info-edit" id="editLocation" value="Kathmandu, Nepal" style="display:none;">
+                            </div>
+
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-clock"></i> Experience</span>
+                                <span class="info-val" id="infoExperience">8 years</span>
+                                <input type="text" class="info-edit" id="editExperience" value="8 years" style="display:none;">
+                            </div>
+
+                            <div class="info-row">
+                                <span class="info-lbl"><i class="bi bi-gender-ambiguous"></i> Gender</span>
+                                <span class="info-val" id="infoGender">Male</span>
+                                <select class="info-edit" id="editGender" style="display:none;">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Prefer not to say">Prefer not to say</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="edit-actions" id="editActions" style="display:none;">
+                            <button class="btn-save" id="saveProfileBtn"><i class="bi bi-check-circle"></i> Save Changes</button>
+                            <button class="btn-cancel" id="cancelEditBtn"><i class="bi bi-x-circle"></i> Cancel</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Qualifications -->
+                <div class="profile-card">
+                    <div class="card-head">
+                        <div>
+                            <h3><i class="bi bi-mortarboard"></i> Qualifications</h3>
+                            <p>Education and certifications</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="qual-item">
+                            <div class="qual-icon"><i class="bi bi-book"></i></div>
+                            <div>
+                                <h4>PhD in Clinical Psychology</h4>
+                                <span>Tribhuvan University, Kathmandu</span>
+                                <span class="qual-year">2015 - 2020</span>
+                            </div>
+                        </div>
+
+                        <div class="qual-item">
+                            <div class="qual-icon"><i class="bi bi-book"></i></div>
+                            <div>
+                                <h4>Masters in Psychology</h4>
+                                <span>Tribhuvan University, Kathmandu</span>
+                                <span class="qual-year">2010 - 2012</span>
+                            </div>
+                        </div>
+
+                        <div class="qual-item">
+                            <div class="qual-icon"><i class="bi bi-award"></i></div>
+                            <div>
+                                <h4>Certified Cognitive Behavioral Therapist</h4>
+                                <span>International CBT Association</span>
+                                <span class="qual-year">2018</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ==========================================================
+                RIGHT COLUMN
+            ========================================================== -->
+
+            <div class="profile-right">
+
+                <!-- Availability -->
+                <div class="profile-card">
+                    <div class="card-head">
+                        <div>
+                            <h3><i class="bi bi-clock"></i> Availability</h3>
+                            <p>Your consultation schedule</p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="availability-item">
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">9:00 AM - 6:00 PM</span>
+                        </div>
+
+                        <div class="availability-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">10:00 AM - 2:00 PM</span>
+                        </div>
+
+                        <div class="availability-item">
+                            <span class="day">Sunday</span>
+                            <span class="time status-off">Off</span>
+                        </div>
+
+                        <div class="availability-edit" id="availabilityEdit" style="display:none;">
+                            <div class="avail-row">
+                                <label>Monday - Friday</label>
+                                <input type="text" value="9:00 AM - 6:00 PM" class="avail-input">
+                            </div>
+                            <div class="avail-row">
+                                <label>Saturday</label>
+                                <input type="text" value="10:00 AM - 2:00 PM" class="avail-input">
+                            </div>
+                            <div class="avail-row">
+                                <label>Sunday</label>
+                                <input type="text" value="Off" class="avail-input">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="profile-card">
+                    <div class="card-head">
+                        <div>
+                            <h3><i class="bi bi-clock-history"></i> Recent Activity</h3>
+                            <p>Your latest actions</p>
+                        </div>
+                    </div>
+                    <div class="card-body activity-body">
+
+                        <div class="activity-item">
+                            <span class="act-icon blue"><i class="bi bi-chat-heart"></i></span>
+                            <div>
+                                <h4>Replied to anonymous post</h4>
+                                <p>"Feeling anxious before exams"</p>
+                                <span>2 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="act-icon green"><i class="bi bi-calendar-check"></i></span>
+                            <div>
+                                <h4>Completed consultation</h4>
+                                <p>With Nirdesh Tiwari</p>
+                                <span>5 hours ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="act-icon orange"><i class="bi bi-pencil-square"></i></span>
+                            <div>
+                                <h4>Updated profile</h4>
+                                <p>Changed availability hours</p>
+                                <span>1 day ago</span>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="act-icon purple"><i class="bi bi-award"></i></span>
+                            <div>
+                                <h4>Received positive feedback</h4>
+                                <p>5-star rating from patient</p>
+                                <span>3 days ago</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Patients -->
+                <div class="profile-card">
+                    <div class="card-head">
+                        <div>
+                            <h3><i class="bi bi-people"></i> Recent Patients</h3>
+                            <p>People you've helped</p>
+                        </div>
+                    </div>
+                    <div class="card-body patients-body">
+
+                        <div class="patient-item">
+                            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
+                            <div>
+                                <h4>Nirdesh Tiwari</h4>
+                                <span>Last session: 2 days ago</span>
+                            </div>
+                            <span class="patient-status active">Active</span>
+                        </div>
+
+                        <div class="patient-item">
+                            <img src="https://ui-avatars.com/api/?name=Anonymous+User&background=10B981&color=fff" alt="Anonymous">
+                            <div>
+                                <h4>Anonymous User</h4>
+                                <span>Last session: 5 days ago</span>
+                            </div>
+                            <span class="patient-status completed">Completed</span>
+                        </div>
+
+                        <div class="patient-item">
+                            <img src="https://ui-avatars.com/api/?name=Anonymous+User&background=F59E0B&color=fff" alt="Anonymous">
+                            <div>
+                                <h4>Anonymous User</h4>
+                                <span>Last session: 1 week ago</span>
+                            </div>
+                            <span class="patient-status pending">Pending</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/psychologist-dashboard.js"></script>
+
+</body>
+
+</html>

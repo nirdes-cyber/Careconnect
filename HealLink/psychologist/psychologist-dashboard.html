@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychologist Dashboard | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist-responsive.css">
+</head>
+
+<body>
+
+
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="psychologist-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="psychologist-dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="psychologist-profile.html">Profile</a></li>
+                    <li><a href="psychologist-posts.html">Anonymous Posts</a></li>
+                    <li><a href="psychologist-replies.html">My Replies</a></li>
+                    <li><a href="psychologist-appointments.html">Appointments</a></li>
+                    <li><a href="psychologist-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+                        <span>Dr. Jagadish</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="psychologist-profile.html"><i class="bi bi-person"></i> Profile</a>
+                        <a href="psychologist-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+   
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="psychologist-dashboard.html" class="active"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="psychologist-profile.html"><i class="bi bi-person-circle"></i> My Profile</a></li>
+            <li><a href="psychologist-posts.html"><i class="bi bi-journal-text"></i> Anonymous Posts</a></li>
+            <li><a href="psychologist-replies.html"><i class="bi bi-chat-left-heart"></i> My Replies</a></li>
+            <li><a href="psychologist-appointments.html"><i class="bi bi-calendar2-check"></i> Appointments</a></li>
+            <li><a href="psychologist-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+            <div>
+                <h4>Dr. Jagadish Oli</h4>
+                <span>Clinical Psychologist</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <div class="video-modal-header">
+                <h3><i class="bi bi-camera-video"></i> Video Consultation</h3>
+                <button class="video-modal-close" id="videoModalClose">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="video-modal-body">
+                <div class="video-container">
+                    <div class="video-local">
+                        <video id="localVideo" autoplay muted></video>
+                        <div class="video-label">You (Dr. Jagadish)</div>
+                    </div>
+                    <div class="video-remote">
+                        <div class="remote-placeholder">
+                            <i class="bi bi-person-circle"></i>
+                            <p>Patient is connecting...</p>
+                            <span>Please wait</span>
+                        </div>
+                        <div class="video-label">Patient</div>
+                    </div>
+                </div>
+                <div class="video-controls">
+                    <button class="video-btn mute-btn" id="muteBtn">
+                        <i class="bi bi-mic"></i>
+                    </button>
+                    <button class="video-btn video-off-btn" id="videoOffBtn">
+                        <i class="bi bi-camera-video"></i>
+                    </button>
+                    <button class="video-btn end-call-btn" id="endCallBtn">
+                        <i class="bi bi-telephone-x"></i> End Call
+                    </button>
+                    <button class="video-btn share-btn" id="shareBtn">
+                        <i class="bi bi-share"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-modal-overlay" id="videoModalOverlay"></div>
+
+
+    <main class="main-content">
+
+     
+
+        <div class="welcome-section">
+            <div class="welcome-box">
+                <div>
+                    <span class="welcome-tag"><i class="bi bi-award"></i> Verified Psychologist</span>
+                    <h1>Good Morning, <span class="highlight">Dr. Jagadish Oli</span> 👋</h1>
+                    <p>Welcome to your psychologist dashboard. You have new anonymous posts waiting for your expert guidance.</p>
+                    <div class="welcome-btns">
+                        <a href="psychologist-posts.html" class="btn-primary"><i class="bi bi-chat-text"></i> View Posts</a>
+                        <a href="psychologist-appointments.html" class="btn-secondary"><i class="bi bi-calendar2-check"></i> Manage Appointments</a>
+                    </div>
+                </div>
+                <div class="welcome-illustration">
+                    <div class="ill-circle c1"></div>
+                    <div class="ill-circle c2"></div>
+                    <div class="ill-circle c3"></div>
+                    <div class="hero-card">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                        <h4>Helping Minds</h4>
+                        <p>You're making a difference</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            STATISTICS
+        ========================================================== -->
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="bi bi-journal-text"></i></div>
+                <div>
+                    <span class="stat-label">Anonymous Posts</span>
+                    <h2 class="counter" data-target="24">0</h2>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up"></i> 12 this week</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="bi bi-chat-heart"></i></div>
+                <div>
+                    <span class="stat-label">Replies Given</span>
+                    <h2 class="counter" data-target="46">0</h2>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up"></i> 8 this week</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange"><i class="bi bi-calendar-event"></i></div>
+                <div>
+                    <span class="stat-label">Appointments</span>
+                    <h2 class="counter" data-target="12">0</h2>
+                    <span class="stat-trend"><i class="bi bi-clock"></i> 3 upcoming</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple"><i class="bi bi-people"></i></div>
+                <div>
+                    <span class="stat-label">Patients Helped</span>
+                    <h2 class="counter" data-target="87">0</h2>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up"></i> +5 this month</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            MAIN GRID
+        ========================================================== -->
+
+        <div class="dashboard-grid">
+
+            <!-- ==========================================================
+                ANONYMOUS POSTS
+            ========================================================== -->
+
+            <div class="grid-left">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>📄 Anonymous Posts</h3>
+                            <p>Posts waiting for your response</p>
+                        </div>
+                        <a href="psychologist-posts.html" class="view-link">View All →</a>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="post-item">
+                            <div class="post-header">
+                                <h4>Feeling anxious before exams</h4>
+                                <span class="post-status new">New</span>
+                            </div>
+                            <div class="post-meta">
+                                <span class="post-cat anxiety">Anxiety</span>
+                                <span class="post-date">2 hours ago</span>
+                                <span class="post-replies"><i class="bi bi-chat"></i> 0 replies</span>
+                            </div>
+                            <p class="post-preview">I have been feeling extremely anxious about my upcoming exams. I can't sleep properly and I keep overthinking...</p>
+                            <a href="#" class="post-action">Reply Now →</a>
+                        </div>
+
+                        <div class="post-item">
+                            <div class="post-header">
+                                <h4>Difficulty sleeping lately</h4>
+                                <span class="post-status new">New</span>
+                            </div>
+                            <div class="post-meta">
+                                <span class="post-cat sleep">Sleep</span>
+                                <span class="post-date">5 hours ago</span>
+                                <span class="post-replies"><i class="bi bi-chat"></i> 0 replies</span>
+                            </div>
+                            <p class="post-preview">I have been having trouble sleeping for the past few weeks. I wake up multiple times during the night...</p>
+                            <a href="#" class="post-action">Reply Now →</a>
+                        </div>
+
+                        <div class="post-item">
+                            <div class="post-header">
+                                <h4>Family pressure and stress</h4>
+                                <span class="post-status pending">Pending</span>
+                            </div>
+                            <div class="post-meta">
+                                <span class="post-cat stress">Stress</span>
+                                <span class="post-date">1 day ago</span>
+                                <span class="post-replies"><i class="bi bi-chat"></i> 1 reply</span>
+                            </div>
+                            <p class="post-preview">My family puts a lot of pressure on me regarding my career choices. I feel trapped and stressed all the time...</p>
+                            <a href="#" class="post-action">View Reply →</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ==========================================================
+                RIGHT SIDEBAR
+            ========================================================== -->
+
+            <div class="grid-right">
+
+                <!-- Upcoming Appointments -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>📅 Upcoming Appointments</h3>
+                            <p>Your scheduled sessions</p>
+                        </div>
+                        <a href="psychologist-appointments.html" class="view-link">Manage →</a>
+                    </div>
+                    <div class="card-body appt-list">
+
+                        <div class="appt-item">
+                            <div class="appt-info">
+                                <h4>Nirdesh Tiwari</h4>
+                                <span>Video Consultation</span>
+                                <span class="appt-time"><i class="bi bi-clock"></i> Today, 10:30 AM</span>
+                            </div>
+                            <button class="appt-btn primary join-btn" data-patient="Nirdesh Tiwari">Join</button>
+                        </div>
+
+                        <div class="appt-item">
+                            <div class="appt-info">
+                                <h4>Anonymous User</h4>
+                                <span>Audio Consultation</span>
+                                <span class="appt-time"><i class="bi bi-clock"></i> Tomorrow, 2:00 PM</span>
+                            </div>
+                            <button class="appt-btn outline prepare-btn" data-patient="Anonymous User">Prepare</button>
+                        </div>
+
+                        <div class="appt-item">
+                            <div class="appt-info">
+                                <h4>Anonymous User</h4>
+                                <span>Video Consultation</span>
+                                <span class="appt-time"><i class="bi bi-clock"></i> Wednesday, 3:30 PM</span>
+                            </div>
+                            <button class="appt-btn outline prepare-btn" data-patient="Anonymous User">Prepare</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>⚡ Quick Actions</h3>
+                            <p>Frequently used</p>
+                        </div>
+                    </div>
+                    <div class="card-body quick-grid">
+                        <a href="psychologist-posts.html" class="quick-item">
+                            <span class="q-icon primary"><i class="bi bi-chat-text"></i></span>
+                            <h4>View Posts</h4>
+                            <p>Check anonymous posts</p>
+                        </a>
+                        <a href="psychologist-appointments.html" class="quick-item">
+                            <span class="q-icon success"><i class="bi bi-calendar2-check"></i></span>
+                            <h4>Appointments</h4>
+                            <p>Manage sessions</p>
+                        </a>
+                        <a href="psychologist-profile.html" class="quick-item">
+                            <span class="q-icon info"><i class="bi bi-person"></i></span>
+                            <h4>Profile</h4>
+                            <p>Update your info</p>
+                        </a>
+                        <a href="psychologist-settings.html" class="quick-item">
+                            <span class="q-icon purple"><i class="bi bi-gear"></i></span>
+                            <h4>Settings</h4>
+                            <p>Manage preferences</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            BOTTOM SECTION - RECENT REPLIES
+        ========================================================== -->
+
+        <div class="bottom-section">
+            <div class="card full-width">
+                <div class="card-header">
+                    <div>
+                        <h3>💬 Recent Replies</h3>
+                        <p>Your recent responses to anonymous users</p>
+                    </div>
+                    <a href="psychologist-replies.html" class="view-link">View All →</a>
+                </div>
+                <div class="card-body replies-list">
+
+                    <div class="reply-item">
+                        <div class="reply-info">
+                            <h4>To: Anonymous User</h4>
+                            <p>Anxiety often becomes stronger when we try to fight it alone. Begin by identifying your thoughts, taking slow breaths, and maintaining a healthy daily routine.</p>
+                            <span class="reply-time"><i class="bi bi-clock"></i> 2 days ago</span>
+                        </div>
+                        <span class="reply-status sent">Sent</span>
+                    </div>
+
+                    <div class="reply-item">
+                        <div class="reply-info">
+                            <h4>To: Anonymous User</h4>
+                            <p>Sleep improves when your body follows a consistent schedule. Try avoiding mobile screens before bedtime and practice mindfulness for a few minutes before sleeping.</p>
+                            <span class="reply-time"><i class="bi bi-clock"></i> 3 days ago</span>
+                        </div>
+                        <span class="reply-status sent">Sent</span>
+                    </div>
+
+                    <div class="reply-item">
+                        <div class="reply-info">
+                            <h4>To: Anonymous User</h4>
+                            <p>Reaching out for help is one of the strongest decisions anyone can make. Celebrate every small improvement instead of expecting perfection.</p>
+                            <span class="reply-time"><i class="bi bi-clock"></i> 5 days ago</span>
+                        </div>
+                        <span class="reply-status read">Read</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/psychologist-dashboard.js"></script>
+
+</body>
+
+</html>
