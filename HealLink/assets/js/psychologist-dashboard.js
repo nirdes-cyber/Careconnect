@@ -499,3 +499,328 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Psychologist Dashboard loaded');
 });
+
+/* ==========================================================
+   Psychologist Profile - Complete JS
+   ========================================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // ==========================================================
+    // MOBILE SIDEBAR
+    // ==========================================================
+
+    var menuBtn = document.getElementById('mobileMenuBtn');
+    var closeBtn = document.getElementById('mobileSidebarClose');
+    var sidebar = document.getElementById('mobileSidebar');
+    var overlay = document.getElementById('mobileOverlay');
+
+    function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', openSidebar);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeSidebar);
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeSidebar();
+        }
+    });
+
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if (window.innerWidth > 1024) {
+                closeSidebar();
+            }
+        }, 200);
+    });
+
+    // ==========================================================
+    // PROFILE DROPDOWN
+    // ==========================================================
+
+    var profileBtn = document.getElementById('navProfileBtn');
+    var dropdown = document.getElementById('navDropdown');
+
+    if (profileBtn && dropdown) {
+        profileBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function() {
+            dropdown.classList.remove('active');
+        });
+    }
+
+    // ==========================================================
+    // DARK MODE
+    // ==========================================================
+
+    var themeBtn = document.getElementById('navThemeBtn');
+
+    function setTheme(isDark) {
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('psychologist-theme', 'dark');
+            if (themeBtn) {
+                var icon = themeBtn.querySelector('i');
+                if (icon) icon.className = 'bi bi-sun';
+            }
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('psychologist-theme', 'light');
+            if (themeBtn) {
+                var icon = themeBtn.querySelector('i');
+                if (icon) icon.className = 'bi bi-moon';
+            }
+        }
+    }
+
+    var savedTheme = localStorage.getItem('psychologist-theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (themeBtn) {
+            var icon = themeBtn.querySelector('i');
+            if (icon) icon.className = 'bi bi-sun';
+        }
+    }
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', function() {
+            var isDark = document.body.classList.contains('dark-mode');
+            setTheme(!isDark);
+        });
+    }
+
+    // ==========================================================
+    // EDIT PROFILE TOGGLE
+    // ==========================================================
+
+    var editBtn = document.getElementById('editProfileBtn');
+    var saveBtn = document.getElementById('saveProfileBtn');
+    var cancelBtn = document.getElementById('cancelEditBtn');
+    var editActions = document.getElementById('editActions');
+
+    var bioText = document.getElementById('bioText');
+    var bioEdit = document.getElementById('bioEdit');
+    var infoValues = document.querySelectorAll('.info-val');
+    var infoEdits = document.querySelectorAll('.info-edit');
+    var displayName = document.getElementById('displayName');
+    var availEdit = document.getElementById('availEdit');
+
+    function toggleEditMode(enable) {
+        if (editBtn) {
+            editBtn.style.display = enable ? 'none' : 'inline-flex';
+        }
+        if (editActions) {
+            editActions.style.display = enable ? 'flex' : 'none';
+        }
+
+        if (bioText) {
+            bioText.style.display = enable ? 'none' : 'block';
+        }
+        if (bioEdit) {
+            bioEdit.style.display = enable ? 'block' : 'none';
+        }
+
+        infoValues.forEach(function(el) {
+            el.style.display = enable ? 'none' : 'inline';
+        });
+        infoEdits.forEach(function(el) {
+            el.style.display = enable ? 'block' : 'none';
+        });
+
+        if (availEdit) {
+            availEdit.style.display = enable ? 'block' : 'none';
+        }
+
+        if (editBtn && !enable) {
+            editBtn.innerHTML = '<i class="bi bi-pencil"></i> Edit Profile';
+        }
+    }
+
+    if (editBtn) {
+        editBtn.addEventListener('click', function() {
+            toggleEditMode(true);
+        });
+    }
+
+    if (cancelBtn) {
+        cancelBtn.addEventListener('click', function() {
+            bioEdit.value = bioText.textContent.trim();
+            document.getElementById('editEmail').value = document.getElementById('infoEmail').textContent.trim();
+            document.getElementById('editPhone').value = document.getElementById('infoPhone').textContent.trim();
+            document.getElementById('editLicense').value = document.getElementById('infoLicense').textContent.trim();
+            document.getElementById('editSpecialization').value = document.getElementById('infoSpecialization').textContent.trim();
+            document.getElementById('editLocation').value = document.getElementById('infoLocation').textContent.trim();
+            document.getElementById('editExperience').value = document.getElementById('infoExperience').textContent.trim();
+
+            toggleEditMode(false);
+        });
+    }
+
+    if (saveBtn) {
+        saveBtn.addEventListener('click', function() {
+            bioText.textContent = bioEdit.value;
+            document.getElementById('infoEmail').textContent = document.getElementById('editEmail').value;
+            document.getElementById('infoPhone').textContent = document.getElementById('editPhone').value;
+            document.getElementById('infoLicense').textContent = document.getElementById('editLicense').value;
+            document.getElementById('infoSpecialization').textContent = document.getElementById('editSpecialization').value;
+            document.getElementById('infoLocation').textContent = document.getElementById('editLocation').value;
+            document.getElementById('infoExperience').textContent = document.getElementById('editExperience').value;
+
+            var emailParts = document.getElementById('editEmail').value.split('@');
+            if (emailParts.length > 0) {
+                var nameParts = emailParts[0].split('.');
+                var formattedName = nameParts.map(function(part) {
+                    return part.charAt(0).toUpperCase() + part.slice(1);
+                }).join(' ');
+                displayName.textContent = formattedName || 'Dr. Jagadish Oli';
+            }
+
+            var profileData = {
+                name: displayName.textContent,
+                email: document.getElementById('infoEmail').textContent,
+                phone: document.getElementById('infoPhone').textContent,
+                license: document.getElementById('infoLicense').textContent,
+                specialization: document.getElementById('infoSpecialization').textContent,
+                location: document.getElementById('infoLocation').textContent,
+                experience: document.getElementById('infoExperience').textContent,
+                bio: bioText.textContent
+            };
+            localStorage.setItem('careconnect-psychologist-profile', JSON.stringify(profileData));
+
+            alert('✅ Profile updated successfully!');
+            toggleEditMode(false);
+        });
+    }
+
+    // ==========================================================
+    // LOAD SAVED PROFILE
+    // ==========================================================
+
+    var savedProfile = localStorage.getItem('careconnect-psychologist-profile');
+    if (savedProfile) {
+        try {
+            var profile = JSON.parse(savedProfile);
+            if (profile.name) document.getElementById('displayName').textContent = profile.name;
+            if (profile.email) {
+                document.getElementById('infoEmail').textContent = profile.email;
+                document.getElementById('editEmail').value = profile.email;
+            }
+            if (profile.phone) {
+                document.getElementById('infoPhone').textContent = profile.phone;
+                document.getElementById('editPhone').value = profile.phone;
+            }
+            if (profile.license) {
+                document.getElementById('infoLicense').textContent = profile.license;
+                document.getElementById('editLicense').value = profile.license;
+            }
+            if (profile.specialization) {
+                document.getElementById('infoSpecialization').textContent = profile.specialization;
+                document.getElementById('editSpecialization').value = profile.specialization;
+            }
+            if (profile.location) {
+                document.getElementById('infoLocation').textContent = profile.location;
+                document.getElementById('editLocation').value = profile.location;
+            }
+            if (profile.experience) {
+                document.getElementById('infoExperience').textContent = profile.experience;
+                document.getElementById('editExperience').value = profile.experience;
+            }
+            if (profile.bio) {
+                document.getElementById('bioText').textContent = profile.bio;
+                document.getElementById('bioEdit').value = profile.bio;
+            }
+        } catch(e) {
+            console.log('Error loading profile');
+        }
+    }
+
+    // ==========================================================
+    // PHOTO UPLOAD
+    // ==========================================================
+
+    var uploadBtn = document.getElementById('uploadPhotoBtn');
+    var photoInput = document.getElementById('photoInput');
+    var profileAvatar = document.getElementById('profileAvatar');
+
+    if (uploadBtn && photoInput) {
+        uploadBtn.addEventListener('click', function() {
+            photoInput.click();
+        });
+
+        photoInput.addEventListener('change', function(e) {
+            var file = e.target.files[0];
+            if (file) {
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('Please upload an image smaller than 2MB.');
+                    photoInput.value = '';
+                    return;
+                }
+
+                if (!file.type.startsWith('image/')) {
+                    alert('Please upload a valid image file.');
+                    photoInput.value = '';
+                    return;
+                }
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    profileAvatar.src = e.target.result;
+                    localStorage.setItem('careconnect-psychologist-avatar', e.target.result);
+                    alert('✅ Profile photo updated successfully!');
+                };
+                reader.onerror = function() {
+                    alert('Error reading file. Please try again.');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    var savedAvatar = localStorage.getItem('careconnect-psychologist-avatar');
+    if (savedAvatar && profileAvatar) {
+        profileAvatar.src = savedAvatar;
+    }
+
+  
+
+    var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
+
+    mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            mobileLinks.forEach(function(l) {
+                l.classList.remove('active');
+            });
+            this.classList.add('active');
+
+            if (window.innerWidth <= 1024) {
+                closeSidebar();
+            }
+        });
+    });
+
+    console.log('Psychologist Profile loaded');
+});
