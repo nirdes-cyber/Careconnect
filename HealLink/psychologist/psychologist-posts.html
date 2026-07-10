@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Posts | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist/psychologist-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist/psychologist-responsive.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist/psychologist-posts.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="psychologist-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="psychologist-dashboard.html">Dashboard</a></li>
+                    <li><a href="psychologist-profile.html">Profile</a></li>
+                    <li><a href="psychologist-posts.html" class="active">Anonymous Posts</a></li>
+                    <li><a href="psychologist-replies.html">My Replies</a></li>
+                    <li><a href="psychologist-appointments.html">Appointments</a></li>
+                    <li><a href="psychologist-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+                        <span>Dr. Jagadish</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="psychologist-profile.html"><i class="bi bi-person"></i> Profile</a>
+                        <a href="psychologist-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOBILE HAMBURGER BUTTON -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="psychologist-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="psychologist-profile.html"><i class="bi bi-person-circle"></i> My Profile</a></li>
+            <li><a href="psychologist-posts.html" class="active"><i class="bi bi-journal-text"></i> Anonymous Posts</a></li>
+            <li><a href="psychologist-replies.html"><i class="bi bi-chat-left-heart"></i> My Replies</a></li>
+            <li><a href="psychologist-appointments.html"><i class="bi bi-calendar2-check"></i> Appointments</a></li>
+            <li><a href="psychologist-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+            <div>
+                <h4>Dr. Jagadish Oli</h4>
+                <span>Clinical Psychologist</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT - SAME AS BEFORE
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
+                <h1>📄 Anonymous Posts</h1>
+                <p>View and respond to anonymous posts from users</p>
+            </div>
+            <div class="page-header-stats">
+                <span class="stat-badge new"><i class="bi bi-envelope"></i> 2 New</span>
+                <span class="stat-badge total"><i class="bi bi-journal-text"></i> 24 Total</span>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            FILTER BAR
+        ========================================================== -->
+
+        <div class="filter-bar">
+            <div class="filter-btns">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="new">New</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="replied">Replied</button>
+            </div>
+            <select id="filterCategory">
+                <option value="all">All Categories</option>
+                <option value="Anxiety">Anxiety</option>
+                <option value="Depression">Depression</option>
+                <option value="Stress">Stress</option>
+                <option value="Sleep Issues">Sleep Issues</option>
+                <option value="Relationships">Relationships</option>
+                <option value="Academic Pressure">Academic Pressure</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- ==========================================================
+            POSTS LIST
+        ========================================================== -->
+
+        <div class="posts-container" id="postsContainer">
+
+            <!-- Post 1 - New -->
+            <div class="post-card new" data-category="Anxiety" data-post="1">
+                <div class="post-header">
+                    <div class="post-title">
+                        <h3>Feeling anxious before exams</h3>
+                        <span class="post-status new">New</span>
+                    </div>
+                    <span class="post-date"><i class="bi bi-clock"></i> 2 hours ago</span>
+                </div>
+                <div class="post-meta">
+                    <span class="post-cat anxiety">Anxiety</span>
+                    <span class="post-privacy"><i class="bi bi-incognito"></i> Anonymous</span>
+                </div>
+                <p class="post-content">I have been feeling extremely anxious about my upcoming exams. I can't sleep properly and I keep overthinking everything. I feel like I'm going to fail even though I've studied hard. My heart races whenever I think about the exams. I don't know how to calm myself down.</p>
+                <div class="post-footer">
+                    <button class="btn-reply" data-post="1">Reply Now</button>
+                </div>
+            </div>
+
+            <!-- Post 2 - New -->
+            <div class="post-card new" data-category="Sleep Issues" data-post="2">
+                <div class="post-header">
+                    <div class="post-title">
+                        <h3>Difficulty sleeping lately</h3>
+                        <span class="post-status new">New</span>
+                    </div>
+                    <span class="post-date"><i class="bi bi-clock"></i> 5 hours ago</span>
+                </div>
+                <div class="post-meta">
+                    <span class="post-cat sleep">Sleep Issues</span>
+                    <span class="post-privacy"><i class="bi bi-incognito"></i> Anonymous</span>
+                </div>
+                <p class="post-content">I have been having trouble sleeping for the past few weeks. I wake up multiple times during the night and can't fall back asleep. I feel tired all day and it's affecting my work. I've tried everything - warm milk, no screens, but nothing works.</p>
+                <div class="post-footer">
+                    <button class="btn-reply" data-post="2">Reply Now</button>
+                </div>
+            </div>
+
+            <!-- Post 3 - Pending -->
+            <div class="post-card pending" data-category="Stress" data-post="3">
+                <div class="post-header">
+                    <div class="post-title">
+                        <h3>Family pressure and stress</h3>
+                        <span class="post-status pending">Pending</span>
+                    </div>
+                    <span class="post-date"><i class="bi bi-clock"></i> 1 day ago</span>
+                </div>
+                <div class="post-meta">
+                    <span class="post-cat stress">Stress</span>
+                    <span class="post-privacy"><i class="bi bi-incognito"></i> Anonymous</span>
+                </div>
+                <p class="post-content">My family puts a lot of pressure on me regarding my career choices. They want me to become a doctor but I want to pursue my passion in arts. I feel trapped and stressed all the time. Every conversation turns into an argument about my future.</p>
+                <div class="post-footer">
+                    <button class="btn-reply" data-post="3">View & Reply</button>
+                </div>
+            </div>
+
+            <!-- Post 4 - Replied -->
+            <div class="post-card replied" data-category="Depression" data-post="4">
+                <div class="post-header">
+                    <div class="post-title">
+                        <h3>Feeling isolated at college</h3>
+                        <span class="post-status replied">Replied</span>
+                    </div>
+                    <span class="post-date"><i class="bi bi-clock"></i> 3 days ago</span>
+                </div>
+                <div class="post-meta">
+                    <span class="post-cat depression">Depression</span>
+                    <span class="post-privacy"><i class="bi bi-incognito"></i> Anonymous</span>
+                </div>
+                <p class="post-content">I feel really isolated at college. I don't have many friends and I feel like nobody understands me. I spend most of my time alone in my room and it's making me depressed. I want to connect with people but I don't know how.</p>
+                <div class="post-footer">
+                    <button class="btn-reply replied" data-post="4">View Reply</button>
+                </div>
+            </div>
+
+            <!-- Post 5 - Replied -->
+            <div class="post-card replied" data-category="Relationships" data-post="5">
+                <div class="post-header">
+                    <div class="post-title">
+                        <h3>Relationship breakup and sadness</h3>
+                        <span class="post-status replied">Replied</span>
+                    </div>
+                    <span class="post-date"><i class="bi bi-clock"></i> 5 days ago</span>
+                </div>
+                <div class="post-meta">
+                    <span class="post-cat relationships">Relationships</span>
+                    <span class="post-privacy"><i class="bi bi-incognito"></i> Anonymous</span>
+                </div>
+                <p class="post-content">I just went through a breakup and I feel completely lost. We were together for 3 years and now I don't know who I am without them. I can't eat, I can't sleep, and I feel like my whole world has collapsed. I need help to get through this.</p>
+                <div class="post-footer">
+                    <button class="btn-reply replied" data-post="5">View Reply</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            REPLY MODAL
+        ========================================================== -->
+
+        <div class="reply-modal" id="replyModal">
+            <div class="reply-modal-content">
+                <div class="reply-modal-header">
+                    <h3><i class="bi bi-chat-text"></i> Reply to Post</h3>
+                    <button class="reply-modal-close" id="replyModalClose">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="reply-modal-body">
+                    <div class="reply-post-preview" id="replyPostPreview">
+                        <h4 id="replyPostTitle">Post Title</h4>
+                        <p id="replyPostContent">Post content preview...</p>
+                    </div>
+                    <div class="reply-form">
+                        <label for="replyContent">Your Response</label>
+                        <textarea id="replyContent" rows="6" placeholder="Write your professional response to help this person..."></textarea>
+                        <div class="reply-actions">
+                            <button class="btn-cancel-reply" id="replyCancel">Cancel</button>
+                            <button class="btn-send-reply" id="replySend"><i class="bi bi-send"></i> Send Reply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reply-modal-overlay" id="replyModalOverlay"></div>
+
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/psychologist-posts.js"></script>
+
+</body>
+
+</html>
