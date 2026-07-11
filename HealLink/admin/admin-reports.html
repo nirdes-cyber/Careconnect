@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | Admin Panel | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-responsive.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-reports.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="admin-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="admin-dashboard.html">Dashboard</a></li>
+                    <li><a href="admin-users.html">Users</a></li>
+                    <li><a href="admin-psychologists.html">Psychologists</a></li>
+                    <li><a href="admin-posts.html">Posts</a></li>
+                    <li><a href="admin-reports.html" class="active">Reports</a></li>
+                    <li><a href="admin-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="#" alt="Admin">
+                        <span>Super Admin</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+                <span class="admin-badge-sm">Admin</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="admin-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="admin-users.html"><i class="bi bi-people"></i> Users</a></li>
+            <li><a href="admin-psychologists.html"><i class="bi bi-person-badge"></i> Psychologists</a></li>
+            <li><a href="admin-posts.html"><i class="bi bi-journal-text"></i> Posts</a></li>
+            <li><a href="admin-reports.html" class="active"><i class="bi bi-bar-chart"></i> Reports</a></li>
+            <li><a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="#" alt="Admin">
+            <div>
+                <h4>Super Admin</h4>
+                <span>Administrator</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
+                <h1>📊 Reports & Analytics</h1>
+                <p>View platform statistics and activity reports</p>
+            </div>
+            <button class="btn-export" id="exportReportBtn">
+                <i class="bi bi-download"></i> Export Report
+            </button>
+        </div>
+
+        <!-- ==========================================================
+            OVERVIEW STATS
+        ========================================================== -->
+
+        <div class="reports-stats">
+            <div class="report-stat-card">
+                <div class="report-stat-icon blue"><i class="bi bi-people"></i></div>
+                <div>
+                    <span class="report-stat-num">156</span>
+                    <span class="report-stat-label">Total Users</span>
+                    <span class="report-stat-change up"><i class="bi bi-arrow-up"></i> 12%</span>
+                </div>
+            </div>
+            <div class="report-stat-card">
+                <div class="report-stat-icon green"><i class="bi bi-person-badge"></i></div>
+                <div>
+                    <span class="report-stat-num">24</span>
+                    <span class="report-stat-label">Psychologists</span>
+                    <span class="report-stat-change up"><i class="bi bi-arrow-up"></i> 8%</span>
+                </div>
+            </div>
+            <div class="report-stat-card">
+                <div class="report-stat-icon orange"><i class="bi bi-journal-text"></i></div>
+                <div>
+                    <span class="report-stat-num">342</span>
+                    <span class="report-stat-label">Total Posts</span>
+                    <span class="report-stat-change up"><i class="bi bi-arrow-up"></i> 15%</span>
+                </div>
+            </div>
+            <div class="report-stat-card">
+                <div class="report-stat-icon purple"><i class="bi bi-chat-heart"></i></div>
+                <div>
+                    <span class="report-stat-num">1,247</span>
+                    <span class="report-stat-label">Total Replies</span>
+                    <span class="report-stat-change up"><i class="bi bi-arrow-up"></i> 22%</span>
+                </div>
+            </div>
+            <div class="report-stat-card">
+                <div class="report-stat-icon red"><i class="bi bi-calendar-event"></i></div>
+                <div>
+                    <span class="report-stat-num">89</span>
+                    <span class="report-stat-label">Appointments</span>
+                    <span class="report-stat-change"><i class="bi bi-clock"></i> 15 upcoming</span>
+                </div>
+            </div>
+            <div class="report-stat-card">
+                <div class="report-stat-icon yellow"><i class="bi bi-emoji-smile"></i></div>
+                <div>
+                    <span class="report-stat-num">4.8</span>
+                    <span class="report-stat-label">Avg. Wellness Score</span>
+                    <span class="report-stat-change up"><i class="bi bi-arrow-up"></i> +0.3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            DATE RANGE FILTER
+        ========================================================== -->
+
+        <div class="date-filter-bar">
+            <div class="date-filter-group">
+                <label>Date Range:</label>
+                <input type="date" id="startDate" value="2026-05-01">
+                <span>to</span>
+                <input type="date" id="endDate" value="2026-06-11">
+                <button class="btn-filter" id="applyDateBtn"><i class="bi bi-check"></i> Apply</button>
+            </div>
+            <div class="date-filter-group">
+                <button class="date-btn active" data-range="7">Last 7 Days</button>
+                <button class="date-btn" data-range="30">Last 30 Days</button>
+                <button class="date-btn" data-range="90">Last 90 Days</button>
+                <button class="date-btn" data-range="365">Last Year</button>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            CHARTS SECTION
+        ========================================================== -->
+
+        <div class="charts-grid">
+
+            <!-- User Growth Chart -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3><i class="bi bi-graph-up"></i> User Growth</h3>
+                    <span class="chart-period">Last 30 Days</span>
+                </div>
+                <div class="chart-body" id="userGrowthChart">
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height:20%;"><span>2</span></div>
+                        <div class="chart-bar" style="height:35%;"><span>5</span></div>
+                        <div class="chart-bar" style="height:25%;"><span>3</span></div>
+                        <div class="chart-bar" style="height:50%;"><span>8</span></div>
+                        <div class="chart-bar" style="height:30%;"><span>4</span></div>
+                        <div class="chart-bar" style="height:45%;"><span>7</span></div>
+                        <div class="chart-bar" style="height:60%;"><span>10</span></div>
+                        <div class="chart-bar" style="height:40%;"><span>6</span></div>
+                        <div class="chart-bar" style="height:55%;"><span>9</span></div>
+                        <div class="chart-bar" style="height:70%;"><span>12</span></div>
+                        <div class="chart-bar" style="height:45%;"><span>7</span></div>
+                        <div class="chart-bar" style="height:80%;"><span>14</span></div>
+                    </div>
+                    <div class="chart-labels">
+                        <span>Day 1</span>
+                        <span>Day 5</span>
+                        <span>Day 10</span>
+                        <span>Day 15</span>
+                        <span>Day 20</span>
+                        <span>Day 25</span>
+                        <span>Day 30</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts by Category -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3><i class="bi bi-pie-chart"></i> Posts by Category</h3>
+                    <span class="chart-period">All Time</span>
+                </div>
+                <div class="chart-body" id="categoryChart">
+                    <div class="category-stats">
+                        <div class="category-stat">
+                            <span class="cat-dot anxiety"></span>
+                            <span class="cat-name">Anxiety</span>
+                            <span class="cat-value">89</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width:26%;"></div></div>
+                        </div>
+                        <div class="category-stat">
+                            <span class="cat-dot depression"></span>
+                            <span class="cat-name">Depression</span>
+                            <span class="cat-value">67</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width:20%;"></div></div>
+                        </div>
+                        <div class="category-stat">
+                            <span class="cat-dot stress"></span>
+                            <span class="cat-name">Stress</span>
+                            <span class="cat-value">54</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width:16%;"></div></div>
+                        </div>
+                        <div class="category-stat">
+                            <span class="cat-dot sleep"></span>
+                            <span class="cat-name">Sleep Issues</span>
+                            <span class="cat-value">42</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width:12%;"></div></div>
+                        </div>
+                        <div class="category-stat">
+                            <span class="cat-dot relationships"></span>
+                            <span class="cat-name">Relationships</span>
+                            <span class="cat-value">35</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width:10%;"></div></div>
+                        </div>
+                        <div class="category-stat">
+                            <span class="cat-dot academic"></span>
+                            <span class="cat-name">Academic</span>
+                            <span class="cat-value">28</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width:8%;"></div></div>
+                        </div>
+                        <div class="category-stat">
+                            <span class="cat-dot other"></span>
+                            <span class="cat-name">Other</span>
+                            <span class="cat-value">27</span>
+                            <div class="cat-bar"><div class="cat-fill" style="width:8%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            ACTIVITY LOG
+        ========================================================== -->
+
+        <div class="activity-log-card">
+            <div class="card-header">
+                <div>
+                    <h3>🔄 Recent Activity Log</h3>
+                    <p>Latest platform activities</p>
+                </div>
+                <button class="btn-refresh" id="refreshLogBtn"><i class="bi bi-arrow-clockwise"></i> Refresh</button>
+            </div>
+            <div class="card-body activity-log">
+
+                <div class="log-item">
+                    <span class="log-time">10:30 AM</span>
+                    <span class="log-icon blue"><i class="bi bi-person-plus"></i></span>
+                    <div class="log-content">
+                        <h4>New User Registered</h4>
+                        <p>Nirdesh Tiwari joined CareConnect</p>
+                    </div>
+                    <span class="log-badge new">New</span>
+                </div>
+
+                <div class="log-item">
+                    <span class="log-time">09:15 AM</span>
+                    <span class="log-icon green"><i class="bi bi-check-circle"></i></span>
+                    <div class="log-content">
+                        <h4>Psychologist Verified</h4>
+                        <p>Dr. Ashma Mall has been verified</p>
+                    </div>
+                    <span class="log-badge completed">Completed</span>
+                </div>
+
+                <div class="log-item">
+                    <span class="log-time">08:45 AM</span>
+                    <span class="log-icon orange"><i class="bi bi-journal-text"></i></span>
+                    <div class="log-content">
+                        <h4>New Post Created</h4>
+                        <p>Anonymous user posted about anxiety</p>
+                    </div>
+                    <span class="log-badge pending">Pending</span>
+                </div>
+
+                <div class="log-item">
+                    <span class="log-time">Yesterday</span>
+                    <span class="log-icon purple"><i class="bi bi-calendar-check"></i></span>
+                    <div class="log-content">
+                        <h4>Appointment Completed</h4>
+                        <p>Session between Nirdesh and Dr. Jagadish</p>
+                    </div>
+                    <span class="log-badge completed">Completed</span>
+                </div>
+
+                <div class="log-item">
+                    <span class="log-time">Yesterday</span>
+                    <span class="log-icon red"><i class="bi bi-flag"></i></span>
+                    <div class="log-content">
+                        <h4>Post Reported</h4>
+                        <p>A post was flagged for review</p>
+                    </div>
+                    <span class="log-badge reported">Reported</span>
+                </div>
+
+                <div class="log-item">
+                    <span class="log-time">2 days ago</span>
+                    <span class="log-icon blue"><i class="bi bi-person-badge"></i></span>
+                    <div class="log-content">
+                        <h4>New Psychologist Registered</h4>
+                        <p>Dr. Sandip Dangi joined the platform</p>
+                    </div>
+                    <span class="log-badge new">New</span>
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <a href="#" class="view-link">View All Activity →</a>
+            </div>
+        </div>
+
+  
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="footer-admin-badge">Admin Panel</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/HealLink/public/privacy.html">Privacy</a>
+                    <a href="/HealLink/public/terms.html">Terms</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/admin-reports.js"></script>
+
+</body>
+
+</html>

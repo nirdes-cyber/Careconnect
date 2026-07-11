@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts | Admin Panel | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-responsive.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-posts.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="admin-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="admin-dashboard.html">Dashboard</a></li>
+                    <li><a href="admin-users.html">Users</a></li>
+                    <li><a href="admin-psychologists.html">Psychologists</a></li>
+                    <li><a href="admin-posts.html" class="active">Posts</a></li>
+                    <li><a href="admin-reports.html">Reports</a></li>
+                    <li><a href="admin-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="#" alt="Admin">
+                        <span>Super Admin</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+                <span class="admin-badge-sm">Admin</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="admin-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="admin-users.html"><i class="bi bi-people"></i> Users</a></li>
+            <li><a href="admin-psychologists.html"><i class="bi bi-person-badge"></i> Psychologists</a></li>
+            <li><a href="admin-posts.html" class="active"><i class="bi bi-journal-text"></i> Posts</a></li>
+            <li><a href="admin-reports.html"><i class="bi bi-bar-chart"></i> Reports</a></li>
+            <li><a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="#" alt="Admin">
+            <div>
+                <h4>Super Admin</h4>
+                <span>Administrator</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
+                <h1>📄 Posts</h1>
+                <p>View and moderate all anonymous posts</p>
+            </div>
+            <div class="page-header-stats">
+                <span class="stat-badge total"><i class="bi bi-journal-text"></i> 342 Total</span>
+                <span class="stat-badge active"><i class="bi bi-check-circle"></i> 289 Active</span>
+                <span class="stat-badge pending"><i class="bi bi-clock"></i> 23 Pending</span>
+                <span class="stat-badge reported"><i class="bi bi-flag"></i> 5 Reported</span>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            SEARCH & FILTER
+        ========================================================== -->
+
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search posts by title, content..." id="searchPosts">
+            </div>
+            <div class="filter-group">
+                <select id="filterStatus">
+                    <option value="all">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="reported">Reported</option>
+                    <option value="resolved">Resolved</option>
+                </select>
+                <select id="filterCategory">
+                    <option value="all">All Categories</option>
+                    <option value="Anxiety">Anxiety</option>
+                    <option value="Depression">Depression</option>
+                    <option value="Stress">Stress</option>
+                    <option value="Sleep Issues">Sleep Issues</option>
+                    <option value="Relationships">Relationships</option>
+                    <option value="Academic Pressure">Academic Pressure</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button class="btn-filter" id="applyFilterBtn"><i class="bi bi-funnel"></i> Apply</button>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            POSTS TABLE
+        ========================================================== -->
+
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="posts-table">
+                    <thead>
+                        <tr>
+                            <th>Post</th>
+                            <th>Category</th>
+                            <th>Author</th>
+                            <th>Status</th>
+                            <th>Replies</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Post 1 - Active -->
+                        <tr>
+                            <td>
+                                <div class="post-cell">
+                                    <span class="post-title">Feeling anxious before exams</span>
+                                    <span class="post-preview">I have been feeling extremely anxious about my upcoming exams...</span>
+                                </div>
+                            </td>
+                            <td><span class="category-badge anxiety">Anxiety</span></td>
+                            <td><span class="author-badge anonymous"><i class="bi bi-incognito"></i> Anonymous</span></td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>4</td>
+                            <td>05 Jun 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn moderate" title="Moderate"><i class="bi bi-shield"></i></button>
+                                    <button class="action-btn flag" title="Report"><i class="bi bi-flag"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Post 2 - Reported -->
+                        <tr>
+                            <td>
+                                <div class="post-cell">
+                                    <span class="post-title">Difficulty sleeping lately</span>
+                                    <span class="post-preview">I have been having trouble sleeping for the past few weeks...</span>
+                                </div>
+                            </td>
+                            <td><span class="category-badge sleep">Sleep Issues</span></td>
+                            <td><span class="author-badge anonymous"><i class="bi bi-incognito"></i> Anonymous</span></td>
+                            <td><span class="status-badge reported">Reported</span></td>
+                            <td>7</td>
+                            <td>30 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn moderate" title="Moderate"><i class="bi bi-shield"></i></button>
+                                    <button class="action-btn flag" title="Report"><i class="bi bi-flag"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Post 3 - Pending -->
+                        <tr>
+                            <td>
+                                <div class="post-cell">
+                                    <span class="post-title">Feeling isolated at college</span>
+                                    <span class="post-preview">I feel really isolated at college. I don't have many friends...</span>
+                                </div>
+                            </td>
+                            <td><span class="category-badge depression">Depression</span></td>
+                            <td><span class="author-badge anonymous"><i class="bi bi-incognito"></i> Anonymous</span></td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>2</td>
+                            <td>26 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn moderate" title="Moderate"><i class="bi bi-shield"></i></button>
+                                    <button class="action-btn flag" title="Report"><i class="bi bi-flag"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Post 4 - Active -->
+                        <tr>
+                            <td>
+                                <div class="post-cell">
+                                    <span class="post-title">Family pressure and stress</span>
+                                    <span class="post-preview">My family puts a lot of pressure on me regarding my career choices...</span>
+                                </div>
+                            </td>
+                            <td><span class="category-badge stress">Stress</span></td>
+                            <td><span class="author-badge named"><i class="bi bi-person"></i> Nirdesh</span></td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>5</td>
+                            <td>22 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn moderate" title="Moderate"><i class="bi bi-shield"></i></button>
+                                    <button class="action-btn flag" title="Report"><i class="bi bi-flag"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Post 5 - Resolved -->
+                        <tr>
+                            <td>
+                                <div class="post-cell">
+                                    <span class="post-title">Relationship breakup and sadness</span>
+                                    <span class="post-preview">I just went through a breakup and I feel completely lost...</span>
+                                </div>
+                            </td>
+                            <td><span class="category-badge relationships">Relationships</span></td>
+                            <td><span class="author-badge anonymous"><i class="bi bi-incognito"></i> Anonymous</span></td>
+                            <td><span class="status-badge resolved">Resolved</span></td>
+                            <td>8</td>
+                            <td>18 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn moderate" title="Moderate"><i class="bi bi-shield"></i></button>
+                                    <button class="action-btn flag" title="Report"><i class="bi bi-flag"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Post 6 - Reported -->
+                        <tr>
+                            <td>
+                                <div class="post-cell">
+                                    <span class="post-title">Academic pressure from parents</span>
+                                    <span class="post-preview">My parents expect me to get perfect grades and it's killing me...</span>
+                                </div>
+                            </td>
+                            <td><span class="category-badge academic">Academic Pressure</span></td>
+                            <td><span class="author-badge anonymous"><i class="bi bi-incognito"></i> Anonymous</span></td>
+                            <td><span class="status-badge reported">Reported</span></td>
+                            <td>3</td>
+                            <td>15 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn moderate" title="Moderate"><i class="bi bi-shield"></i></button>
+                                    <button class="action-btn flag" title="Report"><i class="bi bi-flag"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Post 7 - Active -->
+                        <tr>
+                            <td>
+                                <div class="post-cell">
+                                    <span class="post-title">Dealing with social anxiety</span>
+                                    <span class="post-preview">I get really anxious in social situations and it's affecting my life...</span>
+                                </div>
+                            </td>
+                            <td><span class="category-badge anxiety">Anxiety</span></td>
+                            <td><span class="author-badge anonymous"><i class="bi bi-incognito"></i> Anonymous</span></td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>6</td>
+                            <td>10 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn moderate" title="Moderate"><i class="bi bi-shield"></i></button>
+                                    <button class="action-btn flag" title="Report"><i class="bi bi-flag"></i></button>
+                                    <button class="action-btn delete" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            PAGINATION
+        ========================================================== -->
+
+        <div class="pagination">
+            <button class="page-btn prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+
+        <!-- ==========================================================
+            MODERATE MODAL
+        ========================================================== -->
+
+        <div class="moderate-modal" id="moderateModal">
+            <div class="moderate-modal-content">
+                <div class="moderate-modal-header">
+                    <h3><i class="bi bi-shield"></i> Moderate Post</h3>
+                    <button class="moderate-modal-close" id="moderateModalClose">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="moderate-modal-body">
+                    <div class="moderate-post-preview">
+                        <h4 id="moderatePostTitle">Post Title</h4>
+                        <p id="moderatePostContent">Post content preview...</p>
+                        <div class="moderate-post-meta">
+                            <span id="moderatePostAuthor">Anonymous</span>
+                            <span id="moderatePostCategory">Anxiety</span>
+                        </div>
+                    </div>
+                    <div class="moderate-form">
+                        <div class="form-group">
+                            <label>Change Status</label>
+                            <select id="moderateStatus">
+                                <option value="active">Active</option>
+                                <option value="pending">Pending</option>
+                                <option value="reported">Reported</option>
+                                <option value="resolved">Resolved</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Reason (Optional)</label>
+                            <textarea id="moderateReason" rows="3" placeholder="Reason for moderation..."></textarea>
+                        </div>
+                        <div class="moderate-actions">
+                            <button class="btn-cancel-moderate" id="moderateCancel">Cancel</button>
+                            <button class="btn-confirm-moderate" id="moderateConfirm"><i class="bi bi-check-circle"></i> Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="moderate-modal-overlay" id="moderateOverlay"></div>
+
+ 
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="footer-admin-badge">Admin Panel</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/HealLink/public/privacy.html">Privacy</a>
+                    <a href="/HealLink/public/terms.html">Terms</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/admin-posts.js"></script>
+
+</body>
+
+</html>
