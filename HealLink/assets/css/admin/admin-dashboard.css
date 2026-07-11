@@ -1,11 +1,3 @@
-/* ==========================================================
-   Admin Dashboard - Complete CSS
-   ========================================================== */
-
-/* ----------------------------------------------
-   RESET & BASE
----------------------------------------------- */
-
 * {
     margin: 0;
     padding: 0;
@@ -47,9 +39,6 @@ img {
     display: block;
 }
 
-/* ----------------------------------------------
-   TOP NAVIGATION
----------------------------------------------- */
 
 .top-nav {
     background: #fff;
@@ -271,9 +260,7 @@ body.dark-mode .mobile-menu-btn {
     color: #CBD5E1;
 }
 
-/* ----------------------------------------------
-   MOBILE SIDEBAR
----------------------------------------------- */
+
 
 .mobile-sidebar {
     position: fixed;
@@ -450,9 +437,7 @@ body.dark-mode .mobile-sidebar-footer span {
     display: block;
 }
 
-/* ----------------------------------------------
-   MAIN CONTENT
----------------------------------------------- */
+
 
 .main-content {
     max-width: 1200px;
@@ -460,9 +445,7 @@ body.dark-mode .mobile-sidebar-footer span {
     padding: 20px;
 }
 
-/* ----------------------------------------------
-   WELCOME SECTION
----------------------------------------------- */
+
 
 .welcome-box {
     background: #fff;
@@ -577,9 +560,7 @@ body.dark-mode .btn-secondary:hover {
     background: #334155;
 }
 
-/* ----------------------------------------------
-   WELCOME ILLUSTRATION
----------------------------------------------- */
+
 
 .welcome-illustration {
     position: relative;
@@ -659,9 +640,7 @@ body.dark-mode .hero-card p {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   STATISTICS
----------------------------------------------- */
+
 
 .stats-grid {
     display: grid;
@@ -746,9 +725,7 @@ body.dark-mode .stat-trend.up {
     color: #34D399;
 }
 
-/* ----------------------------------------------
-   QUICK STATS
----------------------------------------------- */
+
 
 .quick-stats {
     display: grid;
@@ -815,9 +792,7 @@ body.dark-mode .qs-lbl {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   DASHBOARD GRID
----------------------------------------------- */
+
 
 .dashboard-grid {
     display: grid;
@@ -826,16 +801,14 @@ body.dark-mode .qs-lbl {
     margin-bottom: 20px;
 }
 
-/* ----------------------------------------------
-   CARDS
----------------------------------------------- */
+
 
 .card {
     background: #fff;
     border: 1px solid #e8e8e8;
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     transition: background 0.3s, border-color 0.3s;
 }
 
@@ -892,9 +865,7 @@ body.dark-mode .view-link {
     text-decoration: underline;
 }
 
-/* ----------------------------------------------
-   USER ITEMS
----------------------------------------------- */
+
 
 .user-item {
     display: flex;
@@ -975,9 +946,7 @@ body.dark-mode .user-status.inactive {
     color: #F87171;
 }
 
-/* ----------------------------------------------
-   PSYCHOLOGIST ITEMS
----------------------------------------------- */
+
 
 .psych-list {
     display: flex;
@@ -1054,9 +1023,7 @@ body.dark-mode .psych-status.pending {
     color: #FBBF24;
 }
 
-/* ----------------------------------------------
-   QUICK ACTIONS
----------------------------------------------- */
+
 
 .quick-grid {
     display: grid;
@@ -1127,9 +1094,7 @@ body.dark-mode .quick-item p {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   ACTIVITY
----------------------------------------------- */
+
 
 .activity-list {
     display: flex;
@@ -1204,9 +1169,7 @@ body.dark-mode .activity-item span {
     color: #64748B;
 }
 
-/* ----------------------------------------------
-   FOOTER
----------------------------------------------- */
+
 
 .main-footer {
     background: #fff;
