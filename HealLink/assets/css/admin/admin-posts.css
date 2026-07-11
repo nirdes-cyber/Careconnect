@@ -1,10 +1,3 @@
-/* ==========================================================
-   Admin Posts - Complete CSS
-   ========================================================== */
-
-/* ----------------------------------------------
-   PAGE HEADER
----------------------------------------------- */
 
 .page-header {
     display: flex;
@@ -86,9 +79,7 @@ body.dark-mode .stat-badge.reported {
     color: #F87171;
 }
 
-/* ----------------------------------------------
-   SEARCH & FILTER
----------------------------------------------- */
+
 
 .search-filter-bar {
     display: flex;
@@ -197,9 +188,6 @@ body.dark-mode .btn-filter:hover {
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   TABLE CONTAINER
----------------------------------------------- */
 
 .table-container {
     background: #fff;
@@ -263,9 +251,7 @@ body.dark-mode .posts-table tbody tr:hover {
     background: #334155;
 }
 
-/* ----------------------------------------------
-   POST CELL
----------------------------------------------- */
+
 
 .post-cell {
     display: flex;
@@ -290,9 +276,6 @@ body.dark-mode .post-preview {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   CATEGORY BADGE
----------------------------------------------- */
 
 .category-badge {
     padding: 2px 12px;
@@ -359,9 +342,6 @@ body.dark-mode .category-badge.other {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   AUTHOR BADGE
----------------------------------------------- */
 
 .author-badge {
     padding: 2px 12px;
@@ -393,9 +373,7 @@ body.dark-mode .author-badge.named {
     color: #34D399;
 }
 
-/* ----------------------------------------------
-   STATUS BADGE
----------------------------------------------- */
+
 
 .status-badge {
     padding: 2px 12px;
@@ -445,9 +423,6 @@ body.dark-mode .status-badge.resolved {
     color: #60A5FA;
 }
 
-/* ----------------------------------------------
-   ACTION BUTTONS
----------------------------------------------- */
 
 .action-btns {
     display: flex;
@@ -547,9 +522,7 @@ body.dark-mode .action-btn.delete:hover {
     color: #fff;
 }
 
-/* ----------------------------------------------
-   MODERATE MODAL
----------------------------------------------- */
+
 
 .moderate-modal {
     position: fixed;
@@ -798,9 +771,7 @@ body.dark-mode .btn-confirm-moderate:hover {
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   TOAST MESSAGE
----------------------------------------------- */
+
 
 .toast-msg {
     position: fixed;
@@ -835,9 +806,7 @@ body.dark-mode .toast-msg {
     }
 }
 
-/* ----------------------------------------------
-   PAGINATION
----------------------------------------------- */
+
 
 .pagination {
     display: flex;
@@ -889,9 +858,7 @@ body.dark-mode .page-btn:hover {
     cursor: not-allowed;
 }
 
-/* ----------------------------------------------
-   RESPONSIVE
----------------------------------------------- */
+
 
 @media (max-width: 768px) {
     .page-header {

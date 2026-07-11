@@ -1,11 +1,3 @@
-/* ==========================================================
-   Psychologist Dashboard - Complete CSS
-   Student Project
-   ========================================================== */
-
-/* ----------------------------------------------
-   RESET & BASE
----------------------------------------------- */
 
 * {
     margin: 0;
@@ -48,9 +40,7 @@ img {
     display: block;
 }
 
-/* ----------------------------------------------
-   TOP NAVIGATION
----------------------------------------------- */
+
 
 .top-nav {
     background: #fff;
@@ -263,9 +253,7 @@ body.dark-mode .mobile-menu-btn {
     color: #CBD5E1;
 }
 
-/* ----------------------------------------------
-   MOBILE SIDEBAR
----------------------------------------------- */
+
 
 .mobile-sidebar {
     position: fixed;
@@ -442,9 +430,7 @@ body.dark-mode .mobile-sidebar-footer span {
     display: block;
 }
 
-/* ----------------------------------------------
-   MAIN CONTENT
----------------------------------------------- */
+
 
 .main-content {
     max-width: 1200px;
@@ -452,9 +438,7 @@ body.dark-mode .mobile-sidebar-footer span {
     padding: 20px;
 }
 
-/* ----------------------------------------------
-   WELCOME SECTION
----------------------------------------------- */
+
 
 .welcome-box {
     background: #fff;
@@ -648,9 +632,7 @@ body.dark-mode .hero-card p {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   STATISTICS
----------------------------------------------- */
+
 
 .stats-grid {
     display: grid;
@@ -735,9 +717,7 @@ body.dark-mode .stat-trend.up {
     color: #34D399;
 }
 
-/* ----------------------------------------------
-   DASHBOARD GRID
----------------------------------------------- */
+
 
 .dashboard-grid {
     display: grid;
@@ -746,9 +726,7 @@ body.dark-mode .stat-trend.up {
     margin-bottom: 20px;
 }
 
-/* ----------------------------------------------
-   CARDS
----------------------------------------------- */
+
 
 .card {
     background: #fff;
@@ -812,9 +790,7 @@ body.dark-mode .view-link {
     text-decoration: underline;
 }
 
-/* ----------------------------------------------
-   POST ITEMS
----------------------------------------------- */
+
 
 .post-item {
     padding: 10px 0;
@@ -959,9 +935,7 @@ body.dark-mode .post-action {
     text-decoration: underline;
 }
 
-/* ----------------------------------------------
-   APPOINTMENTS
----------------------------------------------- */
+
 
 .appt-list {
     display: flex;
@@ -1044,9 +1018,7 @@ body.dark-mode .appt-btn.outline:hover {
     color: #fff;
 }
 
-/* ----------------------------------------------
-   QUICK ACTIONS
----------------------------------------------- */
+
 
 .quick-grid {
     display: grid;
@@ -1117,9 +1089,7 @@ body.dark-mode .quick-item p {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   BOTTOM SECTION - REPLIES
----------------------------------------------- */
+
 
 .bottom-section {
     margin-bottom: 20px;
@@ -1210,9 +1180,7 @@ body.dark-mode .reply-status.read {
     color: #34D399;
 }
 
-/* ----------------------------------------------
-   VIDEO SESSION MODAL
-============================================== */
+
 
 .video-modal {
     position: fixed;
@@ -1423,9 +1391,7 @@ body.dark-mode .reply-status.read {
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   FOOTER
----------------------------------------------- */
+
 
 .main-footer {
     background: #fff;
@@ -1499,9 +1465,7 @@ body.dark-mode .footer-links a:hover {
     color: #818CF8;
 }
 
-/* ----------------------------------------------
-   DARK MODE - Video Modal
----------------------------------------------- */
+
 
 body.dark-mode .video-modal {
     background: #0F172A;
@@ -1520,9 +1484,7 @@ body.dark-mode .video-remote {
     background: #1E293B;
 }
 
-/* ----------------------------------------------
-   RESPONSIVE - Video Modal
----------------------------------------------- */
+
 
 @media (max-width: 768px) {
     .video-container {

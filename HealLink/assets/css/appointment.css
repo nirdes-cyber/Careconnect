@@ -1,11 +1,4 @@
-/* ==========================================================
-   Appointments Page - Complete CSS
-   Student Project
-   ========================================================== */
 
-/* ----------------------------------------------
-   PAGE HEADER
----------------------------------------------- */
 
 .page-header {
     display: flex;
@@ -46,9 +39,6 @@
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   STATS
----------------------------------------------- */
 
 .appt-stats {
     display: flex;
@@ -83,9 +73,7 @@
     background: #e8e8e8;
 }
 
-/* ----------------------------------------------
-   APPOINTMENTS GRID
----------------------------------------------- */
+
 
 .appt-grid {
     display: grid;
@@ -112,9 +100,7 @@
     margin-right: 6px;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT CARD
----------------------------------------------- */
+
 
 .appt-card {
     background: #fff;
@@ -191,9 +177,6 @@
     color: #7C3AED;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT INFO
----------------------------------------------- */
 
 .appt-info {
     display: flex;
@@ -216,9 +199,7 @@
     font-size: 0.8rem;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT BUTTONS
----------------------------------------------- */
+
 
 .appt-btns {
     display: flex;
@@ -273,9 +254,7 @@
     color: #fff;
 }
 
-/* ----------------------------------------------
-   PSYCHOLOGIST CARD
----------------------------------------------- */
+
 
 .psych-card {
     background: #fff;
@@ -357,9 +336,7 @@
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   MODAL
----------------------------------------------- */
+
 
 .modal {
     position: fixed;
@@ -522,9 +499,7 @@
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   RESCHEDULE INFO
----------------------------------------------- */
+
 
 .resched-info {
     background: #f8f9fa;
@@ -552,9 +527,7 @@
     font-weight: 600;
 }
 
-/* ==========================================================
-   DATE PICKER FIXES
-========================================================== */
+
 
 .date-picker {
     cursor: pointer !important;
@@ -580,9 +553,7 @@
     -webkit-appearance: auto !important;
 }
 
-/* ==========================================================
-   DARK MODE
-========================================================== */
+
 
 body.dark-mode .page-header p {
     color: #94A3B8;
@@ -775,14 +746,9 @@ body.dark-mode .date-picker::-webkit-calendar-picker-indicator:hover {
 }
 
 
-/* ==========================================================
-   Appointments Page - Responsive
-   Student Project
-   ========================================================== */
+/* Appointments Page */
 
-/* ----------------------------------------------
-   TABLET (1024px and below)
----------------------------------------------- */
+
 
 @media (max-width: 1024px) {
 
@@ -807,9 +773,7 @@ body.dark-mode .date-picker::-webkit-calendar-picker-indicator:hover {
 
 }
 
-/* ----------------------------------------------
-   MOBILE (768px and below)
----------------------------------------------- */
+
 
 @media (max-width: 768px) {
 
@@ -885,9 +849,7 @@ body.dark-mode .date-picker::-webkit-calendar-picker-indicator:hover {
 
 }
 
-/* ----------------------------------------------
-   SMALL MOBILE (480px and below)
----------------------------------------------- */
+
 
 @media (max-width: 480px) {
 
@@ -1025,9 +987,7 @@ body.dark-mode .date-picker::-webkit-calendar-picker-indicator:hover {
 
 }
 
-/* ----------------------------------------------
-   VERY SMALL (360px and below)
----------------------------------------------- */
+
 
 @media (max-width: 360px) {
 
@@ -1081,9 +1041,7 @@ body.dark-mode .date-picker::-webkit-calendar-picker-indicator:hover {
 
 }
 
-/* ----------------------------------------------
-   TOUCH DEVICES
----------------------------------------------- */
+
 
 @media (hover: none) {
 
@@ -1127,9 +1085,7 @@ body.dark-mode .date-picker::-webkit-calendar-picker-indicator:hover {
 
 }
 
-/* ----------------------------------------------
-   LANDSCAPE MODE
----------------------------------------------- */
+
 
 @media (max-height: 500px) {
 

@@ -1,7 +1,4 @@
-/* ==========================================================
-   PROFILE PAGE STYLES
-   Simple student project - Mobile Friendly
-   ========================================================== */
+
 
 /* Page Header */
 .page-header {
@@ -461,9 +458,7 @@
     cursor: not-allowed;
 }
 
-/* ==========================================================
-   DARK MODE - PROFILE
-========================================================== */
+
 
 body.dark-mode .page-header p {
     color: #94A3B8;
@@ -593,9 +588,6 @@ body.dark-mode .edit-profile-btn:hover {
     background: #3730A3;
 }
 
-/* ==========================================================
-   RESPONSIVE - PROFILE (MOBILE FIRST)
-========================================================== */
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -909,9 +901,7 @@ body.dark-mode .edit-profile-btn:hover {
 }
 
 
-/* ==========================================================
-   CREATE POST PAGE STYLES
-   ========================================================== */
+/* CREATE POST PAGE STYLES*/
 
 .create-post-container {
     display: grid;
@@ -1238,9 +1228,7 @@ body.dark-mode .edit-profile-btn:hover {
     margin-bottom: 6px;
 }
 
-/* ==========================================================
-   DARK MODE - CREATE POST
-========================================================== */
+
 
 body.dark-mode .post-form-card {
     background: #1E293B;
@@ -1321,14 +1309,8 @@ body.dark-mode .no-posts {
     color: #64748B;
 }
 
-/* ==========================================================
-   Appointments Page - Main CSS
-   Student Project
-   ========================================================== */
+/* Appointments Page  */
 
-/* ----------------------------------------------
-   PAGE HEADER
----------------------------------------------- */
 
 .page-header {
     display: flex;
@@ -1369,9 +1351,7 @@ body.dark-mode .no-posts {
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   STATS
----------------------------------------------- */
+
 
 .appt-stats {
     display: flex;
@@ -1406,9 +1386,7 @@ body.dark-mode .no-posts {
     background: #e8e8e8;
 }
 
-/* ----------------------------------------------
-   APPOINTMENTS GRID
----------------------------------------------- */
+
 
 .appt-grid {
     display: grid;
@@ -1435,9 +1413,7 @@ body.dark-mode .no-posts {
     margin-right: 6px;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT CARD
----------------------------------------------- */
+
 
 .appt-card {
     background: #fff;
@@ -1509,9 +1485,7 @@ body.dark-mode .no-posts {
     color: #2563EB;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT INFO
----------------------------------------------- */
+
 
 .appt-info {
     display: flex;
@@ -1534,9 +1508,7 @@ body.dark-mode .no-posts {
     font-size: 0.8rem;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT BUTTONS
----------------------------------------------- */
+
 
 .appt-btns {
     display: flex;
@@ -1591,9 +1563,7 @@ body.dark-mode .no-posts {
     color: #fff;
 }
 
-/* ----------------------------------------------
-   PSYCHOLOGIST CARD
----------------------------------------------- */
+
 
 .psych-card {
     background: #fff;
@@ -1675,9 +1645,6 @@ body.dark-mode .no-posts {
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   MODAL
----------------------------------------------- */
 
 .modal {
     position: fixed;
@@ -1840,9 +1807,7 @@ body.dark-mode .no-posts {
     background: #3730A3;
 }
 
-/* ----------------------------------------------
-   RESCHEDULE INFO
----------------------------------------------- */
+
 
 .resched-info {
     background: #f8f9fa;
@@ -1870,9 +1835,7 @@ body.dark-mode .no-posts {
     font-weight: 600;
 }
 
-/* ==========================================================
-   DARK MODE
-========================================================== */
+
 
 body.dark-mode .page-header p {
     color: #94A3B8;

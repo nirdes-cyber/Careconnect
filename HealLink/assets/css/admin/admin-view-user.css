@@ -1,11 +1,4 @@
-/* ==========================================================
-   Admin View User - Complete CSS
-   Only for viewing User Profile
-   ========================================================== */
 
-/* ----------------------------------------------
-   BACK SECTION
----------------------------------------------- */
 
 .back-section {
     margin-bottom: 16px;
@@ -30,9 +23,7 @@ body.dark-mode .back-link {
     color: #818CF8;
 }
 
-/* ----------------------------------------------
-   PROFILE CONTAINER
----------------------------------------------- */
+
 
 .profile-container {
     display: flex;
@@ -41,9 +32,6 @@ body.dark-mode .back-link {
     margin-bottom: 20px;
 }
 
-/* ----------------------------------------------
-   PROFILE CARD
----------------------------------------------- */
 
 .profile-card {
     background: #fff;
@@ -234,9 +222,7 @@ body.dark-mode .btn-action.danger:hover {
     color: #fff;
 }
 
-/* ----------------------------------------------
-   PROFILE STATS
----------------------------------------------- */
+
 
 .profile-stats {
     display: flex;
@@ -288,9 +274,7 @@ body.dark-mode .stat-divider {
     background: #334155;
 }
 
-/* ----------------------------------------------
-   PROFILE GRID
----------------------------------------------- */
+
 
 .profile-grid {
     display: grid;
@@ -305,9 +289,7 @@ body.dark-mode .stat-divider {
     gap: 20px;
 }
 
-/* ----------------------------------------------
-   INFO CARD
----------------------------------------------- */
+
 
 .info-card {
     background: #fff;
@@ -342,9 +324,7 @@ body.dark-mode .info-card h3 {
     padding: 12px 14px 14px;
 }
 
-/* ----------------------------------------------
-   INFO ROWS
----------------------------------------------- */
+
 
 .info-row {
     display: flex;
@@ -381,9 +361,7 @@ body.dark-mode .info-val {
     color: #E2E8F0;
 }
 
-/* ----------------------------------------------
-   ROLE BADGE (in info)
----------------------------------------------- */
+
 
 .role-badge {
     padding: 2px 12px;
@@ -402,9 +380,7 @@ body.dark-mode .role-badge.user {
     color: #60A5FA;
 }
 
-/* ----------------------------------------------
-   STATUS BADGE (in info)
----------------------------------------------- */
+
 
 .status-badge {
     padding: 2px 12px;
@@ -444,9 +420,7 @@ body.dark-mode .status-badge.inactive {
     color: #F87171;
 }
 
-/* ----------------------------------------------
-   CONNECTED PSYCHOLOGISTS (for user view)
----------------------------------------------- */
+
 
 .psych-body {
     padding: 4px 14px 12px;
@@ -521,9 +495,6 @@ body.dark-mode .psych-status.pending {
     color: #FBBF24;
 }
 
-/* ----------------------------------------------
-   ACTIVITY
----------------------------------------------- */
 
 .activity-body {
     padding: 4px 14px 12px;
@@ -596,9 +567,7 @@ body.dark-mode .activity-item span {
     color: #64748B;
 }
 
-/* ----------------------------------------------
-   TOAST MESSAGE
----------------------------------------------- */
+
 
 .toast-msg {
     position: fixed;
@@ -633,9 +602,7 @@ body.dark-mode .toast-msg {
     }
 }
 
-/* ----------------------------------------------
-   RESPONSIVE
----------------------------------------------- */
+
 
 @media (max-width: 1024px) {
     .profile-grid {

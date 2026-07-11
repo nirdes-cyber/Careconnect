@@ -1,10 +1,4 @@
-/* ==========================================================
-   Psychologist Appointments - Complete CSS
-   ========================================================== */
 
-/* ----------------------------------------------
-   PAGE HEADER STATS
----------------------------------------------- */
 
 .page-header-stats {
     display: flex;
@@ -41,9 +35,7 @@ body.dark-mode .stat-badge.total {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   QUICK STATS
----------------------------------------------- */
+
 
 .appt-stats {
     display: flex;
@@ -95,9 +87,7 @@ body.dark-mode .stat-line {
     background: #334155;
 }
 
-/* ----------------------------------------------
-   APPOINTMENTS GRID
----------------------------------------------- */
+
 
 .appt-grid {
     display: grid;
@@ -128,9 +118,7 @@ body.dark-mode .col-title {
     margin-right: 6px;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT CARD
----------------------------------------------- */
+
 
 .appt-card {
     background: #fff;
@@ -157,9 +145,7 @@ body.dark-mode .appt-card {
     opacity: 1;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT HEADER
----------------------------------------------- */
+
 
 .appt-header {
     display: flex;
@@ -248,9 +234,7 @@ body.dark-mode .appt-status.cancelled {
     color: #F87171;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT INFO
----------------------------------------------- */
+
 
 .appt-info {
     display: flex;
@@ -277,9 +261,6 @@ body.dark-mode .info-row {
     font-size: 0.8rem;
 }
 
-/* ----------------------------------------------
-   APPOINTMENT BUTTONS
----------------------------------------------- */
 
 .appt-btns {
     display: flex;
@@ -376,9 +357,7 @@ body.dark-mode .btn-view-notes:hover {
     color: #fff;
 }
 
-/* ==========================================================
-   VIDEO SESSION MODAL
-============================================== */
+
 
 .video-modal {
     position: fixed;
@@ -587,9 +566,6 @@ body.dark-mode .btn-view-notes:hover {
     background: #3730A3;
 }
 
-/* ==========================================================
-   RESCHEDULE MODAL
-============================================== */
 
 .reschedule-modal {
     position: fixed;
@@ -832,9 +808,7 @@ body.dark-mode .btn-confirm-resched:hover {
 }
 
 
-/* ==========================================================
-   Psychologist Appointments - Responsive
-   ========================================================== */
+
 
 @media (max-width: 1024px) {
     .appt-grid {

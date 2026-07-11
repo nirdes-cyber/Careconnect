@@ -1,10 +1,4 @@
-/* ==========================================================
-   Psychologist Replies - Complete CSS
-   ========================================================== */
 
-/* ----------------------------------------------
-   PAGE HEADER STATS
----------------------------------------------- */
 
 .page-header-stats {
     display: flex;
@@ -41,9 +35,7 @@ body.dark-mode .stat-badge.total {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   REPLIES CONTAINER
----------------------------------------------- */
+
 
 .replies-container {
     display: flex;
@@ -52,9 +44,6 @@ body.dark-mode .stat-badge.total {
     margin-bottom: 20px;
 }
 
-/* ----------------------------------------------
-   REPLY CARD
----------------------------------------------- */
 
 .reply-card {
     background: #fff;
@@ -73,9 +62,7 @@ body.dark-mode .reply-card {
     border-color: #4F46E5;
 }
 
-/* ----------------------------------------------
-   REPLY HEADER
----------------------------------------------- */
+
 
 .reply-header {
     display: flex;
@@ -114,9 +101,6 @@ body.dark-mode .reply-date {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   REPLY POST REF
----------------------------------------------- */
 
 .reply-post-ref {
     display: flex;
@@ -147,9 +131,7 @@ body.dark-mode .reply-post-ref strong {
     color: #E2E8F0;
 }
 
-/* ----------------------------------------------
-   REPLY CONTENT
----------------------------------------------- */
+
 
 .reply-content {
     font-size: 0.85rem;
@@ -162,9 +144,7 @@ body.dark-mode .reply-content {
     color: #CBD5E1;
 }
 
-/* ----------------------------------------------
-   REPLY FOOTER
----------------------------------------------- */
+
 
 .reply-footer {
     display: flex;
@@ -259,9 +239,7 @@ body.dark-mode .reply-action.delete:hover {
     color: #fff;
 }
 
-/* ==========================================================
-   PAGINATION
-========================================================== */
+
 
 .pagination {
     display: flex;
@@ -313,9 +291,7 @@ body.dark-mode .page-btn:hover {
     cursor: not-allowed;
 }
 
-/* ==========================================================
-   EDIT MODAL
-========================================================== */
+
 
 .edit-modal {
     position: fixed;
@@ -547,9 +523,6 @@ body.dark-mode .btn-save-edit:hover {
     background: #3730A3;
 }
 
-/* ==========================================================
-   Psychologist Replies - Responsive CSS
-   ========================================================== */
 
 @media (max-width: 768px) {
     .page-header {

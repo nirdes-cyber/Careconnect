@@ -1,10 +1,3 @@
-/* ==========================================================
-   Psychologist Posts - Complete CSS
-   ========================================================== */
-
-/* ----------------------------------------------
-   PAGE HEADER STATS
----------------------------------------------- */
 
 .page-header-stats {
     display: flex;
@@ -41,9 +34,7 @@ body.dark-mode .stat-badge.total {
     color: #A5B4FC;
 }
 
-/* ----------------------------------------------
-   FILTER BAR
----------------------------------------------- */
+
 
 .filter-bar {
     display: flex;
@@ -128,9 +119,7 @@ body.dark-mode .filter-bar select {
     outline: none;
 }
 
-/* ----------------------------------------------
-   POSTS CONTAINER
----------------------------------------------- */
+
 
 .posts-container {
     display: flex;
@@ -139,9 +128,7 @@ body.dark-mode .filter-bar select {
     margin-bottom: 20px;
 }
 
-/* ----------------------------------------------
-   POST CARD
----------------------------------------------- */
+
 
 .post-card {
     background: #fff;
@@ -184,9 +171,7 @@ body.dark-mode .post-card.replied {
     border-left-color: #10B981;
 }
 
-/* ----------------------------------------------
-   POST HEADER
----------------------------------------------- */
+
 
 .post-header {
     display: flex;
@@ -262,9 +247,6 @@ body.dark-mode .post-date {
     color: #94A3B8;
 }
 
-/* ----------------------------------------------
-   POST META
----------------------------------------------- */
 
 .post-meta {
     display: flex;
@@ -349,9 +331,6 @@ body.dark-mode .post-cat.other {
     gap: 4px;
 }
 
-/* ----------------------------------------------
-   POST CONTENT
----------------------------------------------- */
 
 .post-content {
     font-size: 0.82rem;
@@ -364,9 +343,7 @@ body.dark-mode .post-content {
     color: #CBD5E1;
 }
 
-/* ----------------------------------------------
-   POST FOOTER
----------------------------------------------- */
+
 
 .post-footer {
     display: flex;
@@ -418,9 +395,7 @@ body.dark-mode .btn-reply.replied:hover {
     color: #fff;
 }
 
-/* ==========================================================
-   REPLY MODAL
-========================================================== */
+
 
 .reply-modal {
     position: fixed;
@@ -654,9 +629,7 @@ body.dark-mode .btn-send-reply:hover {
     background: #3730A3;
 }
 
-/* ==========================================================
-   NO RESULTS
-========================================================== */
+
 
 .no-results-msg {
     text-align: center;
@@ -699,9 +672,7 @@ body.dark-mode .no-results-msg i {
     color: #475569;
 }
 
-/* ==========================================================
-   RESPONSIVE
-========================================================== */
+
 
 @media (max-width: 768px) {
     .page-header {
