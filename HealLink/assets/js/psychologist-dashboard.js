@@ -757,11 +757,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Error loading profile');
         }
     }
-
-    // ==========================================================
-    // PHOTO UPLOAD
-    // ==========================================================
-
+    
     var uploadBtn = document.getElementById('uploadPhotoBtn');
     var photoInput = document.getElementById('photoInput');
     var profileAvatar = document.getElementById('profileAvatar');

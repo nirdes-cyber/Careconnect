@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist/psychologist-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist/psychologist-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/psychologist/psychologist-appointments.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="psychologist-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="psychologist-dashboard.html">Dashboard</a></li>
+                    <li><a href="psychologist-profile.html">Profile</a></li>
+                    <li><a href="psychologist-posts.html">Anonymous Posts</a></li>
+                    <li><a href="psychologist-replies.html">My Replies</a></li>
+                    <li><a href="psychologist-appointments.html" class="active">Appointments</a></li>
+                    <li><a href="psychologist-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+                        <span>Dr. Jagadish</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="psychologist-profile.html"><i class="bi bi-person"></i> Profile</a>
+                        <a href="psychologist-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="psychologist-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="psychologist-profile.html"><i class="bi bi-person-circle"></i> My Profile</a></li>
+            <li><a href="psychologist-posts.html"><i class="bi bi-journal-text"></i> Anonymous Posts</a></li>
+            <li><a href="psychologist-replies.html"><i class="bi bi-chat-left-heart"></i> My Replies</a></li>
+            <li><a href="psychologist-appointments.html" class="active"><i class="bi bi-calendar2-check"></i> Appointments</a></li>
+            <li><a href="psychologist-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish Oli">
+            <div>
+                <h4>Dr. Jagadish Oli</h4>
+                <span>Clinical Psychologist</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
+                <h1>📅 Appointments</h1>
+                <p>Manage your counseling sessions</p>
+            </div>
+            <div class="page-header-stats">
+                <span class="stat-badge upcoming"><i class="bi bi-clock"></i> 3 Upcoming</span>
+                <span class="stat-badge total"><i class="bi bi-calendar2-check"></i> 12 Total</span>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            QUICK STATS
+        ========================================================== -->
+
+        <div class="appt-stats">
+            <div class="stat-item">
+                <span class="stat-num">3</span>
+                <span class="stat-lbl">Upcoming</span>
+            </div>
+            <div class="stat-line"></div>
+            <div class="stat-item">
+                <span class="stat-num">8</span>
+                <span class="stat-lbl">Completed</span>
+            </div>
+            <div class="stat-line"></div>
+            <div class="stat-item">
+                <span class="stat-num">1</span>
+                <span class="stat-lbl">Cancelled</span>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            APPOINTMENTS GRID
+        ========================================================== -->
+
+        <div class="appt-grid">
+
+            <!-- ==========================================================
+                UPCOMING APPOINTMENTS
+            ========================================================== -->
+
+            <div class="appt-col">
+
+                <h3 class="col-title"><i class="bi bi-clock"></i> Upcoming Sessions</h3>
+
+                <!-- Appointment 1 -->
+                <div class="appt-card">
+                    <div class="appt-header">
+                        <div class="appt-patient">
+                            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh Tiwari">
+                            <div>
+                                <h4>Nirdesh Tiwari</h4>
+                                <span>Video Consultation</span>
+                            </div>
+                        </div>
+                        <span class="appt-status confirmed">Confirmed</span>
+                    </div>
+
+                    <div class="appt-info">
+                        <div class="info-row">
+                            <i class="bi bi-calendar-event"></i>
+                            <span>Monday, 08 June 2026</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-clock"></i>
+                            <span>10:30 AM</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-camera-video"></i>
+                            <span>Video Consultation</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-chat"></i>
+                            <span>45 minutes</span>
+                        </div>
+                    </div>
+
+                    <div class="appt-btns">
+                        <button class="btn-join" data-patient="Nirdesh Tiwari"><i class="bi bi-camera-video-fill"></i> Join</button>
+                        <button class="btn-cancel"><i class="bi bi-x-circle"></i> Cancel</button>
+                        <button class="btn-reschedule"><i class="bi bi-clock"></i> Reschedule</button>
+                    </div>
+                </div>
+
+                <!-- Appointment 2 -->
+                <div class="appt-card">
+                    <div class="appt-header">
+                        <div class="appt-patient">
+                            <img src="https://ui-avatars.com/api/?name=Anonymous+User&background=06B6D4&color=fff" alt="Anonymous User">
+                            <div>
+                                <h4>Anonymous User</h4>
+                                <span>Audio Consultation</span>
+                            </div>
+                        </div>
+                        <span class="appt-status pending">Pending</span>
+                    </div>
+
+                    <div class="appt-info">
+                        <div class="info-row">
+                            <i class="bi bi-calendar-event"></i>
+                            <span>Friday, 12 June 2026</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-clock"></i>
+                            <span>2:00 PM</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-headset"></i>
+                            <span>Audio Consultation</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-chat"></i>
+                            <span>30 minutes</span>
+                        </div>
+                    </div>
+
+                    <div class="appt-btns">
+                        <button class="btn-cancel"><i class="bi bi-x-circle"></i> Cancel</button>
+                        <button class="btn-reschedule"><i class="bi bi-clock"></i> Reschedule</button>
+                    </div>
+                </div>
+
+                <!-- Appointment 3 -->
+                <div class="appt-card">
+                    <div class="appt-header">
+                        <div class="appt-patient">
+                            <img src="https://ui-avatars.com/api/?name=Anonymous+User&background=10B981&color=fff" alt="Anonymous User">
+                            <div>
+                                <h4>Anonymous User</h4>
+                                <span>Video Consultation</span>
+                            </div>
+                        </div>
+                        <span class="appt-status confirmed">Confirmed</span>
+                    </div>
+
+                    <div class="appt-info">
+                        <div class="info-row">
+                            <i class="bi bi-calendar-event"></i>
+                            <span>Wednesday, 17 June 2026</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-clock"></i>
+                            <span>3:30 PM</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-camera-video"></i>
+                            <span>Video Consultation</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-chat"></i>
+                            <span>45 minutes</span>
+                        </div>
+                    </div>
+
+                    <div class="appt-btns">
+                        <button class="btn-join" data-patient="Anonymous User"><i class="bi bi-camera-video-fill"></i> Join</button>
+                        <button class="btn-cancel"><i class="bi bi-x-circle"></i> Cancel</button>
+                        <button class="btn-reschedule"><i class="bi bi-clock"></i> Reschedule</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ==========================================================
+                COMPLETED APPOINTMENTS
+            ========================================================== -->
+
+            <div class="appt-col">
+
+                <h3 class="col-title"><i class="bi bi-check-circle"></i> Completed Sessions</h3>
+
+                <!-- Completed 1 -->
+                <div class="appt-card completed">
+                    <div class="appt-header">
+                        <div class="appt-patient">
+                            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh Tiwari">
+                            <div>
+                                <h4>Nirdesh Tiwari</h4>
+                                <span>Video Consultation</span>
+                            </div>
+                        </div>
+                        <span class="appt-status completed">Completed</span>
+                    </div>
+
+                    <div class="appt-info">
+                        <div class="info-row">
+                            <i class="bi bi-calendar-event"></i>
+                            <span>Monday, 01 June 2026</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-clock"></i>
+                            <span>10:30 AM</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-camera-video"></i>
+                            <span>Video Consultation</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-chat"></i>
+                            <span>45 minutes</span>
+                        </div>
+                    </div>
+
+                    <div class="appt-btns">
+                        <button class="btn-view-notes"><i class="bi bi-file-text"></i> View Notes</button>
+                    </div>
+                </div>
+
+                <!-- Completed 2 -->
+                <div class="appt-card completed">
+                    <div class="appt-header">
+                        <div class="appt-patient">
+                            <img src="https://ui-avatars.com/api/?name=Anonymous+User&background=06B6D4&color=fff" alt="Anonymous User">
+                            <div>
+                                <h4>Anonymous User</h4>
+                                <span>Audio Consultation</span>
+                            </div>
+                        </div>
+                        <span class="appt-status completed">Completed</span>
+                    </div>
+
+                    <div class="appt-info">
+                        <div class="info-row">
+                            <i class="bi bi-calendar-event"></i>
+                            <span>Friday, 29 May 2026</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-clock"></i>
+                            <span>2:00 PM</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-headset"></i>
+                            <span>Audio Consultation</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-chat"></i>
+                            <span>30 minutes</span>
+                        </div>
+                    </div>
+
+                    <div class="appt-btns">
+                        <button class="btn-view-notes"><i class="bi bi-file-text"></i> View Notes</button>
+                    </div>
+                </div>
+
+                <!-- Completed 3 -->
+                <div class="appt-card completed">
+                    <div class="appt-header">
+                        <div class="appt-patient">
+                            <img src="https://ui-avatars.com/api/?name=Anonymous+User&background=10B981&color=fff" alt="Anonymous User">
+                            <div>
+                                <h4>Anonymous User</h4>
+                                <span>Video Consultation</span>
+                            </div>
+                        </div>
+                        <span class="appt-status completed">Completed</span>
+                    </div>
+
+                    <div class="appt-info">
+                        <div class="info-row">
+                            <i class="bi bi-calendar-event"></i>
+                            <span>Wednesday, 27 May 2026</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-clock"></i>
+                            <span>3:30 PM</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-camera-video"></i>
+                            <span>Video Consultation</span>
+                        </div>
+                        <div class="info-row">
+                            <i class="bi bi-chat"></i>
+                            <span>45 minutes</span>
+                        </div>
+                    </div>
+
+                    <div class="appt-btns">
+                        <button class="btn-view-notes"><i class="bi bi-file-text"></i> View Notes</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================================================
+            VIDEO SESSION MODAL
+        ========================================================== -->
+
+        <div class="video-modal" id="videoModal">
+            <div class="video-modal-content">
+                <div class="video-modal-header">
+                    <h3><i class="bi bi-camera-video"></i> Video Consultation</h3>
+                    <button class="video-modal-close" id="videoModalClose">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="video-modal-body">
+                    <div class="video-container">
+                        <div class="video-local">
+                            <video id="localVideo" autoplay muted></video>
+                            <div class="video-label">You (Dr. Jagadish)</div>
+                        </div>
+                        <div class="video-remote">
+                            <div class="remote-placeholder">
+                                <i class="bi bi-person-circle"></i>
+                                <p>Patient is connecting...</p>
+                                <span>Please wait</span>
+                            </div>
+                            <div class="video-label">Patient</div>
+                        </div>
+                    </div>
+                    <div class="video-controls">
+                        <button class="video-btn mute-btn" id="muteBtn">
+                            <i class="bi bi-mic"></i>
+                        </button>
+                        <button class="video-btn video-off-btn" id="videoOffBtn">
+                            <i class="bi bi-camera-video"></i>
+                        </button>
+                        <button class="video-btn end-call-btn" id="endCallBtn">
+                            <i class="bi bi-telephone-x"></i> End Call
+                        </button>
+                        <button class="video-btn share-btn" id="shareBtn">
+                            <i class="bi bi-share"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-modal-overlay" id="videoModalOverlay"></div>
+
+        <!-- ==========================================================
+            RESCHEDULE MODAL
+        ========================================================== -->
+
+        <div class="reschedule-modal" id="rescheduleModal">
+            <div class="reschedule-modal-content">
+                <div class="reschedule-modal-header">
+                    <h3><i class="bi bi-clock"></i> Reschedule Appointment</h3>
+                    <button class="reschedule-modal-close" id="rescheduleClose">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="reschedule-modal-body">
+                    <div class="reschedule-info">
+                        <p><strong>Patient:</strong> <span id="reschedPatient">Nirdesh Tiwari</span></p>
+                        <p><strong>Current Date:</strong> <span id="reschedDate">Monday, 08 June 2026</span></p>
+                        <p><strong>Current Time:</strong> <span id="reschedTime">10:30 AM</span></p>
+                    </div>
+                    <div class="form-group">
+                        <label>New Date</label>
+                        <input type="date" id="reschedNewDate">
+                    </div>
+                    <div class="form-group">
+                        <label>New Time</label>
+                        <select id="reschedNewTime">
+                            <option value="">Select time</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="09:30">09:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="14:30">02:30 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="15:30">03:30 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Reason (Optional)</label>
+                        <textarea id="reschedReason" rows="2" placeholder="Why do you need to reschedule?"></textarea>
+                    </div>
+                    <div class="reschedule-actions">
+                        <button class="btn-cancel-resched" id="rescheduleCancel">Cancel</button>
+                        <button class="btn-confirm-resched" id="rescheduleConfirm">Confirm Reschedule</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reschedule-modal-overlay" id="rescheduleOverlay"></div>
+
+        
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/psychologist-appointments.js"></script>
+    <script src="/HealLink/assets/js/psychologist-dashboard.js"></script>
+
+</body>
+
+</html>
