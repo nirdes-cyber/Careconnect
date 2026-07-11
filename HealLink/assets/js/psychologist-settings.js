@@ -1,12 +1,8 @@
-/* ==========================================================
-   Psychologist Settings - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
+
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -57,9 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
+
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -75,9 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE - SYNC WITH MAIN THEME
-    // ==========================================================
+
 
     var themeBtn = document.getElementById('navThemeBtn');
     var darkModeToggle = document.getElementById('darkModeToggle');
@@ -125,9 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // NAV LINKS - Mobile active state
-    // ==========================================================
 
     var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
 
@@ -144,9 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // EDIT BUTTONS
-    // ==========================================================
+   
 
     var editBtns = document.querySelectorAll('.edit-btn');
 
@@ -170,9 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // CHANGE PASSWORD
-    // ==========================================================
+
 
     var changePassBtn = document.getElementById('changePasswordBtn');
 
@@ -204,9 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // MANAGE SESSIONS
-    // ==========================================================
+
 
     var sessionsBtn = document.getElementById('manageSessionsBtn');
 
@@ -223,9 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // TOGGLES - Save state
-    // ==========================================================
 
     var toggles = document.querySelectorAll('.toggle input');
 
@@ -245,9 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // DARK MODE TOGGLE (Sync with main theme)
-    // ==========================================================
+
 
     if (darkModeToggle) {
         darkModeToggle.addEventListener('change', function() {
@@ -256,9 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // FONT SIZE
-    // ==========================================================
 
     var fontSizeSelect = document.getElementById('fontSizeSelect');
 
@@ -286,9 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.fontSize = sizes[size] || '15px';
     }
 
-    // ==========================================================
-    // LANGUAGE
-    // ==========================================================
+
 
     var languageSelect = document.getElementById('languageSelect');
 
@@ -309,9 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DEACTIVATE ACCOUNT
-    // ==========================================================
 
     var deactivateBtn = document.getElementById('deactivateBtn');
 
@@ -324,9 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // CLEAR HISTORY
-    // ==========================================================
+
 
     var clearHistoryBtn = document.getElementById('clearHistoryBtn');
 
@@ -339,9 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DELETE ACCOUNT
-    // ==========================================================
+
 
     var deleteBtn = document.getElementById('deleteAccountBtn');
 
@@ -359,9 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // SAVE ALL SETTINGS
-    // ==========================================================
+   
 
     var saveAllBtn = document.getElementById('saveAllBtn');
 
@@ -392,9 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // LOAD SAVED SETTINGS
-    // ==========================================================
+
 
     function loadSavedSettings() {
         var saved = localStorage.getItem('careconnect-psychologist-settings');
@@ -408,9 +370,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadSavedSettings();
 
-    // ==========================================================
-    // TOAST NOTIFICATION
-    // ==========================================================
+  
 
     function showToast(message) {
         var old = document.querySelector('.toast-msg');

@@ -1,12 +1,8 @@
-/* ==========================================================
-   Admin Dashboard - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
+
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -57,9 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
+
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -75,9 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE
-    // ==========================================================
+    
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -115,9 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // COUNTER ANIMATION
-    // ==========================================================
+  
 
     var counters = document.querySelectorAll('.counter');
 

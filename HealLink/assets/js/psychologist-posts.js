@@ -1,12 +1,8 @@
-/* ==========================================================
-   Psychologist Posts - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
+
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -59,9 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
+
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -77,9 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE
-    // ==========================================================
+
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -117,9 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // NAV LINKS - Mobile active state
-    // ==========================================================
+  
 
     var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
 
@@ -136,9 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // REPLY MODAL
-    // ==========================================================
+   
 
     var replyModal = document.getElementById('replyModal');
     var replyOverlay = document.getElementById('replyModalOverlay');
@@ -252,9 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // FILTER FUNCTIONALITY
-    // ==========================================================
+  
 
     var filterBtns = document.querySelectorAll('.filter-btn');
     var filterCategory = document.getElementById('filterCategory');
@@ -337,9 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
         filterCategory.addEventListener('change', applyFilters);
     }
 
-    // ==========================================================
-    // UPDATE NEW POSTS COUNT
-    // ==========================================================
+    
 
     function updateNewCount() {
         var newPosts = document.querySelectorAll('.post-card.new').length;

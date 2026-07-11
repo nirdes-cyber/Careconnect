@@ -1,12 +1,8 @@
-/* ==========================================================
-   Psychologist Appointments - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
+
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -61,9 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
+  
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -79,9 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE
-    // ==========================================================
+  
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -119,9 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // NAV LINKS - Mobile active state
-    // ==========================================================
 
     var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
 
@@ -138,9 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // VIDEO SESSION MODAL
-    // ==========================================================
+
 
     var videoModal = document.getElementById('videoModal');
     var videoOverlay = document.getElementById('videoModalOverlay');
@@ -324,9 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // JOIN BUTTONS - Open Video Call
-    // ==========================================================
+
 
     var joinBtns = document.querySelectorAll('.btn-join');
 
@@ -337,9 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // CANCEL BUTTONS
-    // ==========================================================
+
 
     var cancelBtns = document.querySelectorAll('.btn-cancel');
 
@@ -365,9 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // VIEW NOTES BUTTONS
-    // ==========================================================
+   
 
     var viewNotesBtns = document.querySelectorAll('.btn-view-notes');
 
@@ -383,9 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // RESCHEDULE MODAL
-    // ==========================================================
+
 
     var reschedModal = document.getElementById('rescheduleModal');
     var reschedOverlay = document.getElementById('rescheduleOverlay');

@@ -1,12 +1,7 @@
-/* ==========================================================
-   Psychologist Dashboard - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -54,9 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
+  
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -72,9 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE
-    // ==========================================================
+    
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -112,9 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // COUNTER ANIMATION
-    // ==========================================================
+ 
 
     var counters = document.querySelectorAll('.counter');
 
@@ -136,9 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCounter();
     });
 
-    // ==========================================================
-    // VIEW POSTS - Reply Now / View Reply
-    // ==========================================================
+  
 
     var postActions = document.querySelectorAll('.post-action');
 
@@ -159,9 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // APPOINTMENT BUTTONS - JOIN (Video Call)
-    // ==========================================================
+
 
     var joinBtns = document.querySelectorAll('.join-btn');
 
@@ -177,9 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // PREPARE BUTTONS
-    // ==========================================================
 
     var prepareBtns = document.querySelectorAll('.prepare-btn');
 
@@ -195,9 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // VIDEO SESSION MODAL
-    // ==========================================================
+
 
     var videoModal = document.getElementById('videoModal');
     var videoOverlay = document.getElementById('videoModalOverlay');
@@ -381,9 +361,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DETECT USER JOINING SESSION
-    // ==========================================================
+
 
     function checkActiveSession() {
         var sessionData = localStorage.getItem('careconnect-active-session');
@@ -463,9 +441,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(checkActiveSession, 3000);
     setTimeout(checkActiveSession, 1000);
 
-    // ==========================================================
-    // QUICK ACTIONS
-    // ==========================================================
+ 
 
     var quickItems = document.querySelectorAll('.quick-item');
 
@@ -478,9 +454,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // NAV LINKS - Mobile active state
-    // ==========================================================
+ 
 
     var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
 
@@ -500,15 +474,10 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Psychologist Dashboard loaded');
 });
 
-/* ==========================================================
-   Psychologist Profile - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -555,9 +524,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -573,9 +539,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE
-    // ==========================================================
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -613,9 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // EDIT PROFILE TOGGLE
-    // ==========================================================
+
 
     var editBtn = document.getElementById('editProfileBtn');
     var saveBtn = document.getElementById('saveProfileBtn');
@@ -716,9 +677,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // LOAD SAVED PROFILE
-    // ==========================================================
+
 
     var savedProfile = localStorage.getItem('careconnect-psychologist-profile');
     if (savedProfile) {

@@ -1,12 +1,8 @@
-/* ==========================================================
-   Psychologist Replies - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
+
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -59,9 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
+
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -77,9 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE
-    // ==========================================================
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -117,9 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // NAV LINKS - Mobile active state
-    // ==========================================================
+ 
 
     var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
 
@@ -136,9 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // EDIT MODAL
-    // ==========================================================
+ 
 
     var editModal = document.getElementById('editModal');
     var editOverlay = document.getElementById('editModalOverlay');
@@ -223,10 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DELETE REPLY
-    // ==========================================================
-
+ 
     var deleteBtns = document.querySelectorAll('.reply-action.delete');
 
     deleteBtns.forEach(function(btn) {
@@ -246,10 +230,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // UPDATE COUNTS
-    // ==========================================================
-
     function updateCounts() {
         var total = document.querySelectorAll('.reply-card:not([style*="display: none"])').length;
         var sent = document.querySelectorAll('.reply-status.sent').length;
@@ -265,9 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ==========================================================
-    // PAGINATION
-    // ==========================================================
 
     var pageBtns = document.querySelectorAll('.page-btn');
     var currentPage = 1;

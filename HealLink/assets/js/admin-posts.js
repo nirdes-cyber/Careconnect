@@ -1,12 +1,8 @@
-/* ==========================================================
-   Admin Posts - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
+   
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -59,9 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
+
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -77,9 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE
-    // ==========================================================
+
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -117,9 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // NAV LINKS - Mobile active state
-    // ==========================================================
+    
 
     var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
 
@@ -136,9 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // SEARCH FUNCTION
-    // ==========================================================
+  
 
     var searchInput = document.getElementById('searchPosts');
 
@@ -158,9 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // FILTER FUNCTION
-    // ==========================================================
+  
 
     var filterStatus = document.getElementById('filterStatus');
     var filterCategory = document.getElementById('filterCategory');
@@ -206,11 +192,8 @@ document.addEventListener('DOMContentLoaded', function() {
         filterCategory.addEventListener('change', applyFilters);
     }
 
-    // ==========================================================
-    // ACTION BUTTONS
-    // ==========================================================
 
-    // View Post
+
     var viewBtns = document.querySelectorAll('.action-btn.view');
 
     viewBtns.forEach(function(btn) {
@@ -305,9 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // MODERATE MODAL
-    // ==========================================================
+   
 
     var moderateModal = document.getElementById('moderateModal');
     var moderateOverlay = document.getElementById('moderateOverlay');
@@ -385,9 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // UPDATE COUNTS
-    // ==========================================================
+
 
     function updateCounts() {
         var total = document.querySelectorAll('.posts-table tbody tr').length;
@@ -414,9 +393,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ==========================================================
-    // TOAST NOTIFICATION
-    // ==========================================================
+   
 
     function showToast(message) {
         var old = document.querySelector('.toast-msg');
@@ -438,9 +415,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2500);
     }
 
-    // ==========================================================
-    // PAGINATION
-    // ==========================================================
+
 
     var pageBtns = document.querySelectorAll('.page-btn');
     var currentPage = 1;

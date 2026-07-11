@@ -145,23 +145,23 @@ function addMessage(text, sender) {
 // faq
 const faqItems = document.querySelectorAll(".faq-item");
 
-faqItems.forEach(item=>{
+faqItems.forEach(item => {
 
-const question=item.querySelector(".faq-question");
+    const question = item.querySelector(".faq-question");
 
-question.addEventListener("click",()=>{
+    question.addEventListener("click", () => {
 
-faqItems.forEach(faq=>{
+        faqItems.forEach(faq => {
 
-if(faq!==item){
-faq.classList.remove("active");
-}
+            if (faq !== item) {
+                faq.classList.remove("active");
+            }
 
-});
+        });
 
-item.classList.toggle("active");
+        item.classList.toggle("active");
 
-});
+    });
 
 });
 

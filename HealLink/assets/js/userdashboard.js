@@ -1,12 +1,7 @@
-/* ==========================================================
-   CareConnect Dashboard - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -53,9 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -71,9 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE
-    // ==========================================================
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -111,9 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // COUNTER ANIMATION
-    // ==========================================================
 
     var counters = document.querySelectorAll('.counter');
 
@@ -135,9 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCounter();
     });
 
-    // ==========================================================
-    // SEARCH
-    // ==========================================================
+   
 
     var searchInput = document.getElementById('mainSearch');
 
@@ -150,9 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // ACTIVE NAV LINK (Mobile)
-    // ==========================================================
 
     var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
 
@@ -169,9 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // READ MORE (Replies) - Dashboard
-    // ==========================================================
 
     var readLinks = document.querySelectorAll('.reply-read-link');
 
@@ -182,9 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // VIEW POST - Dashboard
-    // ==========================================================
+ 
 
     var viewLinks = document.querySelectorAll('.post-view-link');
 
@@ -201,9 +177,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // JOIN MEETING
-    // ==========================================================
 
     var joinBtn = document.querySelector('.appt-buttons .appt-btn.primary');
 
@@ -214,9 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // CANCEL APPOINTMENT
-    // ==========================================================
 
     var cancelBtn = document.querySelector('.appt-buttons .cancel-appt');
 
@@ -228,9 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // NOTIFICATION ITEMS
-    // ==========================================================
+
 
     var notifEntries = document.querySelectorAll('.notif-entry');
 
@@ -245,9 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // PROFILE - EDIT FUNCTIONALITY
-    // ==========================================================
+    
 
     var editToggleBtn = document.getElementById('editToggleBtn');
     var saveProfileBtn = document.getElementById('saveProfileBtn');
@@ -351,9 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // LOAD SAVED PROFILE
-    // ==========================================================
+
 
     var savedProfile = localStorage.getItem('careconnect-profile');
     if (savedProfile) {
@@ -391,9 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ==========================================================
-    // PHOTO UPLOAD
-    // ==========================================================
+
 
     var uploadBtn = document.getElementById('uploadPhotoBtn');
     var photoInput = document.getElementById('photoInput');
@@ -438,9 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
         profileAvatar.src = savedAvatar;
     }
 
-    // ==========================================================
-    // MESSAGE PSYCHOLOGIST
-    // ==========================================================
+ 
 
     var msgBtns = document.querySelectorAll('.psych-item .msg-btn');
 
@@ -457,9 +417,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // CREATE POST FUNCTIONALITY
-    // ==========================================================
+  
 
     var postForm = document.getElementById('postForm');
     var postTitle = document.getElementById('postTitle');
@@ -558,9 +516,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // LOAD RECENT POSTS (Create Post page)
-    // ==========================================================
+ 
 
     function loadRecentPosts() {
         var postsList = document.getElementById('recentPostsList');
@@ -600,9 +556,7 @@ document.addEventListener('DOMContentLoaded', function() {
         postsList.innerHTML = html;
     }
 
-    // ==========================================================
-    // LOAD DASHBOARD POSTS
-    // ==========================================================
+   
 
     function loadDashboardPosts() {
         var tableBody = document.querySelector('.post-table tbody');
@@ -642,9 +596,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ==========================================================
-    // LOAD MY POSTS
-    // ==========================================================
 
     function loadMyPosts() {
         var container = document.getElementById('myPostsContainer');
@@ -706,9 +657,7 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = html;
     }
 
-    // ==========================================================
-    // EDIT POST FUNCTION
-    // ==========================================================
+
 
     window.editPost = function(postId) {
         var posts = JSON.parse(localStorage.getItem('careconnect-posts') || '[]');
@@ -747,10 +696,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadRecentPosts();
     };
 
-    // ==========================================================
-    // DELETE POST FUNCTION
-    // ==========================================================
-
+   
     window.deletePost = function(postId) {
         if (!confirm('Are you sure you want to delete this post?')) return;
 
@@ -764,9 +710,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadRecentPosts();
     };
 
-    // ==========================================================
-    // REPLIES PAGE - FUNCTIONALITY
-    // ==========================================================
+
 
     if (document.querySelector('.replies-container')) {
 
@@ -1120,9 +1064,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Replies page loaded successfully');
     }
 
-    // ==========================================================
-    // INITIALIZE ALL LOADS
-    // ==========================================================
+    
 
     loadRecentPosts();
     loadDashboardPosts();
@@ -1132,15 +1074,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// ==========================================================
-// APPOINTMENTS PAGE - COMPLETE JS
-// ==========================================================
+
 
 if (document.querySelector('.appt-grid')) {
 
-    // ==========================================================
-    // BOOK NOW BUTTONS
-    // ==========================================================
+   
 
     var bookNowBtns = document.querySelectorAll('.btn-book-now');
 
@@ -1151,9 +1089,7 @@ if (document.querySelector('.appt-grid')) {
         });
     });
 
-    // ==========================================================
-    // BOOK APPOINTMENT BUTTON (Header)
-    // ==========================================================
+    
 
     var bookBtn = document.getElementById('bookAppointmentBtn');
 
@@ -1163,9 +1099,7 @@ if (document.querySelector('.appt-grid')) {
         });
     }
 
-    // ==========================================================
-    // BOOKING MODAL
-    // ==========================================================
+   
 
     var bookingModal = document.getElementById('bookingModal');
     var bookingOverlay = document.getElementById('modalOverlay');
@@ -1227,9 +1161,7 @@ if (document.querySelector('.appt-grid')) {
         }
     });
 
-    // ==========================================================
-    // BOOK APPOINTMENT - SUBMIT
-    // ==========================================================
+
 
     if (bookingBook) {
         bookingBook.addEventListener('click', function() {
@@ -1287,9 +1219,7 @@ if (document.querySelector('.appt-grid')) {
         });
     }
 
-    // ==========================================================
-    // RESCHEDULE MODAL
-    // ==========================================================
+
 
     var reschedModal = document.getElementById('rescheduleModal');
     var reschedOverlay = document.getElementById('rescheduleOverlay');
@@ -1344,9 +1274,7 @@ if (document.querySelector('.appt-grid')) {
         reschedOverlay.addEventListener('click', closeRescheduleModal);
     }
 
-    // ==========================================================
-    // RESCHEDULE BUTTONS
-    // ==========================================================
+    
 
     function initRescheduleButtons() {
         var btns = document.querySelectorAll('.btn-reschedule');
@@ -1363,9 +1291,7 @@ if (document.querySelector('.appt-grid')) {
 
     initRescheduleButtons();
 
-    // ==========================================================
-    // CONFIRM RESCHEDULE
-    // ==========================================================
+ 
 
     if (reschedConfirm) {
         reschedConfirm.addEventListener('click', function() {
@@ -1422,9 +1348,7 @@ if (document.querySelector('.appt-grid')) {
         });
     }
 
-    // ==========================================================
-    // JOIN MEETING
-    // ==========================================================
+   
 
     var joinBtns = document.querySelectorAll('.btn-join');
 
@@ -1440,9 +1364,6 @@ if (document.querySelector('.appt-grid')) {
         });
     });
 
-    // ==========================================================
-    // CANCEL APPOINTMENT
-    // ==========================================================
 
     var cancelBtns = document.querySelectorAll('.btn-cancel');
 
@@ -1472,9 +1393,6 @@ if (document.querySelector('.appt-grid')) {
         });
     });
 
-    // ==========================================================
-    // LOAD APPOINTMENTS FROM LOCALSTORAGE
-    // ==========================================================
 
     function loadAppointments() {
         var appointments = JSON.parse(localStorage.getItem('careconnect-appointments') || '[]');
@@ -1498,15 +1416,11 @@ if (document.querySelector('.appt-grid')) {
     console.log('Appointments page loaded');
 }
 
-// ==========================================================
-// NOTIFICATIONS PAGE - COMPLETE JS
-// ==========================================================
+
 
 if (document.querySelector('.notif-list')) {
 
-    // ==========================================================
-    // MARK ALL AS READ
-    // ==========================================================
+    
 
     var markAllBtn = document.getElementById('markAllReadBtn');
 
@@ -1529,9 +1443,7 @@ if (document.querySelector('.notif-list')) {
         });
     }
 
-    // ==========================================================
-    // CLICK TO MARK READ
-    // ==========================================================
+
 
     var cards = document.querySelectorAll('.notif-card');
 
@@ -1550,9 +1462,7 @@ if (document.querySelector('.notif-list')) {
         });
     });
 
-    // ==========================================================
-    // DISMISS
-    // ==========================================================
+   
 
     var dismissBtns = document.querySelectorAll('.btn-dismiss');
 
@@ -1572,9 +1482,7 @@ if (document.querySelector('.notif-list')) {
         });
     });
 
-    // ==========================================================
-    // VIEW
-    // ==========================================================
+
 
     var viewBtns = document.querySelectorAll('.btn-view');
 
@@ -1598,9 +1506,6 @@ if (document.querySelector('.notif-list')) {
         });
     });
 
-    // ==========================================================
-    // FILTERS
-    // ==========================================================
 
     var filterBtns = document.querySelectorAll('.filter-btn');
     var filterType = document.getElementById('filterType');
@@ -1637,9 +1542,6 @@ if (document.querySelector('.notif-list')) {
         filterType.addEventListener('change', applyFilters);
     }
 
-    // ==========================================================
-    // UPDATE STATS
-    // ==========================================================
 
     function updateStats() {
         var total = document.querySelectorAll('.notif-card:not([style*="display: none"])').length;
@@ -1649,9 +1551,7 @@ if (document.querySelector('.notif-list')) {
         document.getElementById('readNotif').textContent = total - unread;
     }
 
-    // ==========================================================
-    // PAGINATION
-    // ==========================================================
+    
 
     var pageBtns = document.querySelectorAll('.page-btn');
     var currentPage = 1;
@@ -1693,9 +1593,7 @@ if (document.querySelector('.notif-list')) {
         document.querySelector('.page-btn.next').style.display = 'none';
     }
 
-    // ==========================================================
-    // TOAST
-    // ==========================================================
+  
 
     function showToast(msg) {
         var old = document.querySelector('.toast-msg');
@@ -1721,15 +1619,10 @@ if (document.querySelector('.notif-list')) {
 }
 
 
-// ==========================================================
-// SETTINGS PAGE - COMPLETE JS
-// ==========================================================
+
 
 if (document.querySelector('.settings-grid')) {
 
-    // ==========================================================
-    // EDIT BUTTONS - Open prompt to edit
-    // ==========================================================
 
     var editBtns = document.querySelectorAll('.edit-btn');
 
@@ -1753,9 +1646,7 @@ if (document.querySelector('.settings-grid')) {
         });
     });
 
-    // ==========================================================
-    // CHANGE PASSWORD
-    // ==========================================================
+  
 
     var changePassBtn = document.getElementById('changePasswordBtn');
 
@@ -1787,9 +1678,7 @@ if (document.querySelector('.settings-grid')) {
         });
     }
 
-    // ==========================================================
-    // MANAGE SESSIONS
-    // ==========================================================
+
 
     var sessionsBtn = document.getElementById('manageSessionsBtn');
 
@@ -1806,9 +1695,7 @@ if (document.querySelector('.settings-grid')) {
         });
     }
 
-    // ==========================================================
-    // TOGGLES - Save state
-    // ==========================================================
+   
 
     var toggles = document.querySelectorAll('.toggle input');
 
@@ -1830,9 +1717,7 @@ if (document.querySelector('.settings-grid')) {
         });
     });
 
-    // ==========================================================
-    // DARK MODE TOGGLE (Sync with main theme)
-    // ==========================================================
+  
 
     var darkModeToggle = document.getElementById('darkModeToggle');
 
@@ -1872,9 +1757,7 @@ if (document.querySelector('.settings-grid')) {
         });
     }
 
-    // ==========================================================
-    // FONT SIZE
-    // ==========================================================
+ 
 
     var fontSizeSelect = document.getElementById('fontSizeSelect');
 
@@ -1902,9 +1785,7 @@ if (document.querySelector('.settings-grid')) {
         document.body.style.fontSize = sizes[size] || '15px';
     }
 
-    // ==========================================================
-    // LANGUAGE
-    // ==========================================================
+ 
 
     var languageSelect = document.getElementById('languageSelect');
 
@@ -1925,9 +1806,7 @@ if (document.querySelector('.settings-grid')) {
         });
     }
 
-    // ==========================================================
-    // DELETE ACCOUNT
-    // ==========================================================
+  
 
     var deleteBtn = document.getElementById('deleteAccountBtn');
 
@@ -1947,9 +1826,7 @@ if (document.querySelector('.settings-grid')) {
         });
     }
 
-    // ==========================================================
-    // CLEAR HISTORY
-    // ==========================================================
+  
 
     var clearHistoryBtn = document.getElementById('clearHistoryBtn');
 
@@ -1963,9 +1840,7 @@ if (document.querySelector('.settings-grid')) {
         });
     }
 
-    // ==========================================================
-    // DEACTIVATE ACCOUNT
-    // ==========================================================
+    
 
     var deactivateBtn = document.getElementById('deactivateBtn');
 
@@ -1978,9 +1853,6 @@ if (document.querySelector('.settings-grid')) {
         });
     }
 
-    // ==========================================================
-    // SAVE ALL SETTINGS
-    // ==========================================================
 
     var saveAllBtn = document.getElementById('saveAllBtn');
 
@@ -2015,9 +1887,7 @@ if (document.querySelector('.settings-grid')) {
         });
     }
 
-    // ==========================================================
-    // LOAD SAVED SETTINGS
-    // ==========================================================
+  
 
     function loadSavedSettings() {
         var saved = localStorage.getItem('careconnect-settings');
@@ -2031,9 +1901,7 @@ if (document.querySelector('.settings-grid')) {
 
     loadSavedSettings();
 
-    // ==========================================================
-    // TOAST NOTIFICATION
-    // ==========================================================
+
 
     function showToast(message) {
         var old = document.querySelector('.toast-msg');

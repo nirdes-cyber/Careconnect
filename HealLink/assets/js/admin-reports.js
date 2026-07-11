@@ -1,12 +1,8 @@
-/* ==========================================================
-   Admin Reports - Complete JS
-   ========================================================== */
+
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
+
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -57,9 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
+   
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -75,9 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE - FIXED
-    // ==========================================================
+
 
     var themeBtn = document.getElementById('navThemeBtn');
 
@@ -133,9 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DATE RANGE FILTER
-    // ==========================================================
+
 
     var startDate = document.getElementById('startDate');
     var endDate = document.getElementById('endDate');
@@ -185,9 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // EXPORT REPORT
-    // ==========================================================
 
     var exportBtn = document.getElementById('exportReportBtn');
 
@@ -197,9 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // REFRESH LOG
-    // ==========================================================
+   
 
     var refreshBtn = document.getElementById('refreshLogBtn');
 
@@ -215,9 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // SPIN ANIMATION
-    // ==========================================================
+ 
 
     var style = document.createElement('style');
     style.textContent = `
@@ -228,9 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // ==========================================================
-    // TOAST NOTIFICATION
-    // ==========================================================
+
 
     function showToast(message) {
         var old = document.querySelector('.toast-msg');
