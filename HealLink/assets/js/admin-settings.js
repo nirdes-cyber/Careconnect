@@ -351,9 +351,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // LOAD SAVED SETTINGS
-    // ==========================================================
 
     function loadSavedSettings() {
         var saved = localStorage.getItem('careconnect-admin-settings');
@@ -367,9 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadSavedSettings();
 
-    // ==========================================================
-    // TOAST NOTIFICATION
-    // ==========================================================
+
 
     function showToast(message) {
         var old = document.querySelector('.toast-msg');
