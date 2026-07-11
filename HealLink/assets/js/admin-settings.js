@@ -1,12 +1,6 @@
-/* ==========================================================
-   Admin Settings - Complete JS
-   ========================================================== */
-
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ==========================================================
-    // MOBILE SIDEBAR
-    // ==========================================================
+
 
     var menuBtn = document.getElementById('mobileMenuBtn');
     var closeBtn = document.getElementById('mobileSidebarClose');
@@ -57,9 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ==========================================================
-    // PROFILE DROPDOWN
-    // ==========================================================
 
     var profileBtn = document.getElementById('navProfileBtn');
     var dropdown = document.getElementById('navDropdown');
@@ -75,9 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DARK MODE - SYNC WITH MAIN THEME
-    // ==========================================================
 
     var themeBtn = document.getElementById('navThemeBtn');
     var darkModeToggle = document.getElementById('darkModeToggle');
@@ -125,9 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // NAV LINKS - Mobile active state
-    // ==========================================================
+
 
     var mobileLinks = document.querySelectorAll('.mobile-sidebar-links a');
 
@@ -144,9 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // EDIT BUTTONS
-    // ==========================================================
+
 
     var editBtns = document.querySelectorAll('.edit-btn');
 
@@ -170,9 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // TOGGLES - Save state
-    // ==========================================================
+
 
     var toggles = document.querySelectorAll('.toggle input');
 
@@ -192,9 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // DARK MODE TOGGLE (Sync with main theme)
-    // ==========================================================
 
     if (darkModeToggle) {
         darkModeToggle.addEventListener('change', function() {
@@ -203,9 +182,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // SELECTS - Save state
-    // ==========================================================
 
     var selects = document.querySelectorAll('.setting-select');
 
@@ -225,9 +201,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ==========================================================
-    // CLEAR ALL DATA
-    // ==========================================================
 
     var clearDataBtn = document.getElementById('clearAllDataBtn');
 
@@ -249,9 +222,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // RESET SETTINGS
-    // ==========================================================
 
     var resetBtn = document.getElementById('resetSettingsBtn');
 
@@ -295,9 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // DEACTIVATE SYSTEM
-    // ==========================================================
+
 
     var deactivateBtn = document.getElementById('deactivateSystemBtn');
 
@@ -315,9 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==========================================================
-    // SAVE ALL SETTINGS
-    // ==========================================================
+
 
     var saveAllBtn = document.getElementById('saveAllBtn');
 

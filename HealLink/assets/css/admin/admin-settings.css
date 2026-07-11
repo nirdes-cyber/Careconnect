@@ -266,9 +266,6 @@ body.dark-mode .slider:before {
     transform: translateX(18px);
 }
 
-/* ----------------------------------------------
-   SELECT DROPDOWN
----------------------------------------------- */
 
 .setting-select {
     padding: 4px 10px;
@@ -291,9 +288,6 @@ body.dark-mode .setting-select {
     outline: none;
 }
 
-/* ----------------------------------------------
-   DANGER ZONE
----------------------------------------------- */
 
 .danger-zone {
     border-color: #FECACA;
@@ -315,9 +309,6 @@ body.dark-mode .danger-row {
     border-bottom: none;
 }
 
-/* ----------------------------------------------
-   SAVE SECTION
----------------------------------------------- */
 
 .save-section {
     background: #fff;
@@ -370,9 +361,7 @@ body.dark-mode .save-section p {
     color: #94A3B8;
 }
 
-/* ==========================================================
-   TOAST MESSAGE
-========================================================== */
+
 
 .toast-msg {
     position: fixed;
