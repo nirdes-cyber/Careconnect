@@ -1,0 +1,336 @@
+/* ==========================================================
+   Admin Dashboard - Responsive
+   ========================================================== */
+
+@media (max-width: 1024px) {
+    .mobile-menu-btn {
+        display: block !important;
+    }
+    
+    .nav-center {
+        display: none !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-box p {
+        max-width: 100%;
+    }
+
+    .welcome-btns {
+        justify-content: center;
+    }
+
+    .welcome-illustration {
+        margin-top: 16px;
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        padding: 0 12px;
+    }
+
+    .nav-brand span {
+        display: none;
+    }
+
+    .nav-profile-btn span {
+        display: none;
+    }
+
+    .nav-profile-btn i {
+        display: none;
+    }
+
+    .main-content {
+        padding: 12px;
+    }
+
+    .welcome-box {
+        padding: 16px 18px;
+    }
+
+    .welcome-box h1 {
+        font-size: 1.2rem;
+    }
+
+    .welcome-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .welcome-btns a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .welcome-illustration {
+        width: 120px;
+        height: 120px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 10px 12px;
+    }
+
+    .stat-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .quick-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .quick-stat-item {
+        padding: 10px 12px;
+    }
+
+    .qs-num {
+        font-size: 1rem;
+    }
+
+    .card-body {
+        padding: 8px 12px 10px;
+    }
+
+    .user-item {
+        flex-wrap: wrap;
+    }
+
+    .user-status {
+        margin-left: 0;
+    }
+
+    .psych-item {
+        flex-wrap: wrap;
+    }
+
+    .psych-status {
+        margin-left: 0;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .activity-item {
+        flex-wrap: wrap;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-card {
+        padding: 8px 12px;
+    }
+
+    .hero-card i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-box h1 {
+        font-size: 1rem;
+    }
+
+    .welcome-box p {
+        font-size: 0.8rem;
+    }
+
+    .welcome-tag {
+        font-size: 0.6rem;
+        padding: 3px 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.7rem;
+        padding: 6px 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 8px 10px;
+    }
+
+    .stat-card h2 {
+        font-size: 1rem;
+    }
+
+    .stat-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+
+    .quick-stat-item {
+        padding: 8px 10px;
+    }
+
+    .qs-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .qs-num {
+        font-size: 0.9rem;
+    }
+
+    .card-header {
+        padding: 10px 12px;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .card-header h3 {
+        font-size: 0.85rem;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .user-item img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .user-item h4 {
+        font-size: 0.75rem;
+    }
+
+    .psych-item img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .psych-item h4 {
+        font-size: 0.75rem;
+    }
+
+    .mobile-sidebar {
+        width: 260px;
+        left: -260px;
+    }
+
+    .mobile-sidebar.open {
+        left: 0;
+    }
+
+    .welcome-illustration {
+        width: 100px;
+        height: 100px;
+    }
+
+    .ill-circle.c1 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ill-circle.c2 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .ill-circle.c3 {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 360px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-box {
+        padding: 12px 14px;
+    }
+
+    .welcome-box h1 {
+        font-size: 0.9rem;
+    }
+
+    .hero-card {
+        padding: 6px 10px;
+    }
+
+    .hero-card i {
+        font-size: 1rem;
+    }
+
+    .nav-brand span {
+        display: none;
+    }
+}
+
+@media (hover: none) {
+    .nav-links li a:hover {
+        background: none;
+    }
+
+    .quick-item:hover {
+        border-color: #f0f0f0;
+    }
+
+    .btn-primary:hover {
+        background: #4F46E5;
+    }
+
+    .btn-secondary:hover {
+        background: #fff;
+    }
+
+    body.dark-mode .quick-item:hover {
+        border-color: #334155;
+    }
+}

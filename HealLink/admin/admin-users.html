@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users | Admin Panel | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-responsive.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-users.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="admin-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="admin-dashboard.html">Dashboard</a></li>
+                    <li><a href="admin-users.html" class="active">Users</a></li>
+                    <li><a href="admin-psychologists.html">Psychologists</a></li>
+                    <li><a href="admin-posts.html">Posts</a></li>
+                    <li><a href="admin-reports.html">Reports</a></li>
+                    <li><a href="admin-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Super+Admin&background=4F46E5&color=fff" alt="Admin">
+                        <span>Super Admin</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+                <span class="admin-badge-sm">Admin</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="admin-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="admin-users.html" class="active"><i class="bi bi-people"></i> Users</a></li>
+            <li><a href="admin-psychologists.html"><i class="bi bi-person-badge"></i> Psychologists</a></li>
+            <li><a href="admin-posts.html"><i class="bi bi-journal-text"></i> Posts</a></li>
+            <li><a href="admin-reports.html"><i class="bi bi-bar-chart"></i> Reports</a></li>
+            <li><a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Super+Admin&background=4F46E5&color=fff" alt="Admin">
+            <div>
+                <h4>Super Admin</h4>
+                <span>Administrator</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <main class="main-content">
+
+
+
+        <div class="page-header">
+            <div>
+                <h1>👤 Users</h1>
+                <p>View and manage all registered users</p>
+            </div>
+            <div class="page-header-stats">
+                <span class="stat-badge total"><i class="bi bi-people"></i> 12 Total</span>
+                <span class="stat-badge active"><i class="bi bi-check-circle"></i> 8 Active</span>
+                <span class="stat-badge pending"><i class="bi bi-clock"></i> 2 Pending</span>
+                <span class="stat-badge inactive"><i class="bi bi-slash-circle"></i> 2 Inactive</span>
+            </div>
+        </div>
+
+ 
+
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search users by name, email..." id="searchUsers">
+            </div>
+            <div class="filter-group">
+                <select id="filterStatus">
+                    <option value="all">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+                <button class="btn-filter" id="applyFilterBtn"><i class="bi bi-funnel"></i> Apply</button>
+            </div>
+        </div>
+
+
+
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Posts</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- User 1 - Active -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Nirdesh">
+                                    <span>Nirdesh Tiwari</span>
+                                </div>
+                            </td>
+                            <td>nirdesh@email.com</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>28</td>
+                            <td>05 Jun 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 2 - Active -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Anita">
+                                    <span>Anita Sharma</span>
+                                </div>
+                            </td>
+                            <td>anita@email.com</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>15</td>
+                            <td>02 Jun 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 3 - Pending -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Ramesh">
+                                    <span>Ramesh Khadka</span>
+                                </div>
+                            </td>
+                            <td>ramesh@email.com</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>0</td>
+                            <td>30 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn verify"><i class="bi bi-check-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 4 - Inactive -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Sita">
+                                    <span>Sita Gurung</span>
+                                </div>
+                            </td>
+                            <td>sita@email.com</td>
+                            <td><span class="status-badge inactive">Inactive</span></td>
+                            <td>8</td>
+                            <td>28 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn activate"><i class="bi bi-play-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 5 - Active -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Krishna">
+                                    <span>Krishna Poudel</span>
+                                </div>
+                            </td>
+                            <td>krishna@email.com</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>34</td>
+                            <td>25 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 6 - Active -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Gita">
+                                    <span>Gita Adhikari</span>
+                                </div>
+                            </td>
+                            <td>gita@email.com</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>19</td>
+                            <td>20 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 7 - Pending -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Bikash">
+                                    <span>Bikash Shrestha</span>
+                                </div>
+                            </td>
+                            <td>bikash@email.com</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>0</td>
+                            <td>18 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn verify"><i class="bi bi-check-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 8 - Inactive -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Sabina">
+                                    <span>Sabina Rai</span>
+                                </div>
+                            </td>
+                            <td>sabina@email.com</td>
+                            <td><span class="status-badge inactive">Inactive</span></td>
+                            <td>5</td>
+                            <td>15 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn activate"><i class="bi bi-play-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 9 - Active -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Hari">
+                                    <span>Hari Lama</span>
+                                </div>
+                            </td>
+                            <td>hari@email.com</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>42</td>
+                            <td>10 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 10 - Active -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Sunita">
+                                    <span>Sunita KC</span>
+                                </div>
+                            </td>
+                            <td>sunita@email.com</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>12</td>
+                            <td>05 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 11 - Active -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Mohan">
+                                    <span>Mohan Thapa</span>
+                                </div>
+                            </td>
+                            <td>mohan@email.com</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>21</td>
+                            <td>01 May 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- User 12 - Active -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Radha">
+                                    <span>Radha Pokhrel</span>
+                                </div>
+                            </td>
+                            <td>radha@email.com</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>9</td>
+                            <td>28 Apr 2026</td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-user.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            PAGINATION
+        ========================================================== -->
+
+        <div class="pagination">
+            <button class="page-btn prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="footer-admin-badge">Admin Panel</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/HealLink/public/privacy.html">Privacy</a>
+                    <a href="/HealLink/public/terms.html">Terms</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/admin-users.js"></script>
+    <script src="/HealLink/assets/js/admin-dashboard.js"></script>
+</body>
+
+</html>

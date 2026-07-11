@@ -1,0 +1,716 @@
+/* ==========================================================
+   Admin Psychologists - Complete CSS
+   ========================================================== */
+
+/* ----------------------------------------------
+   PAGE HEADER
+---------------------------------------------- */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.page-header h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+body.dark-mode .page-header p {
+    color: #94A3B8;
+}
+
+.page-header-stats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.stat-badge {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-badge.total {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.stat-badge.active {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.stat-badge.pending {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+body.dark-mode .stat-badge.total {
+    background: #334155;
+    color: #94A3B8;
+}
+
+body.dark-mode .stat-badge.active {
+    background: #064E3B;
+    color: #34D399;
+}
+
+body.dark-mode .stat-badge.pending {
+    background: #451A03;
+    color: #FBBF24;
+}
+
+/* ----------------------------------------------
+   SEARCH & FILTER
+---------------------------------------------- */
+
+.search-filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 10px 16px;
+    margin-bottom: 16px;
+}
+
+body.dark-mode .search-filter-bar {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-box i {
+    color: #999;
+}
+
+body.dark-mode .search-box i {
+    color: #64748B;
+}
+
+.search-box input {
+    border: none;
+    background: none;
+    width: 100%;
+    font-size: 0.85rem;
+    outline: none;
+    color: #333;
+}
+
+body.dark-mode .search-box input {
+    color: #E2E8F0;
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+}
+
+body.dark-mode .search-box input::placeholder {
+    color: #64748B;
+}
+
+.filter-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-group select {
+    padding: 4px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    background: #fff;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body.dark-mode .filter-group select {
+    background: #1E293B;
+    color: #E2E8F0;
+    border-color: #334155;
+}
+
+.filter-group select:focus {
+    border-color: #4F46E5;
+    outline: none;
+}
+
+.btn-filter {
+    padding: 4px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    background: #4F46E5;
+    color: #fff;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-filter:hover {
+    background: #3730A3;
+}
+
+body.dark-mode .btn-filter {
+    background: #4F46E5;
+}
+
+body.dark-mode .btn-filter:hover {
+    background: #3730A3;
+}
+
+/* ----------------------------------------------
+   TABLE CONTAINER
+---------------------------------------------- */
+
+.table-container {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+body.dark-mode .table-container {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.users-table thead {
+    background: #f8f9fa;
+}
+
+body.dark-mode .users-table thead {
+    background: #334155;
+}
+
+.users-table thead th {
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 700;
+    color: #555;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+body.dark-mode .users-table thead th {
+    color: #CBD5E1;
+    border-color: #334155;
+}
+
+.users-table tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f5f5f5;
+    vertical-align: middle;
+}
+
+body.dark-mode .users-table tbody td {
+    border-color: #334155;
+}
+
+.users-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+body.dark-mode .users-table tbody tr:hover {
+    background: #334155;
+}
+
+/* ----------------------------------------------
+   USER CELL
+---------------------------------------------- */
+
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-cell img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.user-cell span {
+    font-weight: 500;
+}
+
+body.dark-mode .user-cell span {
+    color: #E2E8F0;
+}
+
+/* ----------------------------------------------
+   STATUS BADGE
+---------------------------------------------- */
+
+.status-badge {
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-badge.active {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.status-badge.pending {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.status-badge.inactive {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+body.dark-mode .status-badge.active {
+    background: #064E3B;
+    color: #34D399;
+}
+
+body.dark-mode .status-badge.pending {
+    background: #451A03;
+    color: #FBBF24;
+}
+
+body.dark-mode .status-badge.inactive {
+    background: #450A0A;
+    color: #F87171;
+}
+
+/* ----------------------------------------------
+   VERIFICATION BADGE
+---------------------------------------------- */
+
+.verify-badge {
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.verify-badge.verified {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.verify-badge.unverified {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+body.dark-mode .verify-badge.verified {
+    background: #064E3B;
+    color: #34D399;
+}
+
+body.dark-mode .verify-badge.unverified {
+    background: #451A03;
+    color: #FBBF24;
+}
+
+/* ----------------------------------------------
+   ACTION BUTTONS
+---------------------------------------------- */
+
+.action-btns {
+    display: flex;
+    gap: 4px;
+}
+
+.action-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.action-btn.view {
+    background: #EEF2FF;
+    color: #4F46E5;
+}
+
+.action-btn.view:hover {
+    background: #4F46E5;
+    color: #fff;
+}
+
+.action-btn.edit {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.action-btn.edit:hover {
+    background: #059669;
+    color: #fff;
+}
+
+.action-btn.suspend {
+    background: #FEF3C7;
+    color: #D97706;
+}
+
+.action-btn.suspend:hover {
+    background: #D97706;
+    color: #fff;
+}
+
+.action-btn.verify {
+    background: #DBEAFE;
+    color: #2563EB;
+}
+
+.action-btn.verify:hover {
+    background: #2563EB;
+    color: #fff;
+}
+
+.action-btn.activate {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+.action-btn.activate:hover {
+    background: #059669;
+    color: #fff;
+}
+
+.action-btn.delete {
+    background: #FEE2E2;
+    color: #DC2626;
+}
+
+.action-btn.delete:hover {
+    background: #DC2626;
+    color: #fff;
+}
+
+body.dark-mode .action-btn.view {
+    background: #334155;
+    color: #A5B4FC;
+}
+
+body.dark-mode .action-btn.view:hover {
+    background: #4F46E5;
+    color: #fff;
+}
+
+body.dark-mode .action-btn.edit {
+    background: #064E3B;
+    color: #34D399;
+}
+
+body.dark-mode .action-btn.edit:hover {
+    background: #059669;
+    color: #fff;
+}
+
+body.dark-mode .action-btn.suspend {
+    background: #451A03;
+    color: #FBBF24;
+}
+
+body.dark-mode .action-btn.suspend:hover {
+    background: #D97706;
+    color: #fff;
+}
+
+body.dark-mode .action-btn.verify {
+    background: #1E3A5F;
+    color: #60A5FA;
+}
+
+body.dark-mode .action-btn.verify:hover {
+    background: #2563EB;
+    color: #fff;
+}
+
+body.dark-mode .action-btn.activate {
+    background: #064E3B;
+    color: #34D399;
+}
+
+body.dark-mode .action-btn.activate:hover {
+    background: #059669;
+    color: #fff;
+}
+
+body.dark-mode .action-btn.delete {
+    background: #450A0A;
+    color: #F87171;
+}
+
+body.dark-mode .action-btn.delete:hover {
+    background: #DC2626;
+    color: #fff;
+}
+
+/* ----------------------------------------------
+   PAGINATION
+---------------------------------------------- */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.page-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+body.dark-mode .page-btn {
+    background: #1E293B;
+    color: #CBD5E1;
+    border-color: #334155;
+}
+
+.page-btn:hover {
+    border-color: #4F46E5;
+    color: #4F46E5;
+}
+
+body.dark-mode .page-btn:hover {
+    border-color: #4F46E5;
+    color: #4F46E5;
+}
+
+.page-btn.active {
+    background: #4F46E5;
+    color: #fff;
+    border-color: #4F46E5;
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ----------------------------------------------
+   TOAST MESSAGE
+---------------------------------------------- */
+
+.toast-msg {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1a1a2e;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    z-index: 9999;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    animation: slideUp 0.3s ease;
+}
+
+body.dark-mode .toast-msg {
+    background: #1E293B;
+    border: 1px solid #334155;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ----------------------------------------------
+   RESPONSIVE
+---------------------------------------------- */
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .page-header-stats {
+        width: 100%;
+    }
+
+    .stat-badge {
+        font-size: 0.55rem;
+        padding: 3px 10px;
+    }
+
+    .search-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .filter-group {
+        flex-wrap: wrap;
+    }
+
+    .filter-group select {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .btn-filter {
+        flex: 1;
+    }
+
+    .users-table {
+        font-size: 0.75rem;
+    }
+
+    .users-table thead th,
+    .users-table tbody td {
+        padding: 6px 8px;
+    }
+
+    .action-btns {
+        gap: 2px;
+    }
+
+    .action-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 0.7rem;
+    }
+
+    .user-cell img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1rem;
+    }
+
+    .page-header p {
+        font-size: 0.65rem;
+    }
+
+    .stat-badge {
+        font-size: 0.5rem;
+        padding: 2px 8px;
+    }
+
+    .filter-group {
+        flex-direction: column;
+    }
+
+    .filter-group select {
+        width: 100%;
+    }
+
+    .users-table thead th:nth-child(2),
+    .users-table tbody td:nth-child(2) {
+        display: none;
+    }
+
+    .users-table thead th:nth-child(3),
+    .users-table tbody td:nth-child(3) {
+        display: none;
+    }
+
+    .page-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.65rem;
+    }
+
+    .action-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .users-table thead th:nth-child(4),
+    .users-table tbody td:nth-child(4) {
+        display: none;
+    }
+
+    .page-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 0.55rem;
+    }
+
+    .action-btn {
+        width: 22px;
+        height: 22px;
+        font-size: 0.55rem;
+    }
+}

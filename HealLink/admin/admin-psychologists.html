@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychologists | Admin Panel | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-responsive.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-psychologists.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================
+        TOP NAVIGATION
+    ========================================================== -->
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="admin-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="admin-dashboard.html">Dashboard</a></li>
+                    <li><a href="admin-users.html">Users</a></li>
+                    <li><a href="admin-psychologists.html" class="active">Psychologists</a></li>
+                    <li><a href="admin-posts.html">Posts</a></li>
+                    <li><a href="admin-reports.html">Reports</a></li>
+                    <li><a href="admin-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="#" alt="Admin">
+                        <span>Super Admin</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+                <span class="admin-badge-sm">Admin</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="admin-dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="admin-users.html"><i class="bi bi-people"></i> Users</a></li>
+            <li><a href="admin-psychologists.html" class="active"><i class="bi bi-person-badge"></i> Psychologists</a></li>
+            <li><a href="admin-posts.html"><i class="bi bi-journal-text"></i> Posts</a></li>
+            <li><a href="admin-reports.html"><i class="bi bi-bar-chart"></i> Reports</a></li>
+            <li><a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="#" alt="Admin">
+            <div>
+                <h4>Super Admin</h4>
+                <span>Administrator</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            PAGE HEADER
+        ========================================================== -->
+
+        <div class="page-header">
+            <div>
+                <h1>🧑‍⚕️ Psychologists</h1>
+                <p>View and manage all registered psychologists</p>
+            </div>
+            <div class="page-header-stats">
+                <span class="stat-badge total"><i class="bi bi-person-badge"></i> 8 Total</span>
+                <span class="stat-badge active"><i class="bi bi-check-circle"></i> 6 Active</span>
+                <span class="stat-badge pending"><i class="bi bi-clock"></i> 2 Pending</span>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            SEARCH & FILTER
+        ========================================================== -->
+
+        <div class="search-filter-bar">
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Search psychologists by name, email..." id="searchPsychologists">
+            </div>
+            <div class="filter-group">
+                <select id="filterStatus">
+                    <option value="all">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+                <select id="filterVerification">
+                    <option value="all">All Verification</option>
+                    <option value="verified">Verified</option>
+                    <option value="unverified">Unverified</option>
+                </select>
+                <button class="btn-filter" id="applyFilterBtn"><i class="bi bi-funnel"></i> Apply</button>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            PSYCHOLOGISTS TABLE
+        ========================================================== -->
+
+        <div class="table-container">
+            <div class="table-responsive">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Psychologist</th>
+                            <th>Email</th>
+                            <th>Specialization</th>
+                            <th>Status</th>
+                            <th>Verification</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Psychologist 1 - Active Verified -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Dr. Jagadish">
+                                    <span>Dr. Jagadish Oli</span>
+                                </div>
+                            </td>
+                            <td>dr.jagadish@careconnect.com</td>
+                            <td>Clinical Psychology</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td><span class="verify-badge verified">Verified</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-psychologist.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Psychologist 2 - Active Verified -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Dr. Ashma">
+                                    <span>Dr. Ashma Mall</span>
+                                </div>
+                            </td>
+                            <td>dr.ashma@careconnect.com</td>
+                            <td>Counseling Psychology</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td><span class="verify-badge verified">Verified</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-psychologist.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Psychologist 3 - Pending Unverified -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Dr. Kamal">
+                                    <span>Dr. Kamal Bhattrai</span>
+                                </div>
+                            </td>
+                            <td>dr.kamal@careconnect.com</td>
+                            <td>Child Psychology</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td><span class="verify-badge unverified">Unverified</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-psychologist.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn verify"><i class="bi bi-check-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Psychologist 4 - Active Verified -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Dr. Saurav">
+                                    <span>Dr. Saurav Puri</span>
+                                </div>
+                            </td>
+                            <td>dr.saurav@careconnect.com</td>
+                            <td>Cognitive Behavioral Therapy</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td><span class="verify-badge verified">Verified</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-psychologist.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Psychologist 5 - Pending Unverified -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Dr. Prasanna">
+                                    <span>Dr. Prasanna Neupane</span>
+                                </div>
+                            </td>
+                            <td>dr.prasanna@careconnect.com</td>
+                            <td>Clinical Psychology</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td><span class="verify-badge unverified">Unverified</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-psychologist.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn verify"><i class="bi bi-check-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Psychologist 6 - Active Verified -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Dr. Sandip">
+                                    <span>Dr. Sandip Dangi</span>
+                                </div>
+                            </td>
+                            <td>dr.sandip@careconnect.com</td>
+                            <td>Psychotherapy</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td><span class="verify-badge verified">Verified</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-psychologist.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Psychologist 7 - Inactive Unverified -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Dr. Shyam">
+                                    <span>Dr. Shyam Pandey</span>
+                                </div>
+                            </td>
+                            <td>dr.shyam@careconnect.com</td>
+                            <td>Counseling Psychology</td>
+                            <td><span class="status-badge inactive">Inactive</span></td>
+                            <td><span class="verify-badge unverified">Unverified</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-psychologist.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn activate"><i class="bi bi-play-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Psychologist 8 - Active Verified -->
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <img src="#" alt="Dr. Gita">
+                                    <span>Dr. Gita Aryal</span>
+                                </div>
+                            </td>
+                            <td>dr.gita@careconnect.com</td>
+                            <td>Child Psychology</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td><span class="verify-badge verified">Verified</span></td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn view" onclick="window.location.href='admin-view-psychologist.html'"><i class="bi bi-eye"></i></button>
+                                    <button class="action-btn edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="action-btn suspend"><i class="bi bi-slash-circle"></i></button>
+                                    <button class="action-btn delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            PAGINATION
+        ========================================================== -->
+
+        <div class="pagination">
+            <button class="page-btn prev"><i class="bi bi-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+
+        <!-- ==========================================================
+            FOOTER
+        ========================================================== -->
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="footer-admin-badge">Admin Panel</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/HealLink/public/privacy.html">Privacy</a>
+                    <a href="/HealLink/public/terms.html">Terms</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/admin-psychologists.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | CareConnect</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-dashboard.css">
+    <link rel="stylesheet" href="/HealLink/assets/css/admin/admin-responsive.css">
+</head>
+
+<body>
+
+
+    <nav class="top-nav">
+        <div class="nav-container">
+
+            <div class="nav-left">
+                <a href="admin-dashboard.html" class="nav-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="admin-badge">Admin</span>
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="admin-dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="admin-users.html">Users</a></li>
+                    <li><a href="admin-psychologists.html">Psychologists</a></li>
+                    <li><a href="admin-posts.html">Posts</a></li>
+                    <li><a href="admin-reports.html">Reports</a></li>
+                    <li><a href="admin-settings.html">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-theme" id="navThemeBtn"><i class="bi bi-moon"></i></button>
+                <div class="nav-profile">
+                    <button class="nav-profile-btn" id="navProfileBtn">
+                        <img src="https://ui-avatars.com/api/?name=Super+Admin&background=4F46E5&color=fff" alt="Admin">
+                        <span>Super Admin</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="nav-dropdown" id="navDropdown">
+                        <a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a>
+                        <a href="logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="bi bi-list"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- ==========================================================
+        MOBILE SIDEBAR
+    ========================================================== -->
+
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-brand">
+                <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                <span>CareConnect</span>
+                <span class="admin-badge-sm">Admin</span>
+            </div>
+            <button class="mobile-sidebar-close" id="mobileSidebarClose">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul class="mobile-sidebar-links">
+            <li><a href="admin-dashboard.html" class="active"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a></li>
+            <li><a href="admin-users.html"><i class="bi bi-people"></i> Users</a></li>
+            <li><a href="admin-psychologists.html"><i class="bi bi-person-badge"></i> Psychologists</a></li>
+            <li><a href="admin-posts.html"><i class="bi bi-journal-text"></i> Posts</a></li>
+            <li><a href="admin-reports.html"><i class="bi bi-bar-chart"></i> Reports</a></li>
+            <li><a href="admin-settings.html"><i class="bi bi-gear"></i> Settings</a></li>
+            <li><a href="logout.html" class="logout-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+        <div class="mobile-sidebar-footer">
+            <img src="https://ui-avatars.com/api/?name=Super+Admin&background=4F46E5&color=fff" alt="Admin">
+            <div>
+                <h4>Super Admin</h4>
+                <span>Administrator</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================
+        MAIN CONTENT
+    ========================================================== -->
+
+    <main class="main-content">
+
+        <!-- ==========================================================
+            WELCOME SECTION
+        ========================================================== -->
+
+        <div class="welcome-section">
+            <div class="welcome-box">
+                <div>
+                    <span class="welcome-tag"><i class="bi bi-shield-check"></i> Super Admin Panel</span>
+                    <h1>Welcome, <span class="highlight">Super Admin</span> 👋</h1>
+                    <p>Manage users, psychologists, posts, and monitor platform activity.</p>
+                    <div class="welcome-btns">
+                        <a href="admin-users.html" class="btn-primary"><i class="bi bi-people"></i> Manage Users</a>
+                        <a href="admin-psychologists.html" class="btn-secondary"><i class="bi bi-person-badge"></i> Manage Psychologists</a>
+                    </div>
+                </div>
+                <div class="welcome-illustration">
+                    <div class="ill-circle c1"></div>
+                    <div class="ill-circle c2"></div>
+                    <div class="ill-circle c3"></div>
+                    <div class="hero-card">
+                        <i class="bi bi-shield-fill"></i>
+                        <h4>Super Admin</h4>
+                        <p>Full Control</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="bi bi-people"></i></div>
+                <div>
+                    <span class="stat-label">Total Users</span>
+                    <h2 class="counter" data-target="156">0</h2>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up"></i> 12 this month</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="bi bi-person-badge"></i></div>
+                <div>
+                    <span class="stat-label">Psychologists</span>
+                    <h2 class="counter" data-target="24">0</h2>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up"></i> 3 new</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange"><i class="bi bi-journal-text"></i></div>
+                <div>
+                    <span class="stat-label">Total Posts</span>
+                    <h2 class="counter" data-target="342">0</h2>
+                    <span class="stat-trend up"><i class="bi bi-arrow-up"></i> 28 this week</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple"><i class="bi bi-calendar-event"></i></div>
+                <div>
+                    <span class="stat-label">Appointments</span>
+                    <h2 class="counter" data-target="89">0</h2>
+                    <span class="stat-trend"><i class="bi bi-clock"></i> 15 upcoming</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================================
+            QUICK STATS ROW
+        ========================================================== -->
+
+        <div class="quick-stats">
+            <div class="quick-stat-item">
+                <span class="qs-icon active"><i class="bi bi-check-circle"></i></span>
+                <div>
+                    <span class="qs-num">12</span>
+                    <span class="qs-lbl">Active Users</span>
+                </div>
+            </div>
+            <div class="quick-stat-item">
+                <span class="qs-icon pending"><i class="bi bi-clock"></i></span>
+                <div>
+                    <span class="qs-num">8</span>
+                    <span class="qs-lbl">Pending Verification</span>
+                </div>
+            </div>
+            <div class="quick-stat-item">
+                <span class="qs-icon reported"><i class="bi bi-flag"></i></span>
+                <div>
+                    <span class="qs-num">3</span>
+                    <span class="qs-lbl">Reported Content</span>
+                </div>
+            </div>
+            <div class="quick-stat-item">
+                <span class="qs-icon new"><i class="bi bi-envelope"></i></span>
+                <div>
+                    <span class="qs-num">5</span>
+                    <span class="qs-lbl">New Requests</span>
+                </div>
+            </div>
+        </div>
+
+      
+
+        <div class="dashboard-grid">
+
+
+            <div class="grid-left">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>👤 Recent Users</h3>
+                            <p>Latest registered users</p>
+                        </div>
+                        <a href="admin-users.html" class="view-link">View All →</a>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="user-item">
+                            <img src="https://ui-avatars.com/api/?name=Nirdesh+Tiwari&background=4F46E5&color=fff" alt="Nirdesh">
+                            <div>
+                                <h4>Nirdesh Tiwari</h4>
+                                <span>Member since 2 days ago</span>
+                            </div>
+                            <span class="user-status active">Active</span>
+                        </div>
+
+                        <div class="user-item">
+                            <img src="https://ui-avatars.com/api/?name=Anita+Sharma&background=10B981&color=fff" alt="Anita">
+                            <div>
+                                <h4>Anita Sharma</h4>
+                                <span>Member since 5 days ago</span>
+                            </div>
+                            <span class="user-status active">Active</span>
+                        </div>
+
+                        <div class="user-item">
+                            <img src="https://ui-avatars.com/api/?name=Ramesh+Khadka&background=F59E0B&color=fff" alt="Ramesh">
+                            <div>
+                                <h4>Ramesh Khadka</h4>
+                                <span>Member since 1 week ago</span>
+                            </div>
+                            <span class="user-status pending">Pending</span>
+                        </div>
+
+                        <div class="user-item">
+                            <img src="https://ui-avatars.com/api/?name=Sita+Gurung&background=8B5CF6&color=fff" alt="Sita">
+                            <div>
+                                <h4>Sita Gurung</h4>
+                                <span>Member since 1 week ago</span>
+                            </div>
+                            <span class="user-status inactive">Inactive</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ==========================================================
+                RIGHT SIDEBAR
+            ========================================================== -->
+
+            <div class="grid-right">
+
+                <!-- Recent Psychologists -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>🧑‍⚕️ Recent Psychologists</h3>
+                            <p>Latest verified professionals</p>
+                        </div>
+                        <a href="admin-psychologists.html" class="view-link">Manage →</a>
+                    </div>
+                    <div class="card-body psych-list">
+
+                        <div class="psych-item">
+                            <img src="https://ui-avatars.com/api/?name=Dr+Jagadish+Oli&background=4F46E5&color=fff" alt="Dr. Jagadish">
+                            <div>
+                                <h4>Dr. Jagadish Oli</h4>
+                                <span>Clinical Psychologist</span>
+                            </div>
+                            <span class="psych-status verified">Verified</span>
+                        </div>
+
+                        <div class="psych-item">
+                            <img src="https://ui-avatars.com/api/?name=Dr+Ashma+Mall&background=06B6D4&color=fff" alt="Dr. Ashma">
+                            <div>
+                                <h4>Dr. Ashma Mall</h4>
+                                <span>Counseling Psychologist</span>
+                            </div>
+                            <span class="psych-status verified">Verified</span>
+                        </div>
+
+                        <div class="psych-item">
+                            <img src="https://ui-avatars.com/api/?name=Dr+Kamal+Bhattrai&background=10B981&color=fff" alt="Dr. Kamal">
+                            <div>
+                                <h4>Dr. Kamal Bhattrai</h4>
+                                <span>Child Psychologist</span>
+                            </div>
+                            <span class="psych-status pending">Pending</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>⚡ Admin Actions</h3>
+                            <p>Frequently used tools</p>
+                        </div>
+                    </div>
+                    <div class="card-body quick-grid">
+                        <a href="admin-users.html" class="quick-item">
+                            <span class="q-icon primary"><i class="bi bi-people"></i></span>
+                            <h4>Users</h4>
+                            <p>Manage all users</p>
+                        </a>
+                        <a href="admin-psychologists.html" class="quick-item">
+                            <span class="q-icon success"><i class="bi bi-person-badge"></i></span>
+                            <h4>Psychologists</h4>
+                            <p>Manage professionals</p>
+                        </a>
+                        <a href="admin-posts.html" class="quick-item">
+                            <span class="q-icon info"><i class="bi bi-journal-text"></i></span>
+                            <h4>Posts</h4>
+                            <p>Moderate content</p>
+                        </a>
+                        <a href="admin-reports.html" class="quick-item">
+                            <span class="q-icon danger"><i class="bi bi-bar-chart"></i></span>
+                            <h4>Reports</h4>
+                            <p>View analytics</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="bottom-section">
+            <div class="card full-width">
+                <div class="card-header">
+                    <div>
+                        <h3>🔄 Recent Activity</h3>
+                        <p>Latest platform activities</p>
+                    </div>
+                    <a href="admin-reports.html" class="view-link">View All →</a>
+                </div>
+                <div class="card-body activity-list">
+
+                    <div class="activity-item">
+                        <span class="act-icon blue"><i class="bi bi-person-plus"></i></span>
+                        <div>
+                            <h4>New User Registered</h4>
+                            <p>Nirdesh Tiwari joined CareConnect</p>
+                            <span>2 hours ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <span class="act-icon green"><i class="bi bi-check-circle"></i></span>
+                        <div>
+                            <h4>Psychologist Verified</h4>
+                            <p>Dr. Ashma Mall has been verified</p>
+                            <span>5 hours ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <span class="act-icon orange"><i class="bi bi-journal-text"></i></span>
+                        <div>
+                            <h4>New Post Created</h4>
+                            <p>Anonymous user posted about anxiety</p>
+                            <span>1 day ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <span class="act-icon purple"><i class="bi bi-calendar-check"></i></span>
+                        <div>
+                            <h4>Appointment Completed</h4>
+                            <p>Session between Nirdesh and Dr. Jagadish</p>
+                            <span>2 days ago</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+      
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/HealLink/assets/image/logo.png" alt="CareConnect">
+                    <span>CareConnect</span>
+                    <span class="footer-admin-badge">Admin Panel</span>
+                </div>
+                <p>&copy; 2026 CareConnect. All rights reserved.</p>
+                <div class="footer-links">
+             <a href="/HealLink/public/privacy.html">Privacy</a>
+                    <a href="/HealLink/public/terms.html">Terms</a>
+                    <a href="/HealLink/public/contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="/HealLink/assets/js/admin-dashboard.js"></script>
+
+</body>
+
+</html>
